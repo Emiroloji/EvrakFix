@@ -57,6 +57,16 @@ export async function generateDocumentPdf(title: string, content: string): Promi
     throw new Error('Döküman içeriği boş olamaz.');
   }
 
+  // Normalize Turkish characters that are not supported by Helvetica WinAnsi encoding
+  // Preserving supported Turkish chars: ç, Ç, ö, Ö, ü, Ü (which are valid in WinAnsi)
+  const normalizedContent = content
+    .replace(/ğ/g, 'g')
+    .replace(/Ğ/g, 'G')
+    .replace(/ı/g, 'i')
+    .replace(/İ/g, 'I')
+    .replace(/ş/g, 's')
+    .replace(/Ş/g, 'S');
+
   try {
     const pdfDoc = await PDFDocument.create();
     
@@ -82,7 +92,7 @@ export async function generateDocumentPdf(title: string, content: string): Promi
     const titleFontSize = 13;
 
     // First wrap all the text before page allocation
-    const wrappedLines = wrapText(content, printableWidth, helvetica, bodyFontSize);
+    const wrappedLines = wrapText(normalizedContent, printableWidth, helvetica, bodyFontSize);
 
     // Initial page allocation
     let page = pdfDoc.addPage([A4_WIDTH, A4_HEIGHT]);

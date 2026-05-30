@@ -31,8 +31,9 @@ export const documentTemplates: DocumentTemplate[] = [
       { id: 'date', label: 'Dilekçe Tarihi', type: 'date', required: true }
     ],
     generateText: (v) => {
+      const authority = v.authority || '';
       const tcLine = v.tcNo ? `\nT.C. Kimlik No: ${v.tcNo}` : '';
-      return `${v.authority.toUpperCase()}\n\nKONU: ${v.subject}\n\n${v.details}\n\n\nGereğini bilgilerinize saygılarımla arz ederim.\n\nTarih: ${v.date}\n\nAd Soyad: ${v.name}\nİmza: _________________\n\nİLETİŞİM BİLGİLERİ:${tcLine}\nTelefon: ${v.phone}\nAdres: ${v.address}`;
+      return `${authority.toUpperCase()}\n\nKONU: ${v.subject || ''}\n\n${v.details || ''}\n\n\nGereğini bilgilerinize saygılarımla arz ederim.\n\nTarih: ${v.date || ''}\n\nAd Soyad: ${v.name || ''}\nİmza: _________________\n\nİLETİŞİM BİLGİLERİ:${tcLine}\nTelefon: ${v.phone || ''}\nAdres: ${v.address || ''}`;
     }
   },
   {
@@ -48,11 +49,12 @@ export const documentTemplates: DocumentTemplate[] = [
       { id: 'date', label: 'Dilekçe Tarihi', type: 'date', required: true }
     ],
     generateText: (v) => {
+      const company = v.company || '';
       const reasonText = v.reason 
         ? `Ayrılma gerekçem: ${v.reason}`
         : 'Şirketinizde geçirdiğim süre boyunca edinmiş olduğum tecrübeler için teşekkür eder, bundan sonraki süreçte şirketinize başarılar dilerim.';
       
-      return `${v.company.toUpperCase()}\n\nŞirketiniz bünyesinde ${v.date} tarihinden bu yana "${v.position}" görevini yürütmekteyim.\n\nGördüğüm lüzum üzerine, ${v.lastDate} tarihi itibarıyla kendi isteğimle bu görevimden istifa etmek istediğimi bildiririm.\n\n${reasonText}\n\nİstifamın kabulünü ve gerekli işlemlerin başlatılmasını rica ederim.\n\nSaygılarımla,\n\nTarih: ${v.date}\n\nAd Soyad: ${v.name}\nİmza: _________________`;
+      return `${company.toUpperCase()}\n\nŞirketiniz bünyesinde ${v.date || ''} tarihinden bu yana "${v.position || ''}" görevini yürütmekteyim.\n\nGördüğüm lüzum üzerine, ${v.lastDate || ''} tarihi itibarıyla kendi isteğimle bu görevimden istifa etmek istediğimi bildiririm.\n\n${reasonText}\n\nİstifamın kabulünü ve gerekli işlemlerin başlatılmasını rica ederim.\n\nSaygılarımla,\n\nTarih: ${v.date || ''}\n\nAd Soyad: ${v.name || ''}\nİmza: _________________`;
     }
   },
   {
@@ -72,7 +74,8 @@ export const documentTemplates: DocumentTemplate[] = [
       { id: 'date', label: 'Dilekçe Tarihi', type: 'date', required: true }
     ],
     generateText: (v) => {
-      return `${v.company.toUpperCase()}\n\nFirmanızdan ${v.purchaseDate} tarihinde ${v.orderNo} fatura numarası ile "${v.productName}" satın aldım.\n\nSöz konusu ürün/hizmetle ilgili olarak şu sorunla karşılaştım:\n${v.reason}\n\nTüketici Hakları Korunması Kanunu gereğince, ödemiş olduğum ${v.price} tutarındaki ücretin tarafıma iade edilmesini talep ediyorum.\n\nİade tutarının aşağıda belirtmiş olduğum IBAN numarasına gönderilmesini rica ederim.\n\nGereğini bilgilerinize sunarım.\n\nTarih: ${v.date}\n\nAd Soyad: ${v.name}\nİmza: _________________\n\nBANKA VE İLETİŞİM BİLGİLERİ:\nIBAN: ${v.iban}\nTelefon: ${v.phone}`;
+      const company = v.company || '';
+      return `${company.toUpperCase()}\n\nFirmanızdan ${v.purchaseDate || ''} tarihinde ${v.orderNo || ''} fatura numarası ile "${v.productName || ''}" satın aldım.\n\nSöz konusu ürün/hizmetle ilgili olarak şu sorunla karşılaştım:\n${v.reason || ''}\n\nTüketici Hakları Korunması Kanunu gereğince, ödemiş olduğum ${v.price || ''} tutarındaki ücretin tarafıma iade edilmesini talep ediyorum.\n\nİade tutarının aşağıda belirtmiş olduğum IBAN numarasına gönderilmesini rica ederim.\n\nGereğini bilgilerinize sunarım.\n\nTarih: ${v.date || ''}\n\nAd Soyad: ${v.name || ''}\nİmza: _________________\n\nBANKA VE İLETİŞİM BİLGİLERİ:\nIBAN: ${v.iban || ''}\nTelefon: ${v.phone || ''}`;
     }
   },
   {
@@ -87,7 +90,7 @@ export const documentTemplates: DocumentTemplate[] = [
       { id: 'date', label: 'Tutanak Tarihi', type: 'date', required: true }
     ],
     generateText: (v) => {
-      return `TESLİM TESELLÜM TUTANAĞI\n\nİşbu tutanak, aşağıda bilgileri yer alan taraflar arasında demirbaş/varlık teslimatının belgelenmesi amacıyla düzenlenmiştir.\n\nTESLİM EDİLEN VARLIKLAR:\n${v.items}\n\nTESLİM ŞARTLARI / DURUMU:\n${v.conditions}\n\nYukarıda belirtilen varlıklar, Teslim Eden tarafından Teslim Alan kişiye ${v.date} tarihinde eksiksiz, sağlam ve çalışır vaziyette teslim edilmiş ve teslim alınmıştır.\n\nİşbu tutanak taraflarca okunarak karşılıklı imza altına alınmıştır.\n\n\nTarih: ${v.date}\n\nTESLİM EDEN:\nAd Soyad: ${v.deliverer}\nİmza: _________________\n\nTESLİM ALAN:\nAd Soyad: ${v.receiver}\nİmza: _________________`;
+      return `TESLİM TESELLÜM TUTANAĞI\n\nİşbu tutanak, aşağıda bilgileri yer alan taraflar arasında demirbaş/varlık teslimatının belgelenmesi amacıyla düzenlenmiştir.\n\nTESLİM EDİLEN VARLIKLAR:\n${v.items || ''}\n\nTESLİM ŞARTLARI / DURUMU:\n${v.conditions || ''}\n\nYukarıda belirtilen varlıklar, Teslim Eden tarafından Teslim Alan kişiye ${v.date || ''} tarihinde eksiksiz, sağlam ve çalışır vaziyette teslim edilmiş ve teslim alınmıştır.\n\nİşbu tutanak taraflarca okunarak karşılıklı imza altına alınmıştır.\n\n\nTarih: ${v.date || ''}\n\nTESLİM EDEN:\nAd Soyad: ${v.deliverer || ''}\nİmza: _________________\n\nTESLİM ALAN:\nAd Soyad: ${v.receiver || ''}\nİmza: _________________`;
     }
   },
   {
@@ -103,7 +106,7 @@ export const documentTemplates: DocumentTemplate[] = [
       { id: 'date', label: 'Tutanak Tarihi', type: 'date', required: true }
     ],
     generateText: (v) => {
-      return `BORÇ ALACAK VE ÖDEME TAAHHÜT TUTANAĞI\n\nİşbu tutanak, Alacaklı ile Borçlu arasında mevcut borç ilişkisinin ve ödeme şartlarının belirlenmesi amacıyla tanzim edilmiştir.\n\n1. TARAFLAR VE BORÇ TANIMI:\nBorçlu, Alacaklı'ya ${v.amount} tutarında borçlu olduğunu gayrikabili rücu kabul, beyan ve ikrar eder.\n\n2. VADE VE ÖDEME ŞARTLARI:\nBorçlu, söz konusu ${v.amount} tutarındaki borcunu en geç ${v.dueDate} tarihinde ödeyeceğini taahhüt eder.\nÖdeme Planı detayları:\n${v.details}\n\n3. ANLAŞMA HÜKÜMLERİ:\nBorçlu, taahhüt ettiği tarihte borcunu tamamen ve eksiksiz ödemediği takdirde yasal takip başlatılacağını kabul eder.\n\nİşbu tutanak ${v.date} tarihinde iki nüsha olarak karşılıklı rıza ile tanzim ve imza edilmiştir.\n\n\nTarih: ${v.date}\n\nALACAKLI:\nAd Soyad: ${v.creditor}\nİmza: _________________\n\nBORÇLU:\nAd Soyad: ${v.debtor}\nİmza: _________________`;
+      return `BORÇ ALACAK VE ÖDEME TAAHHÜT TUTANAĞI\n\nİşbu tutanak, Alacaklı ile Borçlu arasında mevcut borç ilişkisinin ve ödeme şartlarının belirlenmesi amacıyla tanzim edilmiştir.\n\n1. TARAFLAR VE BORÇ TANIMI:\nBorçlu, Alacaklı'ya ${v.amount || ''} tutarında borçlu olduğunu gayrikabili rücu kabul, beyan ve ikrar eder.\n\n2. VADE VE ÖDEME ŞARTLARI:\nBorçlu, söz konusu ${v.amount || ''} tutarındaki borcunu en geç ${v.dueDate || ''} tarihinde ödeyeceğini taahhüt eder.\nÖdeme Planı detayları:\n${v.details || ''}\n\n3. ANLAŞMA HÜKÜMLERİ:\nBorçlu, taahhüt ettiği tarihte borcunu tamamen ve eksiksiz ödemediği takdirde yasal takip başlatılacağını kabul eder.\n\nİşbu tutanak ${v.date || ''} tarihinde iki nüsha olarak karşılıklı rıza ile tanzim ve imza edilmiştir.\n\n\nTarih: ${v.date || ''}\n\nALACAKLI:\nAd Soyad: ${v.creditor || ''}\nİmza: _________________\n\nBORÇLU:\nAd Soyad: ${v.debtor || ''}\nİmza: _________________`;
     }
   }
 ];

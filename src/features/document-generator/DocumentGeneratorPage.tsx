@@ -38,7 +38,12 @@ export const DocumentGeneratorPage = () => {
   // Compiled text preview
   const livePreviewText = React.useMemo(() => {
     if (!selectedTemplate) return '';
-    return selectedTemplate.generateText(formValues);
+    try {
+      return selectedTemplate.generateText(formValues);
+    } catch (e) {
+      console.error('Error generating template text preview:', e);
+      return '';
+    }
   }, [selectedTemplate, formValues]);
 
   // Execute A4 PDF generation
