@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>EvrakFix | Ücretsiz PDF ve Evrak Araçları</title>
+    <meta name="title" content="EvrakFix | Ücretsiz PDF ve Evrak Araçları" />
+    <meta name="description" content="PDF birleştirme, PDF bölme, imza ekleme, filigran ekleme, görsel sıkıştırma ve dilekçe oluşturma işlemlerinizi sunucuya göndermeden cihazınızda güvenle yapın." />
+    <meta name="keywords" content="pdf birleştir, pdf böl, pdf imza, filigran ekleme, görsel sıkıştır, dilekçe oluştur, evrakfix, tarayıcıda pdf, güvenli pdf" />
+    <meta name="author" content="EvrakFix" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://evrakfix.com/" />
+    <meta property="og:title" content="EvrakFix | Ücretsiz PDF ve Evrak Araçları" />
+    <meta property="og:description" content="Dosyalarınızı sunucuya göndermeden PDF birleştirme, bölme, imza ekleme, filigran ekleme ve dilekçe yazma işlemlerini tarayıcınızda güvenle yapın." />
+    <meta property="og:image" content="https://evrakfix.com/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://evrakfix.com/" />
+    <meta property="twitter:title" content="EvrakFix | Ücretsiz PDF ve Evrak Araçları" />
+    <meta property="twitter:description" content="Dosyalarınızı sunucuya göndermeden PDF birleştirme, bölme, imza ekleme, filigran ekleme ve dilekçe yazma işlemlerini tarayıcınızda güvenle yapın." />
+    <meta property="twitter:image" content="https://evrakfix.com/og-image.png" />
+
+    <!-- PWA integration assets -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('ServiceWorker registered successfully with scope:', reg.scope))
+            .catch(err => console.log('ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

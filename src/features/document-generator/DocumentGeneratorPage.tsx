@@ -1,0 +1,206 @@
+import * as React from 'react';
+import { Alert } from '../../components/ui/Alert';
+import { Button } from '../../components/ui/Button';
+import { TemplateSelector } from './components/TemplateSelector';
+import { DocumentForm } from './components/DocumentForm';
+import { generateDocumentPdf } from './documentGenerator.service';
+import { downloadBlob } from '../../lib/files/downloadFile';
+import { type DocumentTemplate } from './documentTemplates';
+import { Shield, RefreshCw, Download, AlertCircle, Eye, FileSignature } from 'lucide-react';
+
+export const DocumentGeneratorPage = () => {
+  const [selectedTemplate, setSelectedTemplate] = React.useState<DocumentTemplate | null>(null);
+  const [formValues, setFormValues] = React.useState<Record<string, string>>({});
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const [docBlob, setDocBlob] = React.useState<Blob | null>(null);
+
+  // Template select handler
+  const handleSelectTemplate = (template: DocumentTemplate) => {
+    setSelectedTemplate(template);
+    setFormValues({});
+    setDocBlob(null);
+    setError(null);
+  };
+
+  // Check if all required fields are filled
+  const isFormValid = React.useMemo(() => {
+    if (!selectedTemplate) return false;
+    
+    return selectedTemplate.fields.every((field) => {
+      if (field.required) {
+        return !!formValues[field.id]?.trim();
+      }
+      return true;
+    });
+  }, [selectedTemplate, formValues]);
+
+  // Compiled text preview
+  const livePreviewText = React.useMemo(() => {
+    if (!selectedTemplate) return '';
+    return selectedTemplate.generateText(formValues);
+  }, [selectedTemplate, formValues]);
+
+  // Execute A4 PDF generation
+  const handleGenerate = async () => {
+    if (!selectedTemplate || !isFormValid) {
+      setError('Lütfen dilekçeyi oluşturmak için tüm zorunlu alanları doldurun.');
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const blob = await generateDocumentPdf(selectedTemplate.title, livePreviewText);
+      setDocBlob(blob);
+    } catch (err: any) {
+      setError(err.message || 'PDF dökümanı üretilirken hata oluştu.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Download PDF Blob
+  const handleDownload = () => {
+    if (docBlob && selectedTemplate) {
+      downloadBlob(docBlob, `evrakfix-${selectedTemplate.id}.pdf`);
+    }
+  };
+
+  // Clear / reset state
+  const handleClear = () => {
+    setSelectedTemplate(null);
+    setFormValues({});
+    setError(null);
+    setDocBlob(null);
+    setIsLoading(false);
+  };
+
+  return (
+    <div className="flex flex-col gap-6 max-w-6xl mx-auto w-full">
+      {/* Title */}
+      <div className="flex flex-col gap-2">
+        <h1 className="text-3xl font-extrabold tracking-tight text-slate-800 flex items-center gap-2">
+          <span>Dilekçe & Evrak Oluşturucu</span>
+        </h1>
+        <p className="text-slate-500 text-sm">
+          Resmi veya hukuki dilekçelerinizi hazır şablonlarla saniyeler içinde oluşturun, canlı önizleyin ve A4 standartlarında PDF olarak indirin.
+        </p>
+      </div>
+
+      {/* Security alert */}
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
+        Girdiğiniz hiçbir bilgi sunucuya gönderilmez. Dilekçeniz tamamen tarayıcınızda çizilir ve yerel olarak derlenir.
+      </Alert>
+
+      {/* Workspace */}
+      <div className="flex flex-col gap-8 w-full">
+        {!docBlob && (
+          <>
+            {/* Step 1: Select a template */}
+            <TemplateSelector
+              selectedId={selectedTemplate?.id || null}
+              onSelect={handleSelectTemplate}
+            />
+
+            {/* Error alerts */}
+            {error && (
+              <Alert variant="error" title="İşlem Hatası" icon={<AlertCircle className="h-4 w-4" />}>
+                {error}
+              </Alert>
+            )}
+
+            {/* Step 2: Form & Live Preview */}
+            {selectedTemplate && (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                {/* Form area (Left) */}
+                <div className="lg:col-span-5 flex flex-col gap-6 w-full">
+                  <DocumentForm
+                    template={selectedTemplate}
+                    values={formValues}
+                    onChange={setFormValues}
+                  />
+
+                  {/* Desktop execute button block */}
+                  <div className="flex items-center gap-3 w-full">
+                    <Button variant="outline" onClick={handleClear} className="w-1/2 font-semibold">
+                      Geri Dön
+                    </Button>
+                    <Button
+                      variant="primary"
+                      onClick={handleGenerate}
+                      isLoading={isLoading}
+                      disabled={!isFormValid}
+                      className="w-1/2 font-semibold shadow-md shadow-blue-600/10"
+                    >
+                      Dökümanı Üret
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Live Preview area (Right) */}
+                <div className="lg:col-span-7 flex flex-col gap-4 w-full">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400 tracking-wider uppercase">
+                    <Eye className="h-4 w-4 text-blue-500" />
+                    <span>Dilekçe Canlı Önizleme</span>
+                  </div>
+
+                  {/* Styled A4 Sheet representation */}
+                  <div className="w-full bg-white border border-slate-200 shadow-lg rounded-2xl p-8 sm:p-12 font-mono text-[11px] text-slate-800 leading-relaxed whitespace-pre-wrap min-h-[500px] overflow-y-auto max-h-[650px] relative border-t-4 border-t-blue-500">
+                    {livePreviewText ? (
+                      livePreviewText
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center text-slate-300 font-sans text-xs">
+                        Formu doldurdukça önizleme burada canlı olarak güncellenecektir.
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
+        )}
+
+        {/* Successful generation screen */}
+        {docBlob && selectedTemplate && (
+          <div className="flex flex-col items-center justify-center text-center py-10 md:py-16 gap-6 bg-white border border-slate-100 rounded-3xl p-8 shadow-sm">
+            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-emerald-50 text-emerald-600 shadow-sm border border-emerald-100 animate-pulse">
+              <FileSignature className="h-10 w-10 stroke-[1.5]" />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-bold text-emerald-600 tracking-wider uppercase">Evrak Hazır</span>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-800">
+                "{selectedTemplate.title}" Dilekçeniz Başarıyla Oluşturuldu!
+              </h2>
+              <p className="text-slate-500 text-sm max-w-md leading-relaxed">
+                Resmi evrakınız A4 standartlarında ve otomatik satır taşma ayarlarıyla başarıyla PDF formatına dönüştürüldü.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-2">
+              <Button
+                variant="outline"
+                onClick={handleClear}
+                leftIcon={<RefreshCw className="h-4 w-4" />}
+                className="w-full sm:w-auto font-semibold"
+              >
+                Yeni Dilekçe Oluştur
+              </Button>
+              <Button
+                variant="primary"
+                onClick={handleDownload}
+                leftIcon={<Download className="h-4 w-4" />}
+                className="w-full sm:w-auto font-semibold shadow-lg shadow-blue-600/15"
+              >
+                PDF Olarak İndir
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+export default DocumentGeneratorPage;
