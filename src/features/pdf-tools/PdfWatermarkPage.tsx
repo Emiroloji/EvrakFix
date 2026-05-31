@@ -12,6 +12,7 @@ import { formatFileSize } from '../../lib/files/fileSize';
 import { formatDate } from '../../lib/utils/formatDate';
 import { PDFDocument } from 'pdf-lib';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle, FileText, Layers, Type, Calendar } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 export const PdfWatermarkPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
@@ -397,6 +398,39 @@ export const PdfWatermarkPage = () => {
           </div>
         )}
       </Card>
+
+      <ToolSEOInfo
+        toolName="PDF Filigran ve Metin Ekleme"
+        description="PDF Filigran aracımız, telif haklarınızı korumak ve belgelerinize kurumsal kimlik kazandırmak için ideal bir çözümdür. Dökümanlarınızın tüm sayfalarına 45 derece eğik açıyla büyük, yarı saydam çapraz filigranlar basabilir veya ilk sayfada dilediğiniz köşeye (Sol Üst, Sağ Üst vb.) tarih, isim, onay veya kaşe gibi özel metinler yerleştirebilirsiniz. Tamamen tarayıcınızda ve yerel belleğinizde derlenen bu sistemde, verileriniz asla sunucularımıza gitmez."
+        steps={[
+          {
+            title: "PDF Dökümanını Yükleyin",
+            description: "Filigran basmak veya tarih/metin eklemek istediğiniz PDF dökümanını sürükleyip bırakarak sisteme yükleyin."
+          },
+          {
+            title: "Filigran / Metin Ayarlarını Girin",
+            description: "İster tüm sayfalara 'KOPYA' veya 'TASLAK' gibi çapraz filigranlar yazın, ister tek bir köşeye özel tarih ve metin ekleyin."
+          },
+          {
+            title: "Filigranı Basıp İndirin",
+            description: "Filigran opaklığı (saydamlığı) ve metin boyutunu belirledikten sonra 'Filigran Ekle' diyerek anında yeni PDF dosyanızı indirin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Filigran PDF belgesinin tüm sayfalarına otomatik uygulanır mı?",
+            description: "Evet. 'Çapraz Filigran Ekle' modunu kullandığınızda yazdığınız filigran metni PDF belgenizdeki tüm sayfalara otomatik olarak 45 derece eğimle ve orantılı boyutta uygulanır. 'Tarih / Metin Ekle' modu ise sadece dökümanın ilk sayfasına uygulanır."
+          },
+          {
+            question: "Hızlı doldurma butonları ne işe yarar?",
+            description: "Tarih ve Metin modunda yer alan 'Bugünün Tarihi', 'Ad Soyad' veya 'Onaylandı' gibi hızlı şablon butonları, el yazısıyla uğraşmadan tek tıkla girdiyi doldurmanızı ve zamandan tasarruf etmenizi sağlar."
+          },
+          {
+            question: "Eklenen filigranlar dökümanın okunmasını engeller mi?",
+            description: "Hayır. Filigran opaklığı (transparency) ve yazı boyutları tamamen ayarlanabilirdir. Varsayılan olarak yarı şeffaf basıldığı için alttaki yazıların okunurluğunu kesinlikle bozmaz."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

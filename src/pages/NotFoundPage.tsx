@@ -1,5 +1,6 @@
 import { Button } from '../components/ui/Button';
 import { FileQuestion, Home, ArrowLeft } from 'lucide-react';
+import { navigateTo } from '../lib/utils/navigation';
 
 export const NotFoundPage = () => {
   return (
@@ -27,7 +28,7 @@ export const NotFoundPage = () => {
         </Button>
         <Button
           variant="primary"
-          onClick={() => { window.location.hash = '/'; }}
+          onClick={() => navigateTo('/')}
           leftIcon={<Home className="h-4 w-4" />}
           className="w-full sm:w-auto"
         >

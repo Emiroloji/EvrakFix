@@ -1,8 +1,8 @@
 import { MainLayout } from './layout/MainLayout';
-import { useHashRouting } from './routes';
+import { usePathRouting } from './routes';
 
 export const App = () => {
-  const currentComponent = useHashRouting();
+  const currentComponent = usePathRouting();
 
   return <MainLayout>{currentComponent}</MainLayout>;
 };

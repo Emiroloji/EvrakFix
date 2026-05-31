@@ -11,6 +11,7 @@ import { validatePdfFile } from '../../lib/pdf/pdfValidation';
 import { formatFileSize } from '../../lib/files/fileSize';
 import { PDFDocument } from 'pdf-lib';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle, FileText, CheckCircle2 } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 export const PdfSignPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
@@ -333,6 +334,39 @@ export const PdfSignPage = () => {
           </div>
         )}
       </Card>
+
+      <ToolSEOInfo
+        toolName="PDF Belge İmzalama"
+        description="PDF İmzalama aracımız; sözleşmeler, teklifler, dilekçeler ve onay formları gibi resmi belgelerinizi tarayıcı ortamında kolayca imzalamanızı sağlar. Cihazınızın dokunmatik ekranını veya farenizi kullanarak imzanızı çizebilir, imza görselini dökümanın istediğiniz sayfasına, dilediğiniz konum ve boyutta yerleştirebilirsiniz. Islak imzanız da dahil olmak üzere hiçbir belgeniz veya çizim veriniz internete aktarılmaz; işlemler tamamen yerel bilgisayarınızda derlenir."
+        steps={[
+          {
+            title: "Belgenizi Yükleyin",
+            description: "İmzalamak istediğiniz resmi veya özel PDF dökümanını sürükleyip bırakarak veya cihazınızdan seçerek sisteme yükleyin."
+          },
+          {
+            title: "İmzanızı Çizin",
+            description: "Çizim alanına farenizle veya dokunmatik ekranlı mobil cihazınızda parmağınızla imzanızı atın ve 'İmza Olarak Kaydet' butonuna tıklayın."
+          },
+          {
+            title: "Konumu Seçip İndirin",
+            description: "İmzanın uygulanacağı sayfa numarasını, konum açısını (Sol Alt, Orta Alt, Sağ Alt) ve boyutunu seçip 'Belgeyi İmzala' diyerek indirin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Çizdiğim imza sunucunuzda veya sisteminizde saklanır mı?",
+            description: "Kesinlikle hayır. EvrakFix bünyesinde çizdiğiniz ıslak imzalar hiçbir sunucuya yüklenmez ve kaydedilmez. İmza verileriniz sadece tarayıcınızın o anki bellek ortamında geçici olarak tutulur ve PDF'e gömüldüğü anda bellekten silinir."
+          },
+          {
+            question: "Mobil telefon veya tabletten imza atabilir miyim?",
+            description: "Evet! İmza çizim alanımız mobil dokunmatik hassasiyetle tam uyumlu kodlanmıştır. Telefon veya tabletinizden parmağınızla veya akıllı kalemle çok daha hassas ve pürüzsüz imzalar çizebilirsiniz."
+          },
+          {
+            question: "İmza konumu ve boyutu üzerinde ince ayar yapabilir miyim?",
+            description: "İmzanın dökümanda yer alacağı sayfa numarasını belirledikten sonra; Sol Alt Köşe, Orta Alt ve Sağ Alt Köşe olmak üzere 3 farklı hizalama konumu ile Küçük, Orta, Büyük ebat seçeneklerinden dilediğinizi seçebilirsiniz."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

@@ -15,6 +15,7 @@ import { validatePdfFile } from '../../lib/pdf/pdfValidation';
 import { formatFileSize } from '../../lib/files/fileSize';
 import type { PdfToImageOptions } from './types';
 import { Shield, RefreshCw, AlertCircle, CheckSquare, Square, FileArchive } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 // Configure the pdfjs-dist worker location
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
@@ -303,6 +304,39 @@ export const PdfToImagePage = () => {
           </div>
         )}
       </Card>
+
+      <ToolSEOInfo
+        toolName="PDF'i Görsele Çevir"
+        description="PDF'i Görsele Çevir aracımız; PDF belgelerinizdeki sayfaları yüksek kaliteli bağımsız resim dosyalarına (PNG veya JPG) dönüştürmenizi sağlar. İster belirli sayfaları tek tek seçin, isterseniz tüm sayfaları tek tıkla yüksek çözünürlüklü görsellere dönüştürerek ZIP arşivi halinde toplu indirin. Kalite (Düşük/Orta/Yüksek) ve çözünürlük ölçeklerini (1x, 2x, 3x) dilediğiniz gibi belirleyebilirsiniz. Tüm görselleştirme işlemleri tamamen tarayıcınızın render motoruyla yerel olarak gerçekleştirilir."
+        steps={[
+          {
+            title: "PDF Dökümanını Yükleyin",
+            description: "Sayfalarını resme dönüştürmek istediğiniz tek PDF dökümanını sürükleyip bırakarak veya seçerek yükleyin."
+          },
+          {
+            title: "Format ve Çözünürlüğü Belirleyin",
+            description: "Çıktı formatını (PNG / JPG), görsel kalitesini ve netlik ölçeğini (1x, 2x, 3x ultra çözünürlük) kontrol panelinden ayarlayın."
+          },
+          {
+            title: "Görsel Olarak İndirin",
+            description: "Dönüştürmek istediğiniz sayfaları işaretleyin. Tekil olarak 'Görsel Al' ile veya seçilenleri topluca ZIP paketi şeklinde indirin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "PNG ile JPG arasında ne fark vardır ve hangisini seçmeliyim?",
+            description: "PNG formatı kayıpsız sıkıştırma sunar; şablonlar, logolar veya metin ağırlıklı dökümanlar için mükemmel netlik sağlar. JPG ise dosya boyutunu küçültür ve fotoğraf içeren taranmış renkli dökümanlar için daha uygundur."
+          },
+          {
+            question: "Çözünürlük ölçeği (scale) ne anlama gelir?",
+            description: "Ölçeklendirme katsayısı, oluşturulacak görselin piksel çözünürlüğünü katlar. 1x standart çözünürlük sağlarken, 2x ve 3x ölçekler çok daha net, pikselleşmeyen, sunum veya baskıya uygun ultra yüksek çözünürlüklü görseller üretir."
+          },
+          {
+            question: "Büyük PDF'lerde tarayıcının kilitlenme veya çökme riski var mıdır?",
+            description: "Hayır. EvrakFix bünyesindeki dönüşüm algoritması sayfaları paralel değil, ardışık (sıralı) işler. Bu akıllı bellek yönetimi (sequential processing) sayesinde bellek tepe değerleri kontrol altında tutulur ve yüksek boyutlu PDF'ler bile kilitlenme olmadan başarıyla tamamlanır."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

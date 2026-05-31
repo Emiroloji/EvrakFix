@@ -10,6 +10,7 @@ import { validatePdfFile } from '../../lib/pdf/pdfValidation';
 import { formatFileSize } from '../../lib/files/fileSize';
 import { PDFDocument } from 'pdf-lib';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle, FileText } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 export const PdfSplitPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
@@ -230,6 +231,39 @@ export const PdfSplitPage = () => {
           </div>
         )}
       </Card>
+
+      <ToolSEOInfo
+        toolName="PDF Bölme ve Sayfa Ayıklama"
+        description="PDF Bölme aracımız, geniş sayfalı PDF belgelerinden ihtiyacınız olan sayfaları ayıklayarak yeni bir PDF dosyası üretmenizi sağlar. İster belirli bir sayfa aralığı (örn: 1-5), ister tekil sayfalar (örn: 3, 5, 9), isterseniz de tek/çift sayfa numaralarını hedefleyin; akıllı algoritmamız seçtiğiniz sayfaları dökümandan kusursuzca koparır. Tüm işlemler tarayıcınızda ve yerel belleğinizde gerçekleştiği için yüksek boyutlu gizli dosyalarınızın güvenliği tam koruma altındadır."
+        steps={[
+          {
+            title: "PDF Belgenizi Yükleyin",
+            description: "Bölmek istediğiniz PDF dökümanını sürükleyip bırakarak veya cihazınızdan seçerek sisteme güvenle yükleyin."
+          },
+          {
+            title: "Sayfa Seçimini Yapın",
+            description: "Dilediğiniz sayfa aralığını yazın veya 'Tek Sayfalar', 'Çift Sayfalar' gibi hızlı preset tuşlarını kullanarak sayfaları belirleyin."
+          },
+          {
+            title: "Bölün ve İndirin",
+            description: "'PDF'i Böl' butonuna tıklayarak seçtiğiniz sayfalardan oluşan yeni PDF belgesini tarayıcı hızında anında indirin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Belirli sayfa aralıklarını (örn: 3-8, 12, 15-20) nasıl girebilirim?",
+            description: "Sayfa aralığı giriş alanına aralarına virgül koyarak yazabilirsiniz. Örneğin '3-8, 12, 15-20' yazarak 3 ile 8 arasındaki sayfaları, 12. sayfayı ve 15 ile 20 arasındaki sayfaları tek bir PDF halinde ayıklayabilirsiniz."
+          },
+          {
+            question: "Bölünen PDF sayfalarının kalitesinde veya çözünürlüğünde azalma olur mu?",
+            description: "Kesinlikle hayır. Bu işlem, sayfaların yeniden çizilmesiyle değil, PDF döküman yapısının kayıpsız kopyalanmasıyla yapılır. Vektörel grafikler, yazılar ve resimler tam kalitesini korur."
+          },
+          {
+            question: "Yüklediğim belgeler internete sızar mı veya üçüncü şahıslar görebilir mi?",
+            description: "Hayır. EvrakFix tamamen client-side mimariyle kurulmuştur. Dökümanlarınız sunucuya yüklenmez, sunucumuz yoktur. İşlemler doğrudan kullandığınız bilgisayarın veya mobil cihazın işlemcisiyle yapılır."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

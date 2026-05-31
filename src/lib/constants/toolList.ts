@@ -14,7 +14,7 @@ export const toolList: ToolItem[] = [
     id: 'pdf-merge',
     title: 'PDF Birleştir',
     description: 'Birden fazla PDF dosyasını yükleyin, sırasını belirleyin ve tek bir PDF olarak birleştirin.',
-    path: '#/pdf-merge',
+    path: '/pdf-merge',
     category: 'pdf',
     icon: 'Merge',
     isPopular: true
@@ -23,7 +23,7 @@ export const toolList: ToolItem[] = [
     id: 'pdf-split',
     title: 'PDF Böl',
     description: 'Tek bir PDF dosyasını belirli sayfa aralıklarına göre bölerek yeni PDF\'ler oluşturun.',
-    path: '#/pdf-split',
+    path: '/pdf-split',
     category: 'pdf',
     icon: 'Scissors',
     isPopular: true
@@ -32,7 +32,7 @@ export const toolList: ToolItem[] = [
     id: 'image-to-pdf',
     title: 'Görseli PDF\'e Çevir',
     description: 'JPG, PNG veya WebP resimlerinizi yükleyin, sıralayın ve A4 veya orijinal boyutta PDF\'e dönüştürün.',
-    path: '#/image-to-pdf',
+    path: '/image-to-pdf',
     category: 'pdf',
     icon: 'Image'
   },
@@ -40,7 +40,7 @@ export const toolList: ToolItem[] = [
     id: 'pdf-sign',
     title: 'Belgeye İmza Ekle',
     description: 'PDF dosyanızı yükleyin, tarayıcınızda imza çizin ve istediğiniz sayfaya/konuma yerleştirin.',
-    path: '#/pdf-sign',
+    path: '/pdf-sign',
     category: 'pdf',
     icon: 'Signature',
     isPopular: true
@@ -49,7 +49,7 @@ export const toolList: ToolItem[] = [
     id: 'pdf-watermark',
     title: 'Filigran Ekle',
     description: 'PDF dosyalarınızın üzerine tüm sayfalara çapraz filigran metni ve opaklık ayarı ile filigran ekleyin.',
-    path: '#/pdf-watermark',
+    path: '/pdf-watermark',
     category: 'pdf',
     icon: 'Layers'
   },
@@ -57,7 +57,7 @@ export const toolList: ToolItem[] = [
     id: 'pdf-organizer',
     title: 'PDF Sayfa Düzenleyici',
     description: 'PDF sayfalarını silin, döndürün, sıralayın ve yeni PDF olarak indirin.',
-    path: '#/pdf-organizer',
+    path: '/pdf-organizer',
     category: 'pdf',
     icon: 'LayoutGrid',
     isPopular: true
@@ -66,7 +66,7 @@ export const toolList: ToolItem[] = [
     id: 'pdf-to-image',
     title: "PDF'i Görsele Çevir",
     description: 'PDF sayfalarını PNG veya JPG olarak indirin.',
-    path: '#/pdf-to-image',
+    path: '/pdf-to-image',
     category: 'pdf',
     icon: 'Image',
     badge: 'Yeni'
@@ -75,7 +75,7 @@ export const toolList: ToolItem[] = [
     id: 'image-compressor',
     title: 'Görsel Sıkıştırıcı',
     description: 'JPG, PNG ve WebP görsellerinizi sıkıştırın, yeniden boyutlandırın ve dönüştürün.',
-    path: '#/image-compressor',
+    path: '/image-compressor',
     category: 'other',
     icon: 'Sliders',
     badge: 'Yeni'
@@ -84,7 +84,7 @@ export const toolList: ToolItem[] = [
     id: 'document-generator',
     title: 'Dilekçe Oluştur',
     description: 'İstifa, iade, genel dilekçe veya teslim tutanağı gibi hazır şablonları doldurarak anında PDF üretin.',
-    path: '#/document-generator',
+    path: '/document-generator',
     category: 'document',
     icon: 'FileText',
     badge: 'Yeni'

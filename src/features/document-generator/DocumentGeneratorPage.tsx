@@ -7,6 +7,7 @@ import { generateDocumentPdf } from './documentGenerator.service';
 import { downloadBlob } from '../../lib/files/downloadFile';
 import { type DocumentTemplate } from './documentTemplates';
 import { Shield, RefreshCw, Download, AlertCircle, Eye, FileSignature } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 export const DocumentGeneratorPage = () => {
   const [selectedTemplate, setSelectedTemplate] = React.useState<DocumentTemplate | null>(null);
@@ -205,6 +206,39 @@ export const DocumentGeneratorPage = () => {
           </div>
         )}
       </div>
+
+      <ToolSEOInfo
+        toolName="Dilekçe & Evrak Oluşturucu"
+        description="Resmi Dilekçe ve Evrak Oluşturucu aracımız; adliyeler, belediyeler, şirketler veya kamu kurumlarına sunacağınız yasal evraklarınızı A4 standartlarında ve otomatik satır taşma / sayfalama korumalı şekilde saniyeler içinde hazırlamanızı sağlar. Genel Dilekçe, İstifa Dilekçesi, Ürün İade Talebi, Demirbaş Teslim Tutanağı ve Borç Alacak Taahhütnamesi gibi hazır resmi şablonları form doldurarak düzenleyebilirsiniz. Girdiğiniz T.C. Kimlik, adres, IBAN veya telefon gibi hiçbir kişisel veri sunucularımıza gitmez."
+        steps={[
+          {
+            title: "Evrak Şablonunuzu Seçin",
+            description: "Doldurmak istediğiniz döküman tipini (dilekçe, tutanak, taahhüt vb.) şablon kartlarından seçin."
+          },
+          {
+            title: "Form Bilgilerini Doldurun",
+            description: "Açılan interaktif formdaki zorunlu alanları doldurun. Sağ sütundaki A4 kağıt simülasyonunda canlı önizlemeyi (Live Preview) anlık izleyin."
+          },
+          {
+            title: "Derleyin ve İndirin",
+            description: "'Dökümanı Üret' butonuna tıklayarak A4 standartlarında PDF belgenizi tarayıcınızda saniyeler içinde derleyip indirin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Girdiğim T.C. Kimlik, IBAN veya adres gibi kişisel veriler güvende mi?",
+            description: "Evet, %100 güvendedir! EvrakFix sunucusuz çalışan bağımsız bir frontend aracıdır. Form alanlarına yazdığınız hiçbir veri sunucularımıza gönderilmez, sunucumuz yoktur. Tüm döküman derleme işlemi doğrudan bilgisayarınızda (client-side) yapılır."
+          },
+          {
+            question: "Dilekçe A4 standartlarına ve satır uzunluklarına uygun şekilde mi basılır?",
+            description: "Evet. Döküman derleme motorumuz, yazdığınız yazıları Helvetica yazı tipinin karakter genişliklerine göre otomatik olarak sol ve sağ marjlara (55pt) göre satırlara böler. Satır sonlarında kelime bölünmesi yaşanmaz. Yazı uzunsa, otomatik olarak yeni sayfaya (pagination) aktarılır."
+          },
+          {
+            question: "Hazırladığım dilekçeler resmi makamlarca kabul edilir mi?",
+            description: "Evet. Dilekçelerimiz resmi dilekçe formatı standartlarına (muhatap kurum, konu, açıklama, tarih, ad-soyad, imza çizgisi, banka/iletişim bilgileri yerleşimi) birebir uygun olarak derlenir ve resmi makamlarca kabul edilebilir niteliktedir."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

@@ -9,6 +9,7 @@ import { downloadBlob } from '../../lib/files/downloadFile';
 import { validatePdfFile } from '../../lib/pdf/pdfValidation';
 import { formatFileSize } from '../../lib/files/fileSize';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 export const PdfMergePage = () => {
   const [files, setFiles] = React.useState<File[]>([]);
@@ -219,6 +220,39 @@ export const PdfMergePage = () => {
           </div>
         )}
       </Card>
+
+      <ToolSEOInfo
+        toolName="PDF Birleştirme"
+        description="PDF Birleştirici aracımız, birden fazla PDF dökümanını tek bir belge haline getirmenizi kolaylaştırır. Resmi yazışmalar, e-kitaplar, faturalar veya ders notları gibi farklı PDF dosyalarını sıraya dizerek tek tıkla birleştirebilirsiniz. Tamamen yerel (client-side) çalışan bu araç sayesinde, hassas veriler içeren kişisel veya kurumsal PDF dosyalarınız hiçbir internet sunucusuna gönderilmez, gizliliğiniz %100 oranında korunur."
+        steps={[
+          {
+            title: "Dosyalarınızı Seçin",
+            description: "PDF Birleştirme aracımıza sürükleyip bırakarak veya cihazınızdan seçerek dilediğiniz kadar PDF dosyası ekleyin."
+          },
+          {
+            title: "Sıralamayı Düzenleyin",
+            description: "Yukarı ve Aşağı Taşı yön butonlarını kullanarak dökümanların birleşme sırasını dilediğiniz gibi süratle düzenleyin."
+          },
+          {
+            title: "Birleştirip İndirin",
+            description: "'PDF'leri Birleştir' butonuna tıklayın, dökümanlarınız saniyeler içinde tarayıcınızda birleştirilip indirmeye hazır hale gelsin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Bir kerede en fazla kaç PDF dökümanını birleştirebilirim?",
+            description: "Herhangi bir dosya sayısı sınırı yoktur. Tarayıcınızın işlemci ve bellek sınırları dahilinde dilediğiniz sayıda PDF dökümanını birleştirebilirsiniz."
+          },
+          {
+            question: "Birleştirilen PDF dosyalarında sayfa kaybı veya çözünürlük bozulması olur mu?",
+            description: "Hayır. pdf-lib motoru ile sayfalar orijinal piksel kalitesiyle, yazı tipleri, vektör çizimleri ve tüm döküman detaylarıyla birebir kopyalanarak birleştirilir."
+          },
+          {
+            question: "Yüklediğim PDF dosyaları sisteminize kaydedilir mi veya başkası görebilir mi?",
+            description: "Kesinlikle hayır. EvrakFix sunucusuz çalışan (client-side) bir sistemdir. Dosyalarınız tamamen bilgisayarınızın veya telefonunuzun yerel belleğinde işlenir ve asla internete aktarılmaz."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

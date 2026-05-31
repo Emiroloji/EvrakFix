@@ -9,6 +9,7 @@ import { imagesToPdf, type ImageToPdfOptions } from './imageToPdf.service';
 import { downloadBlob } from '../../lib/files/downloadFile';
 import { formatFileSize } from '../../lib/files/fileSize';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 export const ImageToPdfPage = () => {
   const [files, setFiles] = React.useState<File[]>([]);
@@ -281,6 +282,39 @@ export const ImageToPdfPage = () => {
           </div>
         )}
       </Card>
+
+      <ToolSEOInfo
+        toolName="Görseli PDF'e Çevir"
+        description="Görseli PDF'e Çevir aracımız; elinizdeki makbuz, ders notları, kimlik fotokopileri veya taranmış evrak görsellerini hızlıca resmi PDF belgelerine dönüştürmenizi sağlar. JPG, JPEG, PNG veya WebP formatındaki resimleri sürükleyip bırakarak dilediğiniz sıraya dizip yüksek kaliteli PDF sayfaları oluşturabilirsiniz. Sayfa boyutunu (A4 / Orijinal boyut), sayfa yönünü ve kenar paylarını tamamen kendiniz kontrol edebilirsiniz. Cihazınızda yerel işlenen verileriniz üçüncü kişilerle asla paylaşılmaz."
+        steps={[
+          {
+            title: "Görsellerinizi Yükleyin",
+            description: "PDF'e dönüştürmek istediğiniz JPG, JPEG, PNG veya WebP resimlerinizi sürükleyip bırakın veya cihazınızdan seçin."
+          },
+          {
+            title: "Sayfa Düzenini Ayarlayın",
+            description: "PDF sayfa boyutunu (A4 veya orijinal boyutta), dikey/yatay yönü ve kenar payı genişliklerini dilediğiniz gibi seçin."
+          },
+          {
+            title: "PDF Yapın ve İndirin",
+            description: "Dosya sıralamasını yön butonlarıyla netleştirip 'PDF Oluştur' butonuna tıklayarak tek tıkla resmi PDF belgenizi indirin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Hangi görsel formatlarını PDF'e çevirebilirim?",
+            description: "En popüler resim formatları olan JPG, JPEG, PNG ve yeni nesil yüksek sıkıştırmalı WebP görsellerini kayıpsız bir şekilde PDF'e çevirebilirsiniz."
+          },
+          {
+            question: "Birden fazla resmi tek bir PDF belgesine dönüştürebilir miyim?",
+            description: "Evet. İstediğiniz sayıda resmi yükleyerek bunları sıralayabilir ve hepsi ardışık sayfalar halinde olacak şekilde tek bir PDF belgesi olarak indirebilirsiniz."
+          },
+          {
+            question: "Dosyalarım bulut sunucularına veya internete yükleniyor mu?",
+            description: "Hayır. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Tüketilen RAM ve işlemci gücü cihazınızdan karşılanır. Dosyalarınız hiçbir sunucuya yüklenmeden %100 gizlilikle bilgisayarınızda derlenir."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

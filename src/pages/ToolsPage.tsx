@@ -5,6 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../co
 import { Badge } from '../components/ui/Badge';
 import { ArrowRight, Search, ShieldCheck } from 'lucide-react';
 import { Input } from '../components/ui/Input';
+import { navigateTo } from '../lib/utils/navigation';
 
 type CategoryFilter = 'all' | 'pdf' | 'document' | 'other';
 
@@ -114,7 +115,7 @@ export const ToolsPage = () => {
               <Card
                 key={tool.id}
                 hoverable
-                onClick={() => { window.location.hash = tool.path.replace('#', ''); }}
+                onClick={() => { navigateTo(tool.path); }}
                 className="flex flex-col justify-between group h-full relative p-6 border-slate-100 bg-white"
               >
                 <div>

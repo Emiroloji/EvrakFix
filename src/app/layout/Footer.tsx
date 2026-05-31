@@ -23,7 +23,7 @@ export const Footer = () => {
             <Shield className="h-3.5 w-3.5" />
             <span>Dosyalarınız sunucuya gönderilmez. İşlem tarayıcınızda yapılır.</span>
           </div>
-          <a href="#/about" className="hover:text-blue-600 transition-colors">
+          <a href="/about" className="hover:text-blue-600 transition-colors">
             Nasıl Çalışır?
           </a>
         </div>

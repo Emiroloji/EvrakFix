@@ -13,6 +13,7 @@ import { downloadBlob } from '../../lib/files/downloadFile';
 import { validatePdfFile } from '../../lib/pdf/pdfValidation';
 import type { OrganizedPdfPage } from './types';
 import { Shield, RefreshCw, Download, AlertCircle } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 // Configure the pdfjs-dist worker location
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
@@ -337,6 +338,39 @@ export const PdfOrganizerPage = () => {
           </div>
         )}
       </Card>
+
+      <ToolSEOInfo
+        toolName="PDF Sayfa Düzenleyici"
+        description="PDF Sayfa Düzenleme modülümüz, PDF belgelerinizin sayfa yapısını görsel bir panel üzerinden dilediğiniz gibi şekillendirmenizi sağlar. Yüklediğiniz PDF dosyasının tüm sayfalarını küçük resim önizlemeleri (thumbnails) halinde görebilir, gereksiz sayfaları silebilir, sayfaları 90 derece açılarla döndürebilir ve sayfaların sırasını sürüklemeye gerek kalmadan yön butonlarıyla değiştirebilirsiniz. Tamamen yerel çalışan (client-side) sistemimiz sayesinde gizli dosyalarınızın gizliliği tam güvence altındadır."
+        steps={[
+          {
+            title: "PDF Belgenizi Yükleyin",
+            description: "Sayfa düzenlemesi yapmak istediğiniz tek PDF dökümanını sürükleyip bırakarak veya seçerek yükleyin."
+          },
+          {
+            title: "Sayfaları Yönetin (Sil, Döndür, Taşı)",
+            description: "Görsel ızgarada sayfaları yön butonlarıyla sola/sağa taşıyın, 90° döndürün veya istemediğiniz sayfaları anında silin."
+          },
+          {
+            title: "Değişiklikleri Kaydedip İndirin",
+            description: "İşlem bittiğinde 'Düzenlenmiş PDF'i İndir' butonuna tıklayarak yeni dökümanınızı saniyeler içinde bilgisayarınıza kaydedin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Bir sayfayı yanlışlıkla silersem geri getirebilir miyim?",
+            description: "Evet! Sayfa üzerinde yer alan 'Geri Al' butonuna veya üst menüdeki 'Silinenleri Kurtar' butonuna tıklayarak sildiğiniz sayfaları dilediğiniz zaman kurtarabilirsiniz."
+          },
+          {
+            question: "Sayfa döndürme işlemi kalıcı mıdır?",
+            description: "Evet. Döndürdüğünüz sayfalar (90°, 180°, 270°), belgenin orijinal metadata katmanına işlenir ve dökümanı indirdiğinizde tüm PDF okuyucularda döndürülmüş haliyle görüntülenir."
+          },
+          {
+            question: "Dosyalarım üzerinde yapılan işlemler sunucuya gönderilir mi?",
+            description: "Kesinlikle hayır. EvrakFix sunucusuz çalışan bağımsız bir frontend aracıdır. PDF yükleme, görsel önizleme oluşturma ve kopyalama işlemleri tarayıcınızın kendi bellek ortamında gerçekleştirilir."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

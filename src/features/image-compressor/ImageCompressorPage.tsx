@@ -11,6 +11,7 @@ import { downloadBlob } from '../../lib/files/downloadFile';
 import { formatFileSize } from '../../lib/files/fileSize';
 import type { ImageCompressorOptions } from './types';
 import { Shield, AlertCircle, FileArchive, Play, Sliders, Trash2 } from 'lucide-react';
+import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
 
 export const ImageCompressorPage = () => {
   const [items, setItems] = React.useState<SqueezedItem[]>([]);
@@ -354,6 +355,39 @@ export const ImageCompressorPage = () => {
           </div>
         )}
       </Card>
+
+      <ToolSEOInfo
+        toolName="Görsel Sıkıştırıcı ve Format Dönüştürücü"
+        description="Görsel Sıkıştırıcı ve Dönüştürücü modülümüz, web sitenizin yüklenme hızını artırmak veya cihazınızda depolama alanı kazanmak için görsellerinizi optimize etmenizi sağlar. JPG, PNG ve WebP formatındaki görsellerin kalitesini kaybetmeden boyutunu düşürebilir, oransal olarak yeniden boyutlandırabilir ve formatlarını birbirine dönüştürebilirsiniz. Sıralı sıkıştırma motorumuz sayesinde onlarca görseli tarayıcınız kilitlenmeden topluca işleyebilir ve ZIP paketi olarak tek tıkla indirebilirsiniz."
+        steps={[
+          {
+            title: "Görsellerinizi Yükleyin",
+            description: "Sıkıştırmak, boyutlandırmak veya dönüştürmek istediğiniz JPG, PNG, WebP resimlerini sürükleyip bırakın."
+          },
+          {
+            title: "Kalite, Boyut ve Format Seçin",
+            description: "Sıkıştırma seviyesini (Düşük/Orta/Yüksek), yeniden boyutlandırma piksel genişliğini ve dönüştürülecek çıktı formatını seçin."
+          },
+          {
+            title: "Sıkıştırıp Toplu İndirin",
+            description: "'Tümünü Sıkıştır' butonuna tıklayarak işlemi başlatın. Tamamlanan resimleri tek tek veya ZIP arşivi halinde topluca indirin."
+          }
+        ]}
+        faqs={[
+          {
+            question: "Görseller sıkıştırıldığında kalite kaybı çok olur mu?",
+            description: "Hayır. Akıllı canvas sıkıştırma katsayılarımız (medium = 0.70, high = 0.90) insan gözünün fark edemeyeceği detayları ayıklayarak görsel kalitesini korur ve dosya boyutunu %70'e varan oranlarda azaltır."
+          },
+          {
+            question: "Özel piksel değerine göre yeniden boyutlandırma nasıl çalışır?",
+            description: "Genişlik alanına girdiğiniz piksel değerine (örn: 1200px) göre görselin en-boy oranı (aspect ratio) korunarak oransal olarak boyutu küçültülür. Görsel zaten bu değerden küçükse kalitenin bozulmaması için orijinal boyutu korunur."
+          },
+          {
+            question: "Görsellerimin güvenliği nasıl sağlanıyor?",
+            description: "EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz bulut sunucularına gönderilmez, sunucumuz yoktur. İşlemler tarayıcınızın kendi bellek ortamında gerçekleştirilir ve asla internete sızmaz."
+          }
+        ].map(faq => ({ question: faq.question, answer: faq.description }))}
+      />
     </div>
   );
 };

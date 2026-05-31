@@ -1,4 +1,4 @@
-const CACHE_NAME = 'evrakfix-cache-v1.5.0';
+const CACHE_NAME = 'evrakfix-cache-v1.7.0';
 const PRE_CACHE_ASSETS = [
   '/',
   '/index.html',
@@ -44,6 +44,16 @@ self.addEventListener('fetch', (event) => {
   
   // Skip browser extension requests
   if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+
+  // SPA navigation fallback to support offline routing
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return caches.match('/index.html');
+      })
+    );
+    return;
+  }
 
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) => {

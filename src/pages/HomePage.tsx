@@ -4,6 +4,7 @@ import { Button } from '../components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { Shield, Sparkles, Zap, ArrowRight, Lock, UploadCloud, Cpu, DownloadCloud } from 'lucide-react';
+import { navigateTo } from '../lib/utils/navigation';
 
 export const HomePage = () => {
   // Only show the 6 popular/first tools on the home page for a cleaner look
@@ -35,7 +36,7 @@ export const HomePage = () => {
           <Button
             size="lg"
             variant="primary"
-            onClick={() => { window.location.hash = '/tools'; }}
+            onClick={() => { navigateTo('/tools'); }}
             rightIcon={<ArrowRight className="h-4 w-4" />}
             className="w-full sm:w-auto font-bold px-8 shadow-lg shadow-blue-500/20"
           >
@@ -54,6 +55,17 @@ export const HomePage = () => {
           >
             Nasıl Çalışır?
           </Button>
+        </div>
+
+        {/* Popular Searches */}
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mt-6 text-[11px] sm:text-xs text-slate-300/90 max-w-3xl z-10">
+          <span className="font-bold text-slate-400">Popüler Aramalar:</span>
+          <a href="/pdf-merge" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🔍 PDF Birleştir</a>
+          <a href="/pdf-split" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">✂️ PDF Böl</a>
+          <a href="/pdf-sign" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">✍️ İmza Ekle</a>
+          <a href="/image-to-pdf" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🖼️ Görseli PDF Yap</a>
+          <a href="/document-generator" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">📝 Dilekçe Yaz</a>
+          <a href="/image-compressor" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🗜️ Görsel Sıkıştır</a>
         </div>
 
         {/* trust banners */}
@@ -87,7 +99,7 @@ export const HomePage = () => {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => { window.location.hash = '/tools'; }}
+            onClick={() => { navigateTo('/tools'); }}
             className="self-start md:self-auto font-bold h-10 border-slate-200"
           >
             Tüm Araçları Gör
@@ -102,7 +114,7 @@ export const HomePage = () => {
               <Card
                 key={tool.id}
                 hoverable
-                onClick={() => { window.location.hash = tool.path.replace('#', ''); }}
+                onClick={() => { navigateTo(tool.path); }}
                 className="flex flex-col justify-between group h-full relative overflow-hidden p-6 border-slate-100 bg-white"
               >
                 <div>
