@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { HomePage } from '../pages/HomePage';
 import { ToolsPage } from '../pages/ToolsPage';
 import { AboutPage } from '../pages/AboutPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
-import { PdfMergePage } from '../features/pdf-merge/PdfMergePage';
-import { PdfSplitPage } from '../features/pdf-split/PdfSplitPage';
-import { ImageToPdfPage } from '../features/image-to-pdf/ImageToPdfPage';
-import { PdfSignPage } from '../features/pdf-sign/PdfSignPage';
-import { PdfWatermarkPage } from '../features/pdf-tools/PdfWatermarkPage';
-import { DocumentGeneratorPage } from '../features/document-generator/DocumentGeneratorPage';
-import { PdfOrganizerPage } from '../features/pdf-organizer/PdfOrganizerPage';
-import { PdfToImagePage } from '../features/pdf-to-image/PdfToImagePage';
-import { ImageCompressorPage } from '../features/image-compressor/ImageCompressorPage';
+
+// Lazy-loaded feature pages for performance optimization (V2.0)
+const PdfMergePage = lazy(() => import('../features/pdf-merge/PdfMergePage').then(m => ({ default: m.PdfMergePage })));
+const PdfSplitPage = lazy(() => import('../features/pdf-split/PdfSplitPage').then(m => ({ default: m.PdfSplitPage })));
+const ImageToPdfPage = lazy(() => import('../features/image-to-pdf/ImageToPdfPage').then(m => ({ default: m.ImageToPdfPage })));
+const PdfSignPage = lazy(() => import('../features/pdf-sign/PdfSignPage').then(m => ({ default: m.PdfSignPage })));
+const PdfWatermarkPage = lazy(() => import('../features/pdf-tools/PdfWatermarkPage').then(m => ({ default: m.PdfWatermarkPage })));
+const DocumentGeneratorPage = lazy(() => import('../features/document-generator/DocumentGeneratorPage').then(m => ({ default: m.DocumentGeneratorPage })));
+const PdfOrganizerPage = lazy(() => import('../features/pdf-organizer/PdfOrganizerPage').then(m => ({ default: m.PdfOrganizerPage })));
+const PdfToImagePage = lazy(() => import('../features/pdf-to-image/PdfToImagePage').then(m => ({ default: m.PdfToImagePage })));
+const ImageCompressorPage = lazy(() => import('../features/image-compressor/ImageCompressorPage').then(m => ({ default: m.ImageCompressorPage })));
 
 export interface Route {
   path: string;
