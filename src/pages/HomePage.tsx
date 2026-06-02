@@ -1,4 +1,15 @@
-import * as Icons from 'lucide-react';
+import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText } from 'lucide-react';
+
+const iconMap: Record<string, any> = {
+  Merge,
+  Scissors,
+  Image,
+  Signature,
+  Layers,
+  LayoutGrid,
+  Sliders,
+  FileText
+};
 import { toolList } from '../lib/constants/toolList';
 import { Button } from '../components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/Card';
@@ -109,7 +120,7 @@ export const HomePage = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedTools.map((tool) => {
-            const IconComponent = (Icons as any)[tool.icon] || Icons.FileText;
+            const IconComponent = iconMap[tool.icon] || FileText;
             
             return (
               <Card

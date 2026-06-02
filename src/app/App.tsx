@@ -8,7 +8,7 @@ export const App = () => {
 
   return (
     <MainLayout>
-      <Suspense fallback={<Loading size="lg" text="Sayfa yükleniyor..." className="py-24" />}>
+      <Suspense fallback={<Loading size="lg" text="Araç hazırlanıyor..." className="py-16 md:py-24" />}>
         {currentComponent}
       </Suspense>
     </MainLayout>

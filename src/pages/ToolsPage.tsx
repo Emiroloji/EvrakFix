@@ -1,9 +1,19 @@
 import * as React from 'react';
-import * as Icons from 'lucide-react';
+import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, ArrowRight, Search, ShieldCheck } from 'lucide-react';
 import { toolList } from '../lib/constants/toolList';
+
+const iconMap: Record<string, any> = {
+  Merge,
+  Scissors,
+  Image,
+  Signature,
+  Layers,
+  LayoutGrid,
+  Sliders,
+  FileText
+};
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
-import { ArrowRight, Search, ShieldCheck } from 'lucide-react';
 import { Input } from '../components/ui/Input';
 import { navigateTo } from '../lib/utils/navigation';
 
@@ -109,7 +119,7 @@ export const ToolsPage = () => {
       {filteredTools.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTools.map((tool) => {
-            const IconComponent = (Icons as any)[tool.icon] || Icons.FileText;
+            const IconComponent = iconMap[tool.icon] || FileText;
             
             return (
               <Card

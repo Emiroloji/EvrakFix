@@ -7,26 +7,45 @@ interface SecurityModalProps {
 }
 
 export const SecurityModal = ({ isOpen, onClose }: SecurityModalProps) => {
+  const previousActiveElement = React.useRef<HTMLElement | null>(null);
+  const closeButtonRef = React.useRef<HTMLButtonElement | null>(null);
+
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
 
     if (isOpen) {
+      previousActiveElement.current = document.activeElement as HTMLElement;
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleEscape);
+      
+      // Auto-focus the close button for accessibility after a tiny delay
+      setTimeout(() => {
+        closeButtonRef.current?.focus();
+      }, 50);
     }
 
     return () => {
       document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleEscape);
+      
+      // Restore focus to the element that triggered the modal
+      if (!isOpen && previousActiveElement.current) {
+        previousActiveElement.current.focus();
+      }
     };
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="security-modal-title"
+    >
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity duration-300"
@@ -43,10 +62,11 @@ export const SecurityModal = ({ isOpen, onClose }: SecurityModalProps) => {
             </div>
             <div className="flex flex-col">
               <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">Veri Güvenliği</span>
-              <h2 className="text-base sm:text-lg font-extrabold text-slate-800">Dosyalarınız Nasıl Güvende?</h2>
+              <h2 id="security-modal-title" className="text-base sm:text-lg font-extrabold text-slate-800">Dosyalarınız Nasıl Güvende?</h2>
             </div>
           </div>
           <button 
+            ref={closeButtonRef}
             onClick={onClose}
             className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-all cursor-pointer"
             aria-label="Kapat"
