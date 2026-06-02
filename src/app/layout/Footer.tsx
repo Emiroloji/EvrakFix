@@ -26,6 +26,12 @@ export const Footer = () => {
           <a href="/about" className="hover:text-blue-600 transition-colors">
             Nasıl Çalışır?
           </a>
+          <a href="/about#terms" className="hover:text-blue-600 transition-colors">
+            Kullanım Şartları
+          </a>
+          <a href="mailto:evrakfix@gmail.com?subject=EvrakFix%20Geri%20Bildirim" className="hover:text-blue-600 transition-colors">
+            Geri Bildirim Gönder
+          </a>
         </div>
       </div>
     </footer>

@@ -10,6 +10,7 @@ import { downloadBlob } from '../../lib/files/downloadFile';
 import { formatFileSize } from '../../lib/files/fileSize';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 export const ImageToPdfPage = () => {
   const [files, setFiles] = React.useState<File[]>([]);
@@ -148,8 +149,16 @@ export const ImageToPdfPage = () => {
       </div>
 
       {/* Security alert */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Dosyalarınız tamamen tarayıcınızda dönüştürülür. Sunucumuza yüklenmez.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Dosyalarınız tamamen tarayıcınızda dönüştürülür. Sunucumuza yüklenmez.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Main card */}
@@ -286,6 +295,7 @@ export const ImageToPdfPage = () => {
       <ToolSEOInfo
         toolName="Görseli PDF'e Çevir"
         description="Görseli PDF'e Çevir aracımız; elinizdeki makbuz, ders notları, kimlik fotokopileri veya taranmış evrak görsellerini hızlıca resmi PDF belgelerine dönüştürmenizi sağlar. JPG, JPEG, PNG veya WebP formatındaki resimleri sürükleyip bırakarak dilediğiniz sıraya dizip yüksek kaliteli PDF sayfaları oluşturabilirsiniz. Sayfa boyutunu (A4 / Orijinal boyut), sayfa yönünü ve kenar paylarını tamamen kendiniz kontrol edebilirsiniz. Cihazınızda yerel işlenen verileriniz üçüncü kişilerle asla paylaşılmaz."
+        exampleUsage="Telefonunuzla fotoğrafını çektiğiniz kira sözleşmesinin 3 sayfalık görsellerini sisteme yükleyip, A4 ebatında sıralı ve tek bir PDF dökümanına dönüştürerek e-posta ile gönderebilirsiniz."
         steps={[
           {
             title: "Görsellerinizi Yükleyin",

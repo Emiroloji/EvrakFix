@@ -113,6 +113,26 @@ export const AboutPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Kullanım Şartları ve Sorumluluk Reddi */}
+      <div id="terms" className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-3xl flex flex-col gap-6 scroll-mt-20">
+        <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+          <ShieldAlert className="h-5 w-5 text-blue-600" />
+          Kullanım Şartları ve Sorumluluk Reddi
+        </h2>
+
+        <div className="flex flex-col gap-3.5 text-xs text-slate-650 leading-relaxed font-normal">
+          <p>
+            <strong>1. Hizmetin Kullanımı:</strong> EvrakFix, tamamen tarayıcı tabanlı (client-side) çalışan, ücretsiz ve açık kaynaklı bir PDF ve evrak düzenleme araçları bütünüdür. Kullanıcılar, sistemi herhangi bir üyelik yapmadan özgürce kullanabilirler.
+          </p>
+          <p>
+            <strong>2. Kişisel Veri ve Güvenlik Sorumluluğu:</strong> EvrakFix, sunucu barındırmayan yerel bir sistem olduğu için yüklediğiniz veya işlediğiniz hiçbir veriyi, dosyayı veya bilgiyi uzaktaki bir sunucuya göndermez, saklamaz veya işlemez. Bu nedenle, dökümanlarınızın gizliliği teknik olarak sizin kendi cihazınızın güvenliği (virüs olmaması, tarayıcı eklentileri vb.) ile sınırlıdır.
+          </p>
+          <p>
+            <strong>3. Sorumluluk Reddi (Disclaimer):</strong> EvrakFix araçları (PDF birleştirme, bölme, imzalama, dilekçe oluşturma, görsel sıkıştırma vb.) "olduğu gibi" (as-is) sunulmaktadır. Uygulamanın kullanımından, dosya işleme sırasındaki olası veri kayıplarından, tarayıcı çökmelerinden, dilekçe şablonlarındaki hukuki metinlerin uygunluğundan veya tarayıcınızın donanım yetersizliğinden kaynaklanabilecek dolaylı ya da doğrudan hiçbir zarardan EvrakFix geliştiricileri sorumlu tutulamaz. Resmi evraklarınızı resmi makamlara göndermeden önce son çıktı PDF dosyasını kontrol etmeniz tamamen sizin sorumluluğunuzdadır.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

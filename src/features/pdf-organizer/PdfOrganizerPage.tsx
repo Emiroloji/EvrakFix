@@ -14,6 +14,7 @@ import { validatePdfFile } from '../../lib/pdf/pdfValidation';
 import type { OrganizedPdfPage } from './types';
 import { Shield, RefreshCw, Download, AlertCircle } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 // Configure the pdfjs-dist worker location
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
@@ -239,8 +240,16 @@ export const PdfOrganizerPage = () => {
       </div>
 
       {/* Security Banner */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Dosyalarınız tamamen tarayıcınızda işlenir. Sunucularımıza hiçbir veri gönderilmez.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Dosyalarınız tamamen tarayıcınızda işlenir. Sunucularımıza hiçbir veri gönderilmez.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Main Workspace Card */}
@@ -341,7 +350,8 @@ export const PdfOrganizerPage = () => {
 
       <ToolSEOInfo
         toolName="PDF Sayfa Düzenleyici"
-        description="PDF Sayfa Düzenleme modülümüz, PDF belgelerinizin sayfa yapısını görsel bir panel üzerinden dilediğiniz gibi şekillendirmenizi sağlar. Yüklediğiniz PDF dosyasının tüm sayfalarını küçük resim önizlemeleri (thumbnails) halinde görebilir, gereksiz sayfaları silebilir, sayfaları 90 derece açılarla döndürebilir ve sayfaların sırasını sürüklemeye gerek kalmadan yön butonlarıyla değiştirebilirsiniz. Tamamen yerel çalışan (client-side) sistemimiz sayesinde gizli dosyalarınızın gizliliği tam güvence altındadır."
+        description="PDF Sayfa Düzenleme modülümüz, PDF belgelerinizin sayfa yapısını görsel bir panel üzerinden dilediğiniz gibi şekillendirmenizi sağlar. Yüklediğiniz PDF dosyasının tüm sayfalarını küçük resim önizlemeleri (thumbnails) halinde görebilir, gereksiz sayfaları silebilir, sayfaları 90 derece açılarla döndürebilir` ve sayfaların sırasını sürüklemeye gerek kalmadan yön butonlarıyla değiştirebilirsiniz. Tamamen yerel çalışan (client-side) sistemimiz sayesinde gizli dosyalarınızın gizliliği tam güvence altındadır."
+        exampleUsage="Ters taranmış bir dökümandaki 3. ve 7. sayfaları 90 derece sağa döndürebilir, aradaki boş ve gereksiz sayfayı silebilir ve dökümanın sayfa sıralamasını yön butonlarıyla düzelterek kaydedebilirsiniz."
         steps={[
           {
             title: "PDF Belgenizi Yükleyin",

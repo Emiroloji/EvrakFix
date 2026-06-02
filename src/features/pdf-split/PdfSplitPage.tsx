@@ -11,6 +11,7 @@ import { formatFileSize } from '../../lib/files/fileSize';
 import { PDFDocument } from 'pdf-lib';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle, FileText } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 export const PdfSplitPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
@@ -113,8 +114,16 @@ export const PdfSplitPage = () => {
       </div>
 
       {/* Security alert */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Dosyanız tamamen tarayıcınızda işlenir. Sunucumuza herhangi bir veri gönderilmez.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Dosyanız tamamen tarayıcınızda işlenir. Sunucumuza herhangi bir veri gönderilmez.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Workspace card */}
@@ -235,6 +244,7 @@ export const PdfSplitPage = () => {
       <ToolSEOInfo
         toolName="PDF Bölme ve Sayfa Ayıklama"
         description="PDF Bölme aracımız, geniş sayfalı PDF belgelerinden ihtiyacınız olan sayfaları ayıklayarak yeni bir PDF dosyası üretmenizi sağlar. İster belirli bir sayfa aralığı (örn: 1-5), ister tekil sayfalar (örn: 3, 5, 9), isterseniz de tek/çift sayfa numaralarını hedefleyin; akıllı algoritmamız seçtiğiniz sayfaları dökümandan kusursuzca koparır. Tüm işlemler tarayıcınızda ve yerel belleğinizde gerçekleştiği için yüksek boyutlu gizli dosyalarınızın güvenliği tam koruma altındadır."
+        exampleUsage="100 sayfalık bir ders kitabından sadece sınavda sorumlu olduğunuz 15-25 arası sayfaları ayıklayıp, cihazınızda yer kaplamayan yeni ve küçük bir PDF belgesi elde edebilirsiniz."
         steps={[
           {
             title: "PDF Belgenizi Yükleyin",

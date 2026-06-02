@@ -16,6 +16,7 @@ import { formatFileSize } from '../../lib/files/fileSize';
 import type { PdfToImageOptions } from './types';
 import { Shield, RefreshCw, AlertCircle, CheckSquare, Square, FileArchive } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 // Configure the pdfjs-dist worker location
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
@@ -176,8 +177,16 @@ export const PdfToImagePage = () => {
       </div>
 
       {/* Security notice */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Dosyalarınız tamamen tarayıcınızda işlenir. Sunucularımıza hiçbir veri gönderilmez.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Dosyalarınız tamamen tarayıcınızda işlenir. Sunucularımıza hiçbir veri gönderilmez.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Workspace Card */}
@@ -308,6 +317,7 @@ export const PdfToImagePage = () => {
       <ToolSEOInfo
         toolName="PDF'i Görsele Çevir"
         description="PDF'i Görsele Çevir aracımız; PDF belgelerinizdeki sayfaları yüksek kaliteli bağımsız resim dosyalarına (PNG veya JPG) dönüştürmenizi sağlar. İster belirli sayfaları tek tek seçin, isterseniz tüm sayfaları tek tıkla yüksek çözünürlüklü görsellere dönüştürerek ZIP arşivi halinde toplu indirin. Kalite (Düşük/Orta/Yüksek) ve çözünürlük ölçeklerini (1x, 2x, 3x) dilediğiniz gibi belirleyebilirsiniz. Tüm görselleştirme işlemleri tamamen tarayıcınızın render motoruyla yerel olarak gerçekleştirilir."
+        exampleUsage="Sunumunuza eklemek istediğiniz 50 sayfalık bir rapor PDF'inin sadece 12. sayfasını yüksek kaliteli bir JPG resmi haline getirerek doğrudan sunum slaytınıza sürükleyebilirsiniz."
         steps={[
           {
             title: "PDF Dökümanını Yükleyin",

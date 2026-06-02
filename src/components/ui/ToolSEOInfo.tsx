@@ -18,17 +18,37 @@ export interface ToolSEOInfoProps {
   description: string;
   steps: StepItem[];
   faqs: FAQItem[];
+  exampleUsage?: string;
 }
 
-export const ToolSEOInfo = ({ toolName, description, steps, faqs }: ToolSEOInfoProps) => {
+export const ToolSEOInfo = ({ toolName, description, steps, faqs, exampleUsage }: ToolSEOInfoProps) => {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="flex flex-col gap-12 mt-12 pt-8 border-t border-slate-100 w-full text-slate-800">
+      {faqs && faqs.length > 0 && (
+        <script 
+          type="application/ld+json" 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} 
+        />
+      )}
       
       {/* 3 Steps Guide - Nasıl Çalışır? */}
       <section className="flex flex-col gap-6">
@@ -78,9 +98,21 @@ export const ToolSEOInfo = ({ toolName, description, steps, faqs }: ToolSEOInfoP
             </h3>
             <div className="h-1 w-12 bg-blue-600 rounded-full" />
           </div>
-          <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-light whitespace-pre-line">
+          <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-light whitespace-pre-line mb-2">
             {description}
           </p>
+
+          {/* Örnek Kullanım Kutusu */}
+          {exampleUsage && (
+            <div className="p-4.5 rounded-2xl border border-blue-100 bg-blue-50/10 flex flex-col gap-2">
+              <span className="text-[10px] font-extrabold text-blue-600 tracking-wider uppercase flex items-center gap-1.5">
+                💡 Örnek Kullanım Senaryosu
+              </span>
+              <p className="text-xs text-slate-650 leading-relaxed font-normal">
+                {exampleUsage}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Dynamic Trust Banner (Right) */}

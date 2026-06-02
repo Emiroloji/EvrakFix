@@ -5,6 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../co
 import { Badge } from '../components/ui/Badge';
 import { Shield, Sparkles, Zap, ArrowRight, Lock, UploadCloud, Cpu, DownloadCloud } from 'lucide-react';
 import { navigateTo } from '../lib/utils/navigation';
+import { openSecurityModal } from '../lib/utils/security';
 
 export const HomePage = () => {
   // Only show the 6 popular/first tools on the home page for a cleaner look
@@ -216,15 +217,25 @@ export const HomePage = () => {
       </section>
 
       {/* Security Disclaimer Banner */}
-      <section className="rounded-3xl border border-blue-100 bg-blue-50/40 p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm shadow-blue-500/5">
+      <section className="rounded-3xl border border-blue-100 bg-blue-50/45 p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm shadow-blue-500/5 hover:border-blue-200 hover:bg-blue-50/70 transition-all duration-300">
         <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-white text-blue-600 border border-blue-100/50 shadow-sm shrink-0">
-          <Shield className="h-7 w-7" />
+          <Shield className="h-7 w-7 text-blue-600" />
         </div>
-        <div className="flex flex-col gap-1.5">
-          <h3 className="text-base font-bold text-slate-800">Cihazınızda Çalışan Teknoloji (Client-Side)</h3>
-          <p className="text-sm text-slate-600 leading-relaxed max-w-4xl">
-            EvrakFix web sunucuları sadece uygulamanın görsel arayüz kodlarını size ulaştırmak için kullanılır. Dosyalarınızı sürükleyip bıraktığınızda, dosya içeriği internete gönderilmez. Bilgisayarınızın veya telefonunuzun RAM'inde işlenir ve doğrudan indirilir. Bu, tam gizlilik koruması ve sıfır sunucu gecikmesi sağlar.
-          </p>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-6">
+          <div className="flex flex-col gap-1.5">
+            <h3 className="text-base font-bold text-slate-800">Cihazınızda Çalışan Teknoloji (Client-Side)</h3>
+            <p className="text-sm text-slate-650 leading-relaxed max-w-4xl font-normal">
+              Dosyalarınız hiçbir uzak sunucuya yüklenmez, tamamen tarayıcınızın belleğinde (RAM) yerel olarak işlenir. Bu sayede %100 veri gizliliği ve sıfır gecikme elde edersiniz.
+            </p>
+          </div>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={openSecurityModal}
+            className="shrink-0 border-blue-200 text-blue-600 font-bold bg-white/70 hover:bg-white hover:border-blue-300 h-10 px-5 rounded-xl cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </Button>
         </div>
       </section>
     </div>

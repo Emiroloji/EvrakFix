@@ -59,13 +59,13 @@ export const Dropzone = ({
     const firstError = errors[0];
 
     if (firstError.code === 'file-invalid-type') {
-      return 'Geçersiz dosya türü. Lütfen sadece istenilen uzantıda dosya yükleyin.';
+      return 'Seçtiğiniz dosya formatı desteklenmiyor. Lütfen sadece belirtilen ve izin verilen dosya uzantılarını yüklediğinizden emin olun.';
     }
     if (firstError.code === 'file-too-large') {
-      return `Dosya çok büyük. Maksimum dosya boyutu limitini aştınız.`;
+      return 'Yüklemeye çalıştığınız dosya çok büyük. Bellek yetersizliği nedeniyle tarayıcınızın kilitlenmesini veya yavaşlamasını önlemek için daha küçük boyutlu bir dosya seçin.';
     }
     if (firstError.code === 'too-many-files') {
-      return `Çok fazla dosya seçtiniz. Limit: ${maxFiles || 'Sınırsız'}.`;
+      return `Seçilen dosya sayısı sınırı aştı. Tek seferde en fazla ${maxFiles || 'Sınırsız'} adet dosya yüklemenize izin verilmektedir.`;
     }
     return firstError.message;
   }, [fileRejections, maxFiles]);

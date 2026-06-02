@@ -12,6 +12,7 @@ import { formatFileSize } from '../../lib/files/fileSize';
 import type { ImageCompressorOptions } from './types';
 import { Shield, AlertCircle, FileArchive, Play, Sliders, Trash2 } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 export const ImageCompressorPage = () => {
   const [items, setItems] = React.useState<SqueezedItem[]>([]);
@@ -226,8 +227,16 @@ export const ImageCompressorPage = () => {
       </div>
 
       {/* Security alert */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Görselleriniz tamamen tarayıcınızda işlenir. Sunucularımıza hiçbir veri gönderilmez.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Görselleriniz tamamen tarayıcınızda işlenir. Sunucularımıza hiçbir veri gönderilmez.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Main workspace Card */}
@@ -359,6 +368,7 @@ export const ImageCompressorPage = () => {
       <ToolSEOInfo
         toolName="Görsel Sıkıştırıcı ve Format Dönüştürücü"
         description="Görsel Sıkıştırıcı ve Dönüştürücü modülümüz, web sitenizin yüklenme hızını artırmak veya cihazınızda depolama alanı kazanmak için görsellerinizi optimize etmenizi sağlar. JPG, PNG ve WebP formatındaki görsellerin kalitesini kaybetmeden boyutunu düşürebilir, oransal olarak yeniden boyutlandırabilir ve formatlarını birbirine dönüştürebilirsiniz. Sıralı sıkıştırma motorumuz sayesinde onlarca görseli tarayıcınız kilitlenmeden topluca işleyebilir ve ZIP paketi olarak tek tıkla indirebilirsiniz."
+        exampleUsage="Web sitenizin daha hızlı yüklenmesi veya e-posta ekinde kolayca gönderilmesi için 5 MB boyutundaki büyük JPG veya PNG ürün görsellerini kalitesini bozmadan WebP formatına çevirebilir ve boyutunu 200 KB'ın altına düşürebilirsiniz."
         steps={[
           {
             title: "Görsellerinizi Yükleyin",

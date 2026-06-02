@@ -131,6 +131,65 @@ export function updateSEOMeta(title: string, description: string, path: string) 
     document.head.appendChild(canonicalLink);
   }
   canonicalLink.setAttribute('href', canonicalUrl);
+
+  // Update/Inject Structured Data (JSON-LD)
+  const existingScripts = document.querySelectorAll('script[data-schema="jsonld"]');
+  existingScripts.forEach(script => script.remove());
+
+  const schemas: any[] = [];
+
+  // 1. BreadcrumbList Schema (for all subpages)
+  if (path !== '/') {
+    const matchedRoute = routes.find(r => r.path === path);
+    const pageName = matchedRoute ? matchedRoute.title.split(' | ')[0] : 'Sayfa';
+    
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://www.evrakfix.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": pageName,
+          "item": `https://www.evrakfix.com${path}`
+        }
+      ]
+    });
+  }
+
+  // 2. WebApplication Schema (global or on home page)
+  if (path === '/') {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "EvrakFix",
+      "url": "https://www.evrakfix.com/",
+      "description": description,
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "TRY"
+      }
+    });
+  }
+
+  // Inject script tags into head
+  schemas.forEach(schema => {
+    const script = document.createElement('script');
+    script.setAttribute('type', 'application/ld+json');
+    script.setAttribute('data-schema', 'jsonld');
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  });
 }
 
 export const usePathRouting = () => {

@@ -12,6 +12,7 @@ import { formatFileSize } from '../../lib/files/fileSize';
 import { PDFDocument } from 'pdf-lib';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle, FileText, CheckCircle2 } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 export const PdfSignPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
@@ -145,8 +146,16 @@ export const PdfSignPage = () => {
       </div>
 
       {/* Security alert */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Dosyalarınız tamamen tarayıcınızda imzalanır. Sunucumuza herhangi bir veri aktarılmaz.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Dosyalarınız tamamen tarayıcınızda imzalanır. Sunucumuza herhangi bir veri aktarılmaz.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Workspace card */}
@@ -338,6 +347,7 @@ export const PdfSignPage = () => {
       <ToolSEOInfo
         toolName="PDF Belge İmzalama"
         description="PDF İmzalama aracımız; sözleşmeler, teklifler, dilekçeler ve onay formları gibi resmi belgelerinizi tarayıcı ortamında kolayca imzalamanızı sağlar. Cihazınızın dokunmatik ekranını veya farenizi kullanarak imzanızı çizebilir, imza görselini dökümanın istediğiniz sayfasına, dilediğiniz konum ve boyutta yerleştirebilirsiniz. Islak imzanız da dahil olmak üzere hiçbir belgeniz veya çizim veriniz internete aktarılmaz; işlemler tamamen yerel bilgisayarınızda derlenir."
+        exampleUsage="E-posta ile gelen iş teklifi veya muvafakatname belgesini açıp, mobil cihazınızın ekranında parmağınızla ıslak imza çizerek saniyeler içinde belgenin imza alanına yerleştirebilirsiniz."
         steps={[
           {
             title: "Belgenizi Yükleyin",

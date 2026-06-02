@@ -23,6 +23,9 @@ export const Header = () => {
           <a href="/about" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
             Hakkında
           </a>
+          <a href="mailto:evrakfix@gmail.com?subject=EvrakFix%20Geri%20Bildirim" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+            Geri Bildirim
+          </a>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -32,7 +35,7 @@ export const Header = () => {
               %100 Güvenli & Yerel
             </span>
           </div>
-          
+
           {/* Mobile navigation trigger or simple links */}
           <div className="flex md:hidden items-center gap-3">
             <a href="/tools" className="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors">
@@ -40,6 +43,9 @@ export const Header = () => {
             </a>
             <a href="/about" className="text-xs font-semibold text-slate-500 hover:text-slate-700 transition-colors">
               Hakkında
+            </a>
+            <a href="mailto:evrakfix@gmail.com?subject=EvrakFix%20Geri%20Bildirim" className="text-xs font-semibold text-slate-500 hover:text-slate-700 transition-colors">
+              Geri Bildirim
             </a>
           </div>
         </div>

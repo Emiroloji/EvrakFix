@@ -13,6 +13,7 @@ import { formatDate } from '../../lib/utils/formatDate';
 import { PDFDocument } from 'pdf-lib';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle, FileText, Layers, Type, Calendar } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 export const PdfWatermarkPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
@@ -150,8 +151,16 @@ export const PdfWatermarkPage = () => {
       </div>
 
       {/* Security notice */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Dosyalarınız tamamen tarayıcınızda işlenir. Hiçbir sunucuya veri aktarılmaz.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Dosyalarınız tamamen tarayıcınızda işlenir. Hiçbir sunucuya veri aktarılmaz.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Workspace card */}
@@ -402,6 +411,7 @@ export const PdfWatermarkPage = () => {
       <ToolSEOInfo
         toolName="PDF Filigran ve Metin Ekleme"
         description="PDF Filigran aracımız, telif haklarınızı korumak ve belgelerinize kurumsal kimlik kazandırmak için ideal bir çözümdür. Dökümanlarınızın tüm sayfalarına 45 derece eğik açıyla büyük, yarı saydam çapraz filigranlar basabilir veya ilk sayfada dilediğiniz köşeye (Sol Üst, Sağ Üst vb.) tarih, isim, onay veya kaşe gibi özel metinler yerleştirebilirsiniz. Tamamen tarayıcınızda ve yerel belleğinizde derlenen bu sistemde, verileriniz asla sunucularımıza gitmez."
+        exampleUsage="Müşterinize göndereceğiniz fiyat teklifi PDF dökümanının tüm sayfalarına 'GİZLİDİR' veya 'TEKLİF AŞAMASINDADIR' şeklinde çapraz filigran basarak belgenin izinsiz paylaşımını önleyebilirsiniz."
         steps={[
           {
             title: "PDF Dökümanını Yükleyin",

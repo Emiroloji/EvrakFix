@@ -8,6 +8,7 @@ import { downloadBlob } from '../../lib/files/downloadFile';
 import { type DocumentTemplate } from './documentTemplates';
 import { Shield, RefreshCw, Download, AlertCircle, Eye, FileSignature } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 export const DocumentGeneratorPage = () => {
   const [selectedTemplate, setSelectedTemplate] = React.useState<DocumentTemplate | null>(null);
@@ -96,8 +97,16 @@ export const DocumentGeneratorPage = () => {
       </div>
 
       {/* Security alert */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Girdiğiniz hiçbir bilgi sunucuya gönderilmez. Dilekçeniz tamamen tarayıcınızda çizilir ve yerel olarak derlenir.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Girdiğiniz hiçbir bilgi sunucuya gönderilmez. Dilekçeniz tamamen tarayıcınızda çizilir ve yerel olarak derlenir.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Workspace */}
@@ -210,6 +219,7 @@ export const DocumentGeneratorPage = () => {
       <ToolSEOInfo
         toolName="Dilekçe & Evrak Oluşturucu"
         description="Resmi Dilekçe ve Evrak Oluşturucu aracımız; adliyeler, belediyeler, şirketler veya kamu kurumlarına sunacağınız yasal evraklarınızı A4 standartlarında ve otomatik satır taşma / sayfalama korumalı şekilde saniyeler içinde hazırlamanızı sağlar. Genel Dilekçe, İstifa Dilekçesi, Ürün İade Talebi, Demirbaş Teslim Tutanağı ve Borç Alacak Taahhütnamesi gibi hazır resmi şablonları form doldurarak düzenleyebilirsiniz. Girdiğiniz T.C. Kimlik, adres, IBAN veya telefon gibi hiçbir kişisel veri sunucularımıza gitmez."
+        exampleUsage="Çalıştığınız iş yerinden ayrılmak istediğinizde 'İstifa Dilekçesi' şablonunu seçip kişisel bilgilerinizi doldurarak saniyeler içinde A4 boyutunda, resmi formata uygun dilekçenizi hazır edip yazdırabilirsiniz."
         steps={[
           {
             title: "Evrak Şablonunuzu Seçin",

@@ -10,6 +10,7 @@ import { validatePdfFile } from '../../lib/pdf/pdfValidation';
 import { formatFileSize } from '../../lib/files/fileSize';
 import { Shield, FileCheck, RefreshCw, Download, AlertCircle } from 'lucide-react';
 import { ToolSEOInfo } from '../../components/ui/ToolSEOInfo';
+import { openSecurityModal } from '../../lib/utils/security';
 
 export const PdfMergePage = () => {
   const [files, setFiles] = React.useState<File[]>([]);
@@ -122,8 +123,16 @@ export const PdfMergePage = () => {
       </div>
 
       {/* Secure Alert */}
-      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600" />}>
-        Dosyalarınız tamamen tarayıcınızda işlenir. Hiçbir sunucuya veri aktarılmaz.
+      <Alert variant="success" icon={<Shield className="h-5 w-5 text-emerald-600 animate-pulse" />}>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+          <span>Dosyalarınız tamamen tarayıcınızda işlenir. Hiçbir sunucuya veri aktarılmaz.</span>
+          <button 
+            onClick={openSecurityModal}
+            className="text-xs font-bold text-emerald-750 hover:text-emerald-955 underline shrink-0 transition-colors text-left cursor-pointer"
+          >
+            Nasıl Güvende? Öğrenin
+          </button>
+        </div>
       </Alert>
 
       {/* Main Working Card */}
@@ -224,6 +233,7 @@ export const PdfMergePage = () => {
       <ToolSEOInfo
         toolName="PDF Birleştirme"
         description="PDF Birleştirici aracımız, birden fazla PDF dökümanını tek bir belge haline getirmenizi kolaylaştırır. Resmi yazışmalar, e-kitaplar, faturalar veya ders notları gibi farklı PDF dosyalarını sıraya dizerek tek tıkla birleştirebilirsiniz. Tamamen yerel (client-side) çalışan bu araç sayesinde, hassas veriler içeren kişisel veya kurumsal PDF dosyalarınız hiçbir internet sunucusuna gönderilmez, gizliliğiniz %100 oranında korunur."
+        exampleUsage="Üniversite veya iş başvurusu için hazırladığınız özgeçmiş, transkript ve sertifika PDF dosyalarını sırasıyla yükleyip tek bir döküman haline getirerek tek bir dosya şeklinde sisteme yükleyebilirsiniz."
         steps={[
           {
             title: "Dosyalarınızı Seçin",

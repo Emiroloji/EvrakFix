@@ -12,14 +12,14 @@ export function validatePdfFile(file: File): ValidationResult {
 
   // Check file type
   if (file.type !== 'application/pdf' && !file.name.endsWith('.pdf')) {
-    return { isValid: false, error: `"${file.name}" bir PDF dosyası değil.` };
+    return { isValid: false, error: `"${file.name}" geçerli bir PDF dosyası olarak algılanamadı. Lütfen dosya uzantısının .pdf olduğundan emin olun.` };
   }
 
   // Check file size
   if (file.size > APP_CONFIG.maxFileSize) {
     return {
       isValid: false,
-      error: `Dosya boyutu çok büyük. Maksimum limit ${APP_CONFIG.maxFileSize / (1024 * 1024)}MB'dır.`
+      error: `"${file.name}" dosyası çok büyük (${(file.size / (1024 * 1024)).toFixed(1)}MB). Bellek yetersizliği nedeniyle tarayıcınızın kilitlenmesini veya yavaşlamasını önlemek için maksimum limit olan ${APP_CONFIG.maxFileSize / (1024 * 1024)}MB'dan daha küçük bir dosya seçin.`
     };
   }
 
