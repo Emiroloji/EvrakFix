@@ -109,6 +109,13 @@ export const DocumentGeneratorPage = () => {
         </div>
       </Alert>
 
+      {/* Responsibility disclaimer note */}
+      <Alert variant="warning" icon={<AlertCircle className="h-5 w-5 text-amber-600" />}>
+        <span className="text-xs text-amber-900 font-semibold">
+          Önemli Bilgilendirme: Bu araç genel dilekçe taslakları oluşturmak için hazırlanmıştır. Oluşturulan belgeler hukuki danışmanlık yerine geçmez. Resmi başvurular için ilgili kurumun güncel şartlarını kontrol ediniz.
+        </span>
+      </Alert>
+
       {/* Workspace */}
       <div className="flex flex-col gap-8 w-full">
         {!docBlob && (
@@ -217,8 +224,29 @@ export const DocumentGeneratorPage = () => {
       </div>
 
       <ToolSEOInfo
-        toolName="Dilekçe & Evrak Oluşturucu"
-        description="Resmi Dilekçe ve Evrak Oluşturucu aracımız; adliyeler, belediyeler, şirketler veya kamu kurumlarına sunacağınız yasal evraklarınızı A4 standartlarında ve otomatik satır taşma / sayfalama korumalı şekilde saniyeler içinde hazırlamanızı sağlar. Genel Dilekçe, İstifa Dilekçesi, Ürün İade Talebi, Demirbaş Teslim Tutanağı ve Borç Alacak Taahhütnamesi gibi hazır resmi şablonları form doldurarak düzenleyebilirsiniz. Girdiğiniz T.C. Kimlik, adres, IBAN veya telefon gibi hiçbir kişisel veri sunucularımıza gitmez."
+        toolName="Dilekçe Oluştur"
+        description="Resmi Dilekçe ve Evrak Oluşturucu aracımız; adliyeler, belediyeler, şirketler veya kamu kurumlarına sunacağınız yasal evraklarınızı A4 standartlarında ve otomatik satır taşma / sayfalama korumalı şekilde saniyeler içinde hazırlamanızı sağlar. Genel Dilekçe, İstifa Dilekçesi, Ürün İade Talebi, Demirbaş Teslim Tutanağı ve Borç Alacak Taahhütnamesi gibi hazır resmi şablonları form doldurarak düzenleyebilirsiniz. Girdiğiniz T.C. Kimlik, adres, IBAN veya telefon gibi hiçbir kişisel veri sunucularımıza gitmez.
+
+■ Dilekçe Oluşturucu Nedir?
+Dilekçe oluşturucu, resmi makamlara veya özel kurumlara iletmek istediğiniz dilekçeleri, hukuki standartlara uygun olarak tarayıcınızda doldurup A4 PDF formatında çıktı almanızı sağlayan dijital bir araçtır.
+
+■ Online Dilekçe Nasıl Hazırlanır?
+EvrakFix üzerinden hazırlamak istediğiniz dilekçe şablonunu seçin, interaktif formda sizden istenen alanları (ad soyad, adres, tarih ve açıklama gibi) doldurun. Sağ tarafta yer alan canlı önizleme ekranında dilekçenizin son halini anlık olarak izleyebilir ve anında PDF olarak indirebilirsiniz.
+
+■ Hangi Dilekçe Şablonları Kullanılabilir?
+Uygulamamızda Genel Dilekçe, İstifa Dilekçesi, İade Talep Dilekçesi, Teslim Tutanağı ve Borç Alacak Tutanağının yanı sıra; İzin Dilekçesi, Okul Dilekçesi, Şikayet Dilekçesi, İş Başvuru Dilekçesi ve Apartman Yönetimi Dilekçesi gibi geniş şablon seçenekleri bulunmaktadır.
+
+■ PDF Dilekçe Oluşturmak Güvenli mi?
+EvrakFix %100 yerel (client-side) çalıştığı için son derece güvenlidir. Dilekçeye yazdığınız T.C. Kimlik No, telefon, adres veya kişisel detaylar hiçbir internet sunucusuna gönderilmez, veritabanımız yoktur. İşlemler tarayıcınızın kendi belleğinde gerçekleşir.
+
+■ Dilekçe Hazırlarken Nelere Dikkat Edilmeli?
+Dilekçe yazarken muhatap kurumun adının doğru belirtilmesi, konunun net ifade edilmesi, yasal sürelerin aşılmaması (örn: iade için 14 gün) ve iletişim bilgilerinin eksiksiz girilmesi gerekir. Ayrıca yazım kurallarına uygun, sade ve saygılı bir dil kullanılmalıdır.
+
+■ Hazırlanan Dilekçe Resmi Belge Yerine Geçer mi?
+EvrakFix ile hazırladığınız dilekçeler genel başvuru taslakları niteliğindedir. Bu dökümanlar yazdırılıp imzalandıktan veya e-imzalandıktan sonra ilgili kurumlara teslim edilebilir, ancak resmi veya hukuki geçerlilik kararı tamamen muhatap kurumun veya ilgili mevzuatın yetkisindedir.
+
+■ EvrakFix ile Dilekçe Oluşturmanın Avantajları
+EvrakFix ile üyelik veya ücret ödemeden hızlıca dilekçe oluşturabilirsiniz. Otomatik satır taşıma ve marj yönetimi sayesinde yazım düzeniniz asla bozulmaz. Gizliliğiniz %100 korunur ve hazırladığınız evraklar anında cihazınıza indirilir."
         exampleUsage="Çalıştığınız iş yerinden ayrılmak istediğinizde 'İstifa Dilekçesi' şablonunu seçip kişisel bilgilerinizi doldurarak saniyeler içinde A4 boyutunda, resmi formata uygun dilekçenizi hazır edip yazdırabilirsiniz."
         steps={[
           {
@@ -236,16 +264,24 @@ export const DocumentGeneratorPage = () => {
         ]}
         faqs={[
           {
-            question: "Girdiğim T.C. Kimlik, IBAN veya adres gibi kişisel veriler güvende mi?",
-            description: "Evet, %100 güvendedir! EvrakFix sunucusuz çalışan bağımsız bir frontend aracıdır. Form alanlarına yazdığınız hiçbir veri sunucularımıza gönderilmez, sunucumuz yoktur. Tüm döküman derleme işlemi doğrudan bilgisayarınızda (client-side) yapılır."
+            question: "EvrakFix ile oluşturulan dilekçeler resmi belge midir?",
+            description: "EvrakFix ile oluşturulan dilekçeler resmi başvurularda kullanılabilecek genel dilekçe taslaklarıdır. Ancak her kurumun belge formatı, ek evrak ve başvuru şartları farklı olabilir. Bu nedenle teslim etmeden önce ilgili kurumun güncel şartlarını kontrol etmeniz önerilir."
           },
           {
-            question: "Dilekçe A4 standartlarına ve satır uzunluklarına uygun şekilde mi basılır?",
-            description: "Evet. Döküman derleme motorumuz, yazdığınız yazıları Helvetica yazı tipinin karakter genişliklerine göre otomatik olarak sol ve sağ marjlara (55pt) göre satırlara böler. Satır sonlarında kelime bölünmesi yaşanmaz. Yazı uzunsa, otomatik olarak yeni sayfaya (pagination) aktarılır."
+            question: "Dilekçe bilgilerim sunucuya yükleniyor mu?",
+            description: "Kesinlikle hayır. EvrakFix %100 yerel (client-side) çalışmaktadır. Formda yazdığınız T.C. Kimlik No, adres ve iletişim bilgileri gibi hassas veriler hiçbir sunucuya yüklenmez, doğrudan tarayıcınızın RAM belleğinde işlenir."
           },
           {
-            question: "Hazırladığım dilekçeler resmi makamlarca kabul edilir mi?",
-            description: "Evet. Dilekçelerimiz resmi dilekçe formatı standartlarına (muhatap kurum, konu, açıklama, tarih, ad-soyad, imza çizgisi, banka/iletişim bilgileri yerleşimi) birebir uygun olarak derlenir ve resmi makamlarca kabul edilebilir niteliktedir."
+            question: "Dilekçeyi PDF olarak indirebilir miyim?",
+            description: "Evet, formu doldurduktan sonra 'Dökümanı Üret' butonuna tıklayarak A4 sayfa boyutunda ve yazdırılmaya hazır, yüksek kaliteli PDF dökümanınızı tek tıkla cihazınıza indirebilirsiniz."
+          },
+          {
+            question: "İstifa dilekçesi ve iade talep dilekçesi oluşturabilir miyim?",
+            description: "Evet. Sistemimizde hazır bulunan İstifa Dilekçesi, İade Talebi, İzin Dilekçesi, Şikayet Dilekçesi gibi hazır şablonları kullanarak kendinize uygun resmi yazıları kolayca oluşturabilirsiniz."
+          },
+          {
+            question: "Dilekçe şablonlarını düzenleyebilir miyim?",
+            description: "Evet. Form alanlarındaki bilgileri istediğiniz zaman değiştirebilirsiniz. Sağ taraftaki canlı önizleme alanında yaptığınız tüm değişiklikler anında güncellenmektedir."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />

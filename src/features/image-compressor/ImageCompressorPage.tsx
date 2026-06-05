@@ -366,8 +366,29 @@ export const ImageCompressorPage = () => {
       </Card>
 
       <ToolSEOInfo
-        toolName="Görsel Sıkıştırıcı ve Format Dönüştürücü"
-        description="Görsel Sıkıştırıcı ve Dönüştürücü modülümüz, web sitenizin yüklenme hızını artırmak veya cihazınızda depolama alanı kazanmak için görsellerinizi optimize etmenizi sağlar. JPG, PNG ve WebP formatındaki görsellerin kalitesini kaybetmeden boyutunu düşürebilir, oransal olarak yeniden boyutlandırabilir ve formatlarını birbirine dönüştürebilirsiniz. Sıralı sıkıştırma motorumuz sayesinde onlarca görseli tarayıcınız kilitlenmeden topluca işleyebilir ve ZIP paketi olarak tek tıkla indirebilirsiniz."
+        toolName="Görsel Sıkıştırıcı"
+        description="Görsel Sıkıştırıcı ve Dönüştürücü modülümüz, web sitenizin yüklenme hızını artırmak veya cihazınızda depolama alanı kazanmak için görsellerinizi optimize etmenizi sağlar. JPG, PNG ve WebP formatındaki görsellerin kalitesini kaybetmeden boyutunu düşürebilir, oransal olarak yeniden boyutlandırabilir ve formatlarını birbirine dönüştürebilirsiniz.
+
+■ Görsel Sıkıştırıcı Nedir?
+Görsel sıkıştırıcı, resim dosyalarının içindeki görünmez detayları, gereksiz renk bilgilerini ve meta verilerini akıllı algoritmalarla temizleyerek dosya boyutunu düşüren bir araçtır. EvrakFix Görsel Sıkıştırıcı, tüm bu işlemleri tamamen cihazınızın yerel tarayıcısında gerçekleştirir.
+
+■ Görsel Sıkıştırma Ne İşe Yarar?
+Görsel sıkıştırma, web sitelerinin daha hızlı yüklenmesini sağlar, mobil veri kullanımını azaltır ve e-posta eki veya form yüklemelerinde boyut sınırlarına takılmanızı engeller. Ayrıca, telefon veya bilgisayarınızda gigabaytlarca depolama alanı kazanmanıza yardımcı olur.
+
+■ JPG, PNG ve WebP Görseller Nasıl Küçültülür?
+EvrakFix ile görsellerinizi sürükleyip bıraktıktan sonra sıkıştırma kalitesini (Düşük, Orta, Yüksek) seçebilir, genişlik değerine göre boyutlandırabilir ve anında sıkıştırabilirsiniz. Tek bir tuşla tüm görselleriniz saniyeler içinde küçültülür.
+
+■ Görsel Boyutu Küçültmek Kaliteyi Bozar mı?
+Akıllı sıkıştırma oranlarımız sayesinde, pikseller arasındaki benzer renk geçişleri optimize edilir. Bu işlem insan gözünün ayırt edemeyeceği seviyede yapıldığı için görsel kalitesinde gözle görülür bir bozulma olmadan dosya boyutu %70'e varan oranlarda azalır.
+
+■ WebP Formatına Dönüştürmek Ne Avantaj Sağlar?
+WebP, Google tarafından geliştirilen modern bir görsel formatıdır. JPG ve PNG formatlarına göre %30'a varan oranlarda daha yüksek sıkıştırma ve daha küçük dosya boyutu sunarken şeffaflık (transparency) desteğini de korur. Web sitenizin SEO performansını artırmak için en iyi tercihtir.
+
+■ Mobilde Görsel Sıkıştırma Yapılabilir mi?
+Evet, EvrakFix responsive mobil arayüzü sayesinde iPhone, iPad veya Android cihazlarınızdan da ek hiçbir uygulama indirmeden tarayıcınız üzerinden fotoğraflarınızı güvenle sıkıştırabilirsiniz.
+
+■ Dosyalar Neden Güvende?
+EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz hiçbir uzak sunucuya yüklenmez ve internete gönderilmez. İşlemler doğrudan tarayıcınızın belleğinde (RAM) yapılır, bu yüzden verileriniz tamamen sizin cihazınızda kalır."
         exampleUsage="Web sitenizin daha hızlı yüklenmesi veya e-posta ekinde kolayca gönderilmesi için 5 MB boyutundaki büyük JPG veya PNG ürün görsellerini kalitesini bozmadan WebP formatına çevirebilir ve boyutunu 200 KB'ın altına düşürebilirsiniz."
         steps={[
           {
@@ -385,16 +406,24 @@ export const ImageCompressorPage = () => {
         ]}
         faqs={[
           {
-            question: "Görseller sıkıştırıldığında kalite kaybı çok olur mu?",
-            description: "Hayır. Akıllı canvas sıkıştırma katsayılarımız (medium = 0.70, high = 0.90) insan gözünün fark edemeyeceği detayları ayıklayarak görsel kalitesini korur ve dosya boyutunu %70'e varan oranlarda azaltır."
+            question: "Görsellerim sunucuya yükleniyor mu?",
+            description: "Hayır. EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz hiçbir sunucuya yüklenmez, depolanmaz ve paylaşılmaz. Tüm işlemler doğrudan tarayıcınızda ve cihazınızda gerçekleşir."
           },
           {
-            question: "Özel piksel değerine göre yeniden boyutlandırma nasıl çalışır?",
-            description: "Genişlik alanına girdiğiniz piksel değerine (örn: 1200px) göre görselin en-boy oranı (aspect ratio) korunarak oransal olarak boyutu küçültülür. Görsel zaten bu değerden küçükse kalitenin bozulmaması için orijinal boyutu korunur."
+            question: "JPG ve PNG dosyalarını sıkıştırabilir miyim?",
+            description: "Evet, JPG, JPEG ve PNG formatındaki tüm popüler görsellerinizi dilediğiniz gibi sıkıştırabilir, yeniden boyutlandırabilir ve birbirine dönüştürebilirsiniz."
           },
           {
-            question: "Görsellerimin güvenliği nasıl sağlanıyor?",
-            description: "EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz bulut sunucularına gönderilmez, sunucumuz yoktur. İşlemler tarayıcınızın kendi bellek ortamında gerçekleştirilir ve asla internete sızmaz."
+            question: "WebP formatına dönüştürmek ne işe yarar?",
+            description: "WebP formatı, geleneksel JPG ve PNG formatlarına göre çok daha yüksek sıkıştırma oranları sunar. Kalite kaybı minimum düzeyde tutulurken dosya boyutu ciddi oranda düşürülür, bu da web sayfalarının yüklenme hızını artırır."
+          },
+          {
+            question: "Görsel kalitesi düşer mi?",
+            description: "Akıllı Canvas sıkıştırma algoritmamız sayesinde, insan gözünün fark edemeyeceği detaylar ayıklanır. Böylece görsel netliği korunurken dosya boyutu %70'e kadar küçültülmüş olur."
+          },
+          {
+            question: "Mobil cihazdan görsel sıkıştırabilir miyim?",
+            description: "Evet. EvrakFix, mobil uyumlu (responsive) tasarımı sayesinde akıllı telefonlar ve tabletlerdeki web tarayıcılarında da ek bir uygulama indirmeye gerek kalmadan kusursuz ve hızlı çalışır."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />

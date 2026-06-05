@@ -19,8 +19,15 @@ import { navigateTo } from '../lib/utils/navigation';
 import { openSecurityModal } from '../lib/utils/security';
 
 export const HomePage = () => {
-  // Only show the 6 popular/first tools on the home page for a cleaner look
-  const displayedTools = toolList.slice(0, 6);
+  // Show the 6 most relevant tools (including the highlighted image-compressor & document-generator based on Search Console signals)
+  const displayedTools = toolList.filter(t => 
+    t.id === 'pdf-merge' || 
+    t.id === 'pdf-split' || 
+    t.id === 'pdf-sign' || 
+    t.id === 'image-to-pdf' || 
+    t.id === 'image-compressor' || 
+    t.id === 'document-generator'
+  );
 
   return (
     <div className="flex flex-col gap-16 md:gap-24">
@@ -76,8 +83,8 @@ export const HomePage = () => {
           <a href="/pdf-split" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">✂️ PDF Böl</a>
           <a href="/pdf-sign" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">✍️ İmza Ekle</a>
           <a href="/image-to-pdf" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🖼️ Görseli PDF Yap</a>
-          <a href="/document-generator" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">📝 Dilekçe Yaz</a>
-          <a href="/image-compressor" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🗜️ Görsel Sıkıştır</a>
+          <a href="/document-generator" className="px-2.5 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/45 hover:bg-emerald-500/30 hover:border-emerald-400 text-emerald-250 transition-all font-bold shadow-md shadow-emerald-500/10">📝 Dilekçe Oluştur</a>
+          <a href="/image-compressor" className="px-2.5 py-1.5 rounded-xl bg-blue-500/25 border border-blue-500/40 hover:bg-blue-500/35 hover:border-blue-400 text-blue-250 transition-all font-bold shadow-md shadow-blue-500/10 animate-pulse">🔥 🗜️ Görsel Sıkıştır</a>
         </div>
 
         {/* trust banners */}

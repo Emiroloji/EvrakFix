@@ -74,8 +74,8 @@ export const routes: Route[] = [
   {
     path: '/document-generator',
     component: <DocumentGeneratorPage />,
-    title: 'Dilekçe & Evrak Oluşturucu | Hazır Resmi Şablonlar - EvrakFix',
-    description: 'İstifa dilekçesi, iade talebi, genel dilekçe veya teslim tutanağı gibi resmi evrak şablonlarını tarayıcıda form doldurarak saniyeler içinde A4 PDF yapın.'
+    title: 'Dilekçe Oluştur | Ücretsiz PDF Dilekçe Hazırlama - EvrakFix',
+    description: 'İstifa, iade talebi, teslim tutanağı ve genel dilekçe şablonlarını doldurarak cihazınızda güvenle PDF dilekçe oluşturun. Üyelik gerekmez, veriler sunucuya gönderilmez.'
   },
   {
     path: '/pdf-organizer',
@@ -92,8 +92,8 @@ export const routes: Route[] = [
   {
     path: '/image-compressor',
     component: <ImageCompressorPage />,
-    title: 'Görsel Sıkıştırıcı & Format Dönüştürücü | JPG, PNG, WebP - EvrakFix',
-    description: 'Görsellerinizin kalitesini bozmadan dosya boyutunu küçültün, genişlik değerine göre yeniden boyutlandırın ve JPG, PNG, WebP formatlarına dönüştürün.'
+    title: 'Görsel Sıkıştırıcı | JPG, PNG ve WebP Boyut Küçültme - EvrakFix',
+    description: 'JPG, PNG ve WebP görsellerinizi cihazınızda güvenle sıkıştırın, yeniden boyutlandırın ve farklı formatlara dönüştürün. Dosyalarınız sunucuya yüklenmez.'
   }
 ];
 

@@ -70,14 +70,14 @@ const routeConfigs = [
   },
   {
     path: '/image-compressor',
-    title: 'Görsel Sıkıştırıcı & Format Dönüştürücü | JPG, PNG, WebP - EvrakFix',
-    description: 'Görsellerinizin kalitesini bozmadan dosya boyutunu küçültün, genişlik değerine göre yeniden boyutlandırın ve JPG, PNG, WebP formatlarına dönüştürün.',
+    title: 'Görsel Sıkıştırıcı | JPG, PNG ve WebP Boyut Küçültme - EvrakFix',
+    description: 'JPG, PNG ve WebP görsellerinizi cihazınızda güvenle sıkıştırın, yeniden boyutlandırın ve farklı formatlara dönüştürün. Dosyalarınız sunucuya yüklenmez.',
     sourceFile: 'src/features/image-compressor/ImageCompressorPage.tsx'
   },
   {
     path: '/document-generator',
-    title: 'Dilekçe & Evrak Oluşturucu | Hazır Resmi Şablonlar - EvrakFix',
-    description: 'İstifa dilekçesi, iade talebi, genel dilekçe veya teslim tutanağı gibi resmi evrak şablonlarını tarayıcıda form doldurarak saniyeler içinde A4 PDF yapın.',
+    title: 'Dilekçe Oluştur | Ücretsiz PDF Dilekçe Hazırlama - EvrakFix',
+    description: 'İstifa, iade talebi, teslim tutanağı ve genel dilekçe şablonlarını doldurarak cihazınızda güvenle PDF dilekçe oluşturun. Üyelik gerekmez, veriler sunucuya gönderilmez.',
     sourceFile: 'src/features/document-generator/DocumentGeneratorPage.tsx'
   }
 ];
@@ -110,6 +110,80 @@ const fallbackData = {
       { question: 'Belirli sayfa aralıklarını nasıl girebilirim?', answer: 'Sayfa aralığı giriş alanına aralarına virgül koyarak yazabilirsiniz. Örneğin "3-8, 12, 15-20" yazarak 3 ile 8 arasındaki sayfaları, 12. sayfayı ve 15 ile 20 arasındaki sayfaları tek bir PDF halinde ayıklayabilirsiniz.' },
       { question: 'Bölünen PDF sayfalarının kalitesinde veya çözünürlüğünde azalma olur mu?', answer: 'Kesinlikle hayır. Bu işlem, sayfaların yeniden çizilmesiyle değil, PDF döküman yapısının kayıpsız kopyalanmasıyla yapılır. Vektörel grafikler, yazılar ve resimler tam kalitesini korur.' }
     ]
+  },
+  '/image-compressor': {
+    toolName: 'Görsel Sıkıştırıcı',
+    description: `Görsel Sıkıştırıcı ve Dönüştürücü modülümüz, web sitenizin yüklenme hızını artırmak veya cihazınızda depolama alanı kazanmak için görsellerinizi optimize etmenizi sağlar. JPG, PNG ve WebP formatındaki görsellerin kalitesini kaybetmeden boyutunu düşürebilir, oransal olarak yeniden boyutlandırabilir ve formatlarını birbirine dönüştürebilirsiniz.
+
+■ Görsel Sıkıştırıcı Nedir?
+Görsel sıkıştırıcı, resim dosyalarının içindeki görünmez detayları, gereksiz renk bilgilerini ve meta verilerini akıllı algoritmalarla temizleyerek dosya boyutunu düşüren bir araçtır. EvrakFix Görsel Sıkıştırıcı, tüm bu işlemleri tamamen cihazınızın yerel tarayıcısında gerçekleştirir.
+
+■ Görsel Sıkıştırma Ne İşe Yarar?
+Görsel sıkıştırma, web sitelerinin daha hızlı yüklenmesini sağlar, mobil veri kullanımını azaltır ve e-posta eki veya form yüklemelerinde boyut sınırlarına takılmanızı engeller. Ayrıca, telefon veya bilgisayarınızda gigabaytlarca depolama alanı kazanmanıza yardımcı olur.
+
+■ JPG, PNG ve WebP Görseller Nasıl Küçültülür?
+EvrakFix ile görsellerinizi sürükleyip bıraktıktan sonra sıkıştırma kalitesini (Düşük, Orta, Yüksek) seçebilir, genişlik değerine göre boyutlandırabilir ve anında sıkıştırabilirsiniz. Tek bir tuşla tüm görselleriniz saniyeler içinde küçültülür.
+
+■ Görsel Boyutu Küçültmek Kaliteyi Bozar mı?
+Akıllı sıkıştırma oranlarımız sayesinde, pikseller arasındaki benzer renk geçişleri optimize edilir. Bu işlem insan gözünün ayırt edemeyeceği seviyede yapıldığı için görsel kalitesinde gözle görülür bir bozulma olmadan dosya boyutu %70'e varan oranlarda azalır.
+
+■ WebP Formatına Dönüştürmek Ne Avantaj Sağlar?
+WebP, Google tarafından geliştirilen modern bir görsel formatıdır. JPG ve PNG formatlarına göre %30'a varan oranlarda daha yüksek sıkıştırma ve daha küçük dosya boyutu sunarken şeffaflık (transparency) desteğini de korur. Web sitenizin SEO performansını artırmak için en iyi tercihtir.
+
+■ Mobilde Görsel Sıkıştırma Yapılabilir mi?
+Evet, EvrakFix responsive mobil arayüzü sayesinde iPhone, iPad veya Android cihazlarınızdan da ek hiçbir uygulama indirmeden tarayıcınız üzerinden fotoğraflarınızı güvenle sıkıştırabilirsiniz.
+
+■ Dosyalar Neden Güvende?
+EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz hiçbir uzak sunucuya yüklenmez ve internete gönderilmez. İşlemler doğrudan tarayıcınızın belleğinde (RAM) yapılır, bu yüzden verileriniz tamamen sizin cihazınızda kalır.`,
+    steps: [
+      { title: 'Görsellerinizi Yükleyin', description: 'Sıkıştırmak, boyutlandırmak veya dönüştürmek istediğiniz JPG, PNG, WebP resimlerini sürükleyip bırakın.' },
+      { title: 'Kalite, Boyut ve Format Seçin', description: 'Sıkıştırma seviyesini (Düşük/Orta/Yüksek), yeniden boyutlandırma piksel genişliğini ve dönüştürülecek çıktı formatını seçin.' },
+      { title: 'Sıkıştırıp Toplu İndirin', description: 'Tümünü Sıkıştır butonuna tıklayarak işlemi başlatın. Tamamlanan resimleri tek tek veya ZIP arşivi halinde topluca indirin.' }
+    ],
+    faqs: [
+      { question: 'Görsellerim sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz hiçbir sunucuya yüklenmez, depolanmaz ve paylaşılmaz. Tüm işlemler doğrudan tarayıcınızda ve cihazınızda gerçekleşir.' },
+      { question: 'JPG ve PNG dosyalarını sıkıştırabilir miyim?', answer: 'Evet, JPG, JPEG ve PNG formatındaki tüm popüler görsellerinizi dilediğiniz gibi sıkıştırabilir, yeniden boyutlandırabilir ve birbirine dönüştürebilirsiniz.' },
+      { question: 'WebP formatına dönüştürmek ne işe yarar?', answer: 'WebP formatı, geleneksel JPG ve PNG formatlarına göre çok daha yüksek sıkıştırma oranları sunar. Kalite kaybı minimum düzeyde tutulurken dosya boyutu ciddi oranda düşürülür, bu da web sayfalarının yüklenme hızını artırır.' },
+      { question: 'Görsel kalitesi düşer mi?', answer: 'Akıllı Canvas sıkıştırma algoritmamız sayesinde, insan gözünün fark edemeyeceği detaylar ayıklanır. Böylece görsel netliği korunurken dosya boyutu %70\'e kadar küçültülmüş olur.' },
+      { question: 'Mobil cihazdan görsel sıkıştırabilir miyim?', answer: 'Evet. EvrakFix, mobil uyumlu (responsive) tasarımı sayesinde akıllı telefonlar ve tabletlerdeki web tarayıcılarında da ek bir uygulama indirmeye gerek kalmadan kusursuz ve hızlı çalışır.' }
+    ]
+  },
+  '/document-generator': {
+    toolName: 'Dilekçe Oluştur',
+    description: `Resmi Dilekçe ve Evrak Oluşturucu aracımız; adliyeler, belediyeler, şirketler veya kamu kurumlarına sunacağınız yasal evraklarınızı A4 standartlarında ve otomatik satır taşma / sayfalama korumalı şekilde saniyeler içinde hazırlamanızı sağlar. Genel Dilekçe, İstifa Dilekçesi, Ürün İade Talebi, Demirbaş Teslim Tutanağı ve Borç Alacak Taahhütnamesi gibi hazır resmi şablonları form doldurarak düzenleyebilirsiniz. Girdiğiniz T.C. Kimlik, adres, IBAN veya telefon gibi hiçbir kişisel veri sunucularımıza gitmez.
+
+■ Dilekçe Oluşturucu Nedir?
+Dilekçe oluşturucu, resmi makamlara veya özel kurumlara iletmek istediğiniz dilekçeleri, hukuki standartlara uygun olarak tarayıcınızda doldurup A4 PDF formatında çıktı almanızı sağlayan dijital bir araçtır.
+
+■ Online Dilekçe Nasıl Hazırlanır?
+EvrakFix üzerinden hazırlamak istediğiniz dilekçe şablonunu seçin, interaktif formda sizden istenen alanları (ad soyad, adres, tarih ve açıklama gibi) doldurun. Sağ tarafta yer alan canlı önizleme ekranında dilekçenizin son halini anlık olarak izleyebilir ve anında PDF olarak indirebilirsiniz.
+
+■ Hangi Dilekçe Şablonları Kullanılabilir?
+Uygulamamızda Genel Dilekçe, İstifa Dilekçesi, İade Talep Dilekçesi, Teslim Tutanağı ve Borç Alacak Tutanağının yanı sıra; İzin Dilekçesi, Okul Dilekçesi, Şikayet Dilekçesi, İş Başvuru Dilekçesi ve Apartman Yönetimi Dilekçesi gibi geniş şablon seçenekleri bulunmaktadır.
+
+■ PDF Dilekçe Oluşturmak Güvenli mi?
+EvrakFix %100 yerel (client-side) çalıştığı için son derece güvenlidir. Dilekçeye yazdığınız T.C. Kimlik No, telefon, adres veya kişisel detaylar hiçbir internet sunucusuna gönderilmez, veritabanımız yoktur. İşlemler tarayıcınızın kendi belleğinde gerçekleşir.
+
+■ Dilekçe Hazırlarken Nelere Dikkat Edilmeli?
+Dilekçe yazarken muhatap kurumun adının doğru belirtilmesi, konunun net ifade edilmesi, yasal sürelerin aşılmaması (örn: iade için 14 gün) ve iletişim bilgilerinin eksiksiz girilmesi gerekir. Ayrıca yazım kurallarına uygun, sade ve saygılı bir dil kullanılmalıdır.
+
+■ Hazırlanan Dilekçe Resmi Belge Yerine Geçer mi?
+EvrakFix ile hazırladığınız dilekçeler genel başvuru taslakları niteliğindedir. Bu dökümanlar yazdırılıp imzalandıktan veya e-imzalandıktan sonra ilgili kurumlara teslim edilebilir, ancak resmi veya hukuki geçerlilik kararı tamamen muhatap kurumun veya ilgili mevzuatın yetkisindedir.
+
+■ EvrakFix ile Dilekçe Oluşturmanın Avantajları
+EvrakFix ile üyelik veya ücret ödemeden hızlıca dilekçe oluşturabilirsiniz. Otomatik satır taşıma ve marj yönetimi sayesinde yazım düzeniniz asla bozulmaz. Gizliliğiniz %100 korunur ve hazırladığınız evraklar anında cihazınıza indirilir.`,
+    steps: [
+      { title: 'Evrak Şablonunuzu Seçin', description: 'Doldurmak istediğiniz döküman tipini (dilekçe, tutanak, taahhüt vb.) şablon kartlarından seçin.' },
+      { title: 'Form Bilgilerini Doldurun', description: 'Açılan interaktif formdaki zorunlu alanları doldurun. Sağ sütundaki A4 kağıt simülasyonunda canlı önizlemeyi (Live Preview) anlık izleyin.' },
+      { title: 'Derleyin ve İndirin', description: 'Dökümanı Üret butonuna tıklayarak A4 standartlarında PDF belgenizi tarayıcınızda saniyeler içinde derleyip indirin.' }
+    ],
+    faqs: [
+      { question: 'EvrakFix ile oluşturulan dilekçeler resmi belge midir?', answer: 'EvrakFix ile oluşturulan dilekçeler resmi başvurularda kullanılabilecek genel dilekçe taslaklarıdır. Ancak her kurumun belge formatı, ek evrak ve başvuru şartları farklı olabilir. Bu nedenle teslim etmeden önce ilgili kurumun güncel şartlarını kontrol etmeniz önerilir.' },
+      { question: 'Dilekçe bilgilerim sunucuya yükleniyor mu?', answer: 'Kesinlikle hayır. EvrakFix %100 yerel (client-side) çalışmaktadır. Formda yazdığınız T.C. Kimlik No, adres ve iletişim bilgileri gibi hassas veriler hiçbir sunucuya yüklenmez, doğrudan tarayıcınızın RAM belleğinde işlenir.' },
+      { question: 'Dilekçeyi PDF olarak indirebilir miyim?', answer: 'Evet, formu doldurduktan sonra \'Dökümanı Üret\' butonuna tıklayarak A4 sayfa boyutunda ve yazdırılmaya hazır, yüksek kaliteli PDF dökümanınızı tek tıkla cihazınıza indirebilirsiniz.' },
+      { question: 'İstifa dilekçesi ve iade talep dilekçesi oluşturabilir miyim?', answer: 'Evet. Sistemimizde hazır bulunan İstifa Dilekçesi, İade Talebi, İzin Dilekçesi, Şikayet Dilekçesi gibi hazır şablonları kullanarak kendinize uygun resmi yazıları kolayca oluşturabilirsiniz.' },
+      { question: 'Dilekçe şablonlarını düzenleyebilir miyim?', answer: 'Evet. Form alanlarındaki bilgileri istediğiniz zaman değiştirebilirsiniz. Sağ taraftaki canlı önizleme alanında yaptığınız tüm değişiklikler anında güncellenmektedir.' }
+    ]
   }
 };
 
@@ -133,8 +207,8 @@ function extractSEOFromTSX(filePath, routePath) {
     const toolName = toolNameMatch ? toolNameMatch[1] : '';
 
     // Extract description
-    const descMatch = block.match(/description=["']([\s\S]+?)["']/);
-    const description = descMatch ? descMatch[1].trim() : '';
+    const descMatch = block.match(/description=(["'])([\s\S]+?)\1/);
+    const description = descMatch ? descMatch[2].trim() : '';
 
     // Extract steps
     const stepsSectionMatch = block.match(/steps=\{\[\s*([\s\S]+?)\s*\]\}/);
