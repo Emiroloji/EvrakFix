@@ -295,7 +295,7 @@ EvrakFix ile üyelik, limit veya hiçbir ücret olmadan tamamen ücretsiz PDF b�
           },
           {
             question: "PDF bölme işlemi mobilde çalışır mı?",
-            description: "Evet. EvrakFix mobil tarayıcılarla %100 uyumludur. Akıllı telefon veya tabletinizden ek uygulama indirmeden PDF'lerinizi anında bölebilirsiniz."
+            description: "Evet. EvrakFix mobil tarayıcılarla tam uyumludur. Akıllı telefon veya tabletinizden ek uygulama indirmeden PDF'lerinizi anında bölebilirsiniz."
           },
           {
             question: "Bölünen PDF dosyasını hemen indirebilir miyim?",

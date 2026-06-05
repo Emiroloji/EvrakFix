@@ -388,7 +388,7 @@ WebP, Google tarafından geliştirilen modern bir görsel formatıdır. JPG ve P
 Evet, EvrakFix responsive mobil arayüzü sayesinde iPhone, iPad veya Android cihazlarınızdan da ek hiçbir uygulama indirmeden tarayıcınız üzerinden fotoğraflarınızı güvenle sıkıştırabilirsiniz.
 
 ■ Dosyalar Neden Güvende?
-EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz hiçbir uzak sunucuya yüklenmez ve internete gönderilmez. İşlemler doğrudan tarayıcınızın belleğinde (RAM) yapılır, bu yüzden verileriniz tamamen sizin cihazınızda kalır."
+EvrakFix tamamen yerel (client-side) çalışmaktadır. Görselleriniz hiçbir uzak sunucuya yüklenmez ve internete gönderilmez. İşlemler doğrudan tarayıcınızın belleğinde (RAM) yapılır, bu yüzden verileriniz tamamen sizin cihazınızda kalır."
         exampleUsage="Web sitenizin daha hızlı yüklenmesi veya e-posta ekinde kolayca gönderilmesi için 5 MB boyutundaki büyük JPG veya PNG ürün görsellerini kalitesini bozmadan WebP formatına çevirebilir ve boyutunu 200 KB'ın altına düşürebilirsiniz."
         steps={[
           {
@@ -407,7 +407,7 @@ EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz hiçbir uzak
         faqs={[
           {
             question: "Görsellerim sunucuya yükleniyor mu?",
-            description: "Hayır. EvrakFix %100 yerel (client-side) çalışmaktadır. Görselleriniz hiçbir sunucuya yüklenmez, depolanmaz ve paylaşılmaz. Tüm işlemler doğrudan tarayıcınızda ve cihazınızda gerçekleşir."
+            description: "Hayır. EvrakFix tamamen yerel (client-side) çalışmaktadır. Görselleriniz hiçbir sunucuya yüklenmez, depolanmaz ve paylaşılmaz. Tüm işlemler doğrudan tarayıcınızda ve cihazınızda gerçekleşir."
           },
           {
             question: "JPG ve PNG dosyalarını sıkıştırabilir miyim?",

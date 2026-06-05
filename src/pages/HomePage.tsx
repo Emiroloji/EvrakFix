@@ -1,4 +1,4 @@
-import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText } from 'lucide-react';
+import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, EyeOff, Hash } from 'lucide-react';
 
 const iconMap: Record<string, any> = {
   Merge,
@@ -8,7 +8,9 @@ const iconMap: Record<string, any> = {
   Layers,
   LayoutGrid,
   Sliders,
-  FileText
+  FileText,
+  EyeOff,
+  Hash
 };
 import { toolList } from '../lib/constants/toolList';
 import { Button } from '../components/ui/Button';
@@ -39,7 +41,7 @@ export const HomePage = () => {
         
         <Badge variant="info" className="bg-blue-500/15 text-blue-300 border-blue-500/20 px-4 py-1 gap-1.5 backdrop-blur-md">
           <Sparkles className="h-3.5 w-3.5" />
-          <span>%100 Tarayıcı Tabanlı Evrak Çözümü</span>
+          <span>Tamamen Tarayıcı Tabanlı Evrak Çözümü</span>
         </Badge>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight max-w-4xl leading-tight">
@@ -84,6 +86,8 @@ export const HomePage = () => {
           <a href="/pdf-sign" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">✍️ İmza Ekle</a>
           <a href="/pdf-organizer" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">📋 Sayfa Düzenle</a>
           <a href="/pdf-to-image" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🖼️ PDF'i Görsel Yap</a>
+          <a href="/pdf-metadata-cleaner" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🧹 Metadata Temizle</a>
+          <a href="/pdf-page-numbers" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🔢 Numaralandır</a>
           <a href="/image-to-pdf" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🖼️ Görseli PDF Yap</a>
           <a href="/document-generator" className="px-2.5 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/45 hover:bg-emerald-500/30 hover:border-emerald-400 text-emerald-250 transition-all font-bold shadow-md shadow-emerald-500/10">📝 Dilekçe Oluştur</a>
           <a href="/image-compressor" className="px-2.5 py-1.5 rounded-xl bg-blue-500/25 border border-blue-500/40 hover:bg-blue-500/35 hover:border-blue-400 text-blue-250 transition-all font-bold shadow-md shadow-blue-500/10 animate-pulse">🔥 🗜️ Görsel Sıkıştır</a>
@@ -93,7 +97,7 @@ export const HomePage = () => {
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-10 pt-8 border-t border-white/10 w-full text-slate-400 text-xs sm:text-sm">
           <div className="flex items-center gap-2">
             <Lock className="h-4 w-4 text-emerald-400" />
-            <span>%100 Gizlilik Güvencesi</span>
+            <span>Cihaz Tabanlı Gizlilik Güvencesi</span>
           </div>
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4 text-emerald-400" />
@@ -245,7 +249,7 @@ export const HomePage = () => {
           <div className="flex flex-col gap-1.5">
             <h3 className="text-base font-bold text-slate-800">Cihazınızda Çalışan Teknoloji (Client-Side)</h3>
             <p className="text-sm text-slate-650 leading-relaxed max-w-4xl font-normal">
-              Dosyalarınız hiçbir uzak sunucuya yüklenmez, tamamen tarayıcınızın belleğinde (RAM) yerel olarak işlenir. Bu sayede %100 veri gizliliği ve sıfır gecikme elde edersiniz.
+              Dosyalarınız hiçbir uzak sunucuya yüklenmez, tamamen tarayıcınızın belleğinde (RAM) yerel olarak işlenir. Bu sayede tam veri gizliliği ve sıfır gecikme elde edersiniz.
             </p>
           </div>
           <Button 

@@ -57,7 +57,7 @@ export const Header = () => {
           <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500">
             <ShieldAlert className="h-3.5 w-3.5 text-emerald-500" />
             <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-600">
-              %100 Güvenli & Yerel
+              Tamamen Güvenli & Yerel
             </span>
           </div>
 

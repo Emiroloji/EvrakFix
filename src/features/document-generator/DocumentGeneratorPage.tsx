@@ -237,7 +237,7 @@ EvrakFix üzerinden hazırlamak istediğiniz dilekçe şablonunu seçin, interak
 Uygulamamızda Genel Dilekçe, İstifa Dilekçesi, İade Talep Dilekçesi, Teslim Tutanağı ve Borç Alacak Tutanağının yanı sıra; İzin Dilekçesi, Okul Dilekçesi, Şikayet Dilekçesi, İş Başvuru Dilekçesi ve Apartman Yönetimi Dilekçesi gibi geniş şablon seçenekleri bulunmaktadır.
 
 ■ PDF Dilekçe Oluşturmak Güvenli mi?
-EvrakFix %100 yerel (client-side) çalıştığı için son derece güvenlidir. Dilekçeye yazdığınız T.C. Kimlik No, telefon, adres veya kişisel detaylar hiçbir internet sunucusuna gönderilmez, veritabanımız yoktur. İşlemler tarayıcınızın kendi belleğinde gerçekleşir.
+EvrakFix tamamen yerel (client-side) çalıştığı için son derece güvenlidir. Dilekçeye yazdığınız T.C. Kimlik No, telefon, adres veya kişisel detaylar hiçbir internet sunucusuna gönderilmez, veritabanımız yoktur. İşlemler tarayıcınızın kendi belleğinde gerçekleşir.
 
 ■ Dilekçe Hazırlarken Nelere Dikkat Edilmeli?
 Dilekçe yazarken muhatap kurumun adının doğru belirtilmesi, konunun net ifade edilmesi, yasal sürelerin aşılmaması (örn: iade için 14 gün) ve iletişim bilgilerinin eksiksiz girilmesi gerekir. Ayrıca yazım kurallarına uygun, sade ve saygılı bir dil kullanılmalıdır.
@@ -246,7 +246,7 @@ Dilekçe yazarken muhatap kurumun adının doğru belirtilmesi, konunun net ifad
 EvrakFix ile hazırladığınız dilekçeler genel başvuru taslakları niteliğindedir. Bu dökümanlar yazdırılıp imzalandıktan veya e-imzalandıktan sonra ilgili kurumlara teslim edilebilir, ancak resmi veya hukuki geçerlilik kararı tamamen muhatap kurumun veya ilgili mevzuatın yetkisindedir.
 
 ■ EvrakFix ile Dilekçe Oluşturmanın Avantajları
-EvrakFix ile üyelik veya ücret ödemeden hızlıca dilekçe oluşturabilirsiniz. Otomatik satır taşıma ve marj yönetimi sayesinde yazım düzeniniz asla bozulmaz. Gizliliğiniz %100 korunur ve hazırladığınız evraklar anında cihazınıza indirilir."
+EvrakFix ile üyelik veya ücret ödemeden hızlıca dilekçe oluşturabilirsiniz. Otomatik satır taşıma ve marj yönetimi sayesinde yazım düzeniniz asla bozulmaz. Gizliliğiniz tamamen korunur ve hazırladığınız evraklar anında cihazınıza indirilir."
         exampleUsage="Çalıştığınız iş yerinden ayrılmak istediğinizde 'İstifa Dilekçesi' şablonunu seçip kişisel bilgilerinizi doldurarak saniyeler içinde A4 boyutunda, resmi formata uygun dilekçenizi hazır edip yazdırabilirsiniz."
         steps={[
           {
@@ -269,7 +269,7 @@ EvrakFix ile üyelik veya ücret ödemeden hızlıca dilekçe oluşturabilirsini
           },
           {
             question: "Dilekçe bilgilerim sunucuya yükleniyor mu?",
-            description: "Kesinlikle hayır. EvrakFix %100 yerel (client-side) çalışmaktadır. Formda yazdığınız T.C. Kimlik No, adres ve iletişim bilgileri gibi hassas veriler hiçbir sunucuya yüklenmez, doğrudan tarayıcınızın RAM belleğinde işlenir."
+            description: "Kesinlikle hayır. EvrakFix tamamen yerel (client-side) çalışmaktadır. Formda yazdığınız T.C. Kimlik No, adres ve iletişim bilgileri gibi hassas veriler hiçbir sunucuya yüklenmez, doğrudan tarayıcınızın RAM belleğinde işlenir."
           },
           {
             question: "Dilekçeyi PDF olarak indirebilir miyim?",

@@ -14,6 +14,8 @@ const DocumentGeneratorPage = lazy(() => import('../features/document-generator/
 const PdfOrganizerPage = lazy(() => import('../features/pdf-organizer/PdfOrganizerPage').then(m => ({ default: m.PdfOrganizerPage })));
 const PdfToImagePage = lazy(() => import('../features/pdf-to-image/PdfToImagePage').then(m => ({ default: m.PdfToImagePage })));
 const ImageCompressorPage = lazy(() => import('../features/image-compressor/ImageCompressorPage').then(m => ({ default: m.ImageCompressorPage })));
+const PdfMetadataCleanerPage = lazy(() => import('../features/pdf-metadata-cleaner/PdfMetadataCleanerPage').then(m => ({ default: m.PdfMetadataCleanerPage })));
+const PdfPageNumbersPage = lazy(() => import('../features/pdf-page-numbers/PdfPageNumbersPage').then(m => ({ default: m.PdfPageNumbersPage })));
 
 export interface Route {
   path: string;
@@ -26,7 +28,7 @@ export const routes: Route[] = [
   {
     path: '/',
     component: <HomePage />,
-    title: 'EvrakFix | %100 Güvenli Ücretsiz PDF ve Evrak Araçları',
+    title: 'EvrakFix | Güvenli ve Ücretsiz PDF ve Evrak Araçları',
     description: 'Dosyalarınızı sunucuya göndermeden PDF birleştirme, PDF bölme, imza ekleme, filigran ekleme, görsel sıkıştırma ve dilekçe yazma işlemlerini tarayıcınızda güvenle yapın.'
   },
   {
@@ -94,6 +96,18 @@ export const routes: Route[] = [
     component: <ImageCompressorPage />,
     title: 'Görsel Sıkıştırıcı | JPG, PNG ve WebP Boyut Küçültme - EvrakFix',
     description: 'JPG, PNG ve WebP görsellerinizi cihazınızda güvenle sıkıştırın, yeniden boyutlandırın ve farklı formatlara dönüştürün. Dosyalarınız sunucuya yüklenmez.'
+  },
+  {
+    path: '/pdf-metadata-cleaner',
+    component: <PdfMetadataCleanerPage />,
+    title: 'PDF Metadata Temizleyici | PDF Belge Bilgilerini Sil - EvrakFix',
+    description: 'PDF dosyanızdaki başlık, yazar, oluşturucu ve tarih gibi metadata bilgilerini cihazınızda güvenle temizleyin. Dosyalarınız sunucuya yüklenmez.'
+  },
+  {
+    path: '/pdf-page-numbers',
+    component: <PdfPageNumbersPage />,
+    title: 'PDF Sayfa Numarası Ekle | Ücretsiz PDF Numaralandırma - EvrakFix',
+    description: 'PDF dosyanıza cihazınızda güvenle sayfa numarası ekleyin. Konum ve format seçin, numaralandırılmış PDF’i hemen indirin.'
   }
 ];
 

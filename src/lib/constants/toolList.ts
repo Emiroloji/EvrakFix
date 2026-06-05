@@ -88,5 +88,23 @@ export const toolList: ToolItem[] = [
     category: 'document',
     icon: 'FileText',
     badge: 'Yeni'
+  },
+  {
+    id: 'pdf-metadata-cleaner',
+    title: 'PDF Metadata Temizleyici',
+    description: 'PDF dosyanızdaki başlık, yazar, oluşturucu ve tarih gibi belge bilgilerini cihazınızda güvenle temizleyin.',
+    path: '/pdf-metadata-cleaner',
+    category: 'pdf',
+    icon: 'EyeOff',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-page-numbers',
+    title: 'PDF Sayfa Numarası Ekle',
+    description: 'PDF dosyanıza cihazınızda güvenle sayfa numarası ekleyin ve numaralandırılmış PDF olarak indirin.',
+    path: '/pdf-page-numbers',
+    category: 'pdf',
+    icon: 'Hash',
+    badge: 'Yeni'
   }
 ];

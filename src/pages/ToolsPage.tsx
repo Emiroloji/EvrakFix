@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, ArrowRight, Search, ShieldCheck } from 'lucide-react';
+import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, ArrowRight, Search, ShieldCheck, EyeOff, Hash } from 'lucide-react';
 import { toolList } from '../lib/constants/toolList';
 
 const iconMap: Record<string, any> = {
@@ -10,7 +10,9 @@ const iconMap: Record<string, any> = {
   Layers,
   LayoutGrid,
   Sliders,
-  FileText
+  FileText,
+  EyeOff,
+  Hash
 };
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
@@ -111,7 +113,7 @@ export const ToolsPage = () => {
         {/* Security badge */}
         <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-50/50 border border-emerald-100/55 text-emerald-800 text-xs font-semibold self-start lg:self-auto shrink-0 shadow-sm shadow-emerald-500/2">
           <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
-          <span>Sıfır Sunucu Aktarımı, %100 Cihaz Güvenliği</span>
+          <span>Sıfır Sunucu Aktarımı, Cihaz Tabanlı Tam Güvenlik</span>
         </div>
       </div>
 

@@ -46,7 +46,7 @@ export const AboutPage = () => {
           </div>
           <h3 className="text-base font-bold text-slate-800">Kalıcı Güvenlik</h3>
           <p className="text-xs text-slate-500 leading-relaxed">
-            Kullanıcı hesabı oluşturmanıza, kredi kartı girmenize gerek yoktur. Uygulamada hiçbir izleyici (tracker) veya veritabanı bulunmaz. Verileriniz %100 sizde kalır.
+            Kullanıcı hesabı oluşturmanıza, kredi kartı girmenize gerek yoktur. Uygulamada hiçbir izleyici (tracker) veya veritabanı bulunmaz. Verileriniz tamamen cihazınızda kalır.
           </p>
         </Card>
       </div>

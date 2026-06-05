@@ -318,7 +318,7 @@ Evet. EvrakFix yerel (client-side) teknoloji kullanır. Yüklediğiniz görselle
 Evet. EvrakFix mobil tarayıcılarla tam uyumludur. Akıllı telefon veya tabletinizin kamerasıyla çektiğiniz evrak fotoğraflarını ek bir uygulama yüklemeden anında seçip PDF belgesine dönüştürebilirsiniz.
 
 ■ EvrakFix ile Görseli PDF’e Çevirmenin Avantajları
-EvrakFix tamamen ücretsizdir, üyelik veya kullanım limiti yoktur. Dosyalar yerel işlendiği için internete yükleme bekleme süresi yoktur ve gizliliğiniz %100 güvence altındadır."
+EvrakFix tamamen ücretsizdir, üyelik veya kullanım limiti yoktur. Dosyalar yerel işlendiği için internete yükleme bekleme süresi yoktur ve gizliliğiniz tamamen güvence altındadır."
         exampleUsage="Telefonunuzla fotoğrafını çektiğiniz kira sözleşmesinin 3 sayfalık görsellerini sisteme yükleyip, A4 ebatında sıralı ve tek bir PDF dökümanına dönüştürerek e-posta ile gönderebilirsiniz."
         steps={[
           {

@@ -232,7 +232,7 @@ export const PdfMergePage = () => {
 
       <ToolSEOInfo
         toolName="PDF Birleştirme"
-        description="PDF Birleştirici aracımız, birden fazla PDF dökümanını tek bir belge haline getirmenizi kolaylaştırır. Resmi yazışmalar, e-kitaplar, faturalar veya ders notları gibi farklı PDF dosyalarını sıraya dizerek tek tıkla birleştirebilirsiniz. Tamamen yerel (client-side) çalışan bu araç sayesinde, hassas veriler içeren kişisel veya kurumsal PDF dosyalarınız hiçbir internet sunucusuna gönderilmez, gizliliğiniz %100 oranında korunur.
+        description="PDF Birleştirici aracımız, birden fazla PDF dökümanını tek bir belge haline getirmenizi kolaylaştırır. Resmi yazışmalar, e-kitaplar, faturalar veya ders notları gibi farklı PDF dosyalarını sıraya dizerek tek tıkla birleştirebilirsiniz. Tamamen yerel (client-side) çalışan bu araç sayesinde, hassas veriler içeren kişisel veya kurumsal PDF dosyalarınız hiçbir internet sunucusuna gönderilmez, gizliliğiniz tamamen korunur.
 
 ■ PDF Birleştirme Nedir?
 PDF birleştirme, ayrı ayrı duran birden fazla PDF belgesinin (sayfa yapıları, yazı tipleri ve görsel kaliteleri korunarak) tek bir ardışık PDF dosyası halinde uç uca eklenmesi işlemidir.
@@ -284,7 +284,7 @@ EvrakFix ile üyelik, limit veya ücret olmadan tamamen ücretsiz PDF birleştir
           },
           {
             question: "PDF birleştirme işlemi mobilde çalışır mı?",
-            description: "Evet. EvrakFix mobil tarayıcılarla %100 uyumludur. Akıllı telefon veya tabletinizden tarayıcınız üzerinden PDF'lerinizi anında birleştirebilirsiniz."
+            description: "Evet. EvrakFix mobil tarayıcılarla tam uyumludur. Akıllı telefon veya tabletinizden tarayıcınız üzerinden PDF'lerinizi anında birleştirebilirsiniz."
           },
           {
             question: "Birleştirilen PDF dosyasını hemen indirebilir miyim?",
