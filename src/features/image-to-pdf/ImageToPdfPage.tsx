@@ -294,7 +294,31 @@ export const ImageToPdfPage = () => {
 
       <ToolSEOInfo
         toolName="Görseli PDF'e Çevir"
-        description="Görseli PDF'e Çevir aracımız; elinizdeki makbuz, ders notları, kimlik fotokopileri veya taranmış evrak görsellerini hızlıca resmi PDF belgelerine dönüştürmenizi sağlar. JPG, JPEG, PNG veya WebP formatındaki resimleri sürükleyip bırakarak dilediğiniz sıraya dizip yüksek kaliteli PDF sayfaları oluşturabilirsiniz. Sayfa boyutunu (A4 / Orijinal boyut), sayfa yönünü ve kenar paylarını tamamen kendiniz kontrol edebilirsiniz. Cihazınızda yerel işlenen verileriniz üçüncü kişilerle asla paylaşılmaz."
+        description="Görseli PDF'e Çevir aracımız; elinizdeki makbuz, ders notları, kimlik fotokopileri veya taranmış evrak görsellerini hızlıca resmi PDF belgelerine dönüştürmenizi sağlar.
+
+■ Görseli PDF’e Çevirme Nedir?
+Görseli PDF'e çevirme; JPG, PNG veya WebP formatındaki resimlerin, döküman standartlarına uygun biçimde pikselleri korunarak PDF sayfaları haline getirilmesi ve tek veya çok sayfalı bir döküman olarak kaydedilmesidir.
+
+■ JPG ve PNG Dosyaları PDF’e Nasıl Çevrilir?
+EvrakFix Görseli PDF'e Çevir aracına resimlerinizi sürükleyip bırakın veya cihazınızdan seçin. Kenar boşluğu ve sayfa yönünü isteğinize göre yapılandırdıktan sonra 'PDF Oluştur' butonuna tıklayarak saniyeler içinde çıktıyı indirebilirsiniz.
+
+■ Birden fazla görsel tek PDF yapılabilir mi?
+Evet. İstediğiniz kadar görsel dosyasını tek seferde yükleyerek hepsinin sırayla birer sayfa halinde yer aldığı tek bir birleşik PDF belgesi oluşturabilirsiniz.
+
+■ Görsellerin sırası değiştirilebilir mi?
+Evet. Görselleri yükledikten sonra, liste üzerinde yer alan yukarı ve aşağı taşıma butonlarını kullanarak görsellerin PDF belgesindeki sayfa sırasını kolayca düzenleyebilirsiniz.
+
+■ A4 ve Orijinal Boyut Farkı Nedir?
+A4 seçeneği, görselleri standart A4 kağıt boyutuna (sığacak şekilde) boyutlandırıp hizalar. Orijinal Boyut seçeneği ise her görselin kendi piksel çözünürlüğündeki en ve boy oranını koruyarak sayfa sınırlarını görselin kendisine göre ayarlar.
+
+■ Görseli PDF’e Çevirmek Güvenli mi?
+Evet. EvrakFix yerel (client-side) teknoloji kullanır. Yüklediğiniz görseller uzak bir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcısında işlenir. Gizli veya kişisel belgelerinizin güvenliği tamamen sizin kontrolünüzdedir.
+
+■ Mobil Cihazdan Görsel PDF Yapma Mümkün mü?
+Evet. EvrakFix mobil tarayıcılarla tam uyumludur. Akıllı telefon veya tabletinizin kamerasıyla çektiğiniz evrak fotoğraflarını ek bir uygulama yüklemeden anında seçip PDF belgesine dönüştürebilirsiniz.
+
+■ EvrakFix ile Görseli PDF’e Çevirmenin Avantajları
+EvrakFix tamamen ücretsizdir, üyelik veya kullanım limiti yoktur. Dosyalar yerel işlendiği için internete yükleme bekleme süresi yoktur ve gizliliğiniz %100 güvence altındadır."
         exampleUsage="Telefonunuzla fotoğrafını çektiğiniz kira sözleşmesinin 3 sayfalık görsellerini sisteme yükleyip, A4 ebatında sıralı ve tek bir PDF dökümanına dönüştürerek e-posta ile gönderebilirsiniz."
         steps={[
           {
@@ -312,16 +336,24 @@ export const ImageToPdfPage = () => {
         ]}
         faqs={[
           {
-            question: "Hangi görsel formatlarını PDF'e çevirebilirim?",
-            description: "En popüler resim formatları olan JPG, JPEG, PNG ve yeni nesil yüksek sıkıştırmalı WebP görsellerini kayıpsız bir şekilde PDF'e çevirebilirsiniz."
+            question: "Görsellerim sunucuya yükleniyor mu?",
+            description: "Hayır. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Görselleriniz hiçbir sunucuya yüklenmez, doğrudan cihazınızın tarayıcı belleğinde işlenir."
           },
           {
-            question: "Birden fazla resmi tek bir PDF belgesine dönüştürebilir miyim?",
-            description: "Evet. İstediğiniz sayıda resmi yükleyerek bunları sıralayabilir ve hepsi ardışık sayfalar halinde olacak şekilde tek bir PDF belgesi olarak indirebilirsiniz."
+            question: "JPG, PNG ve WebP dosyalarını PDF’e çevirebilir miyim?",
+            description: "Evet. JPG, JPEG, PNG ve WebP formatındaki tüm popüler resim dosyalarını sorunsuz bir şekilde PDF formatına dönüştürebilirsiniz."
           },
           {
-            question: "Dosyalarım bulut sunucularına veya internete yükleniyor mu?",
-            description: "Hayır. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Tüketilen RAM ve işlemci gücü cihazınızdan karşılanır. Dosyalarınız hiçbir sunucuya yüklenmeden %100 gizlilikle bilgisayarınızda derlenir."
+            question: "Birden fazla görseli tek PDF yapabilir miyim?",
+            description: "Evet. Dilediğiniz sayıda görseli yükleyerek bunları sıralı sayfalar halinde tek bir PDF dökümanı haline getirebilirsiniz."
+          },
+          {
+            question: "Görsel sırasını değiştirebilir miyim?",
+            description: "Evet. Görselleri yükledikten sonra liste üzerindeki ok butonlarını kullanarak sayfaların sıralamasını dilediğiniz gibi düzenleyebilirsiniz."
+          },
+          {
+            question: "PDF çıktısını hemen indirebilir miyim?",
+            description: "Evet. 'PDF Oluştur' butonuna bastıktan sonra dönüştürme işlemi tarayıcı hızında yerel olarak gerçekleşir. Çok sayıda veya yüksek çözünürlüklü görsellerde işlem süresi cihazınızın donanım performansına bağlı olarak birkaç saniye sürebilir ve tamamlandığında indirme butonu görünür."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />

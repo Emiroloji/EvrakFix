@@ -44,32 +44,32 @@ export const routes: Route[] = [
   {
     path: '/pdf-merge',
     component: <PdfMergePage />,
-    title: 'PDF Birleştirici | Ücretsiz & Güvenli Çoklu PDF Birleştirme - EvrakFix',
-    description: 'Birden fazla PDF dökümanını dilediğiniz sıraya dizin ve sunuculara yüklemeden, tarayıcınızda %100 güvenli ve hızlı şekilde tek bir PDF olarak birleştirin.'
+    title: 'PDF Birleştir | Ücretsiz ve Güvenli PDF Birleştirme - EvrakFix',
+    description: 'Birden fazla PDF dosyasını cihazınızda güvenle tek PDF haline getirin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
   },
   {
     path: '/pdf-split',
     component: <PdfSplitPage />,
-    title: 'PDF Bölücü | PDF Sayfalarını Ayırma ve Ayıklama Aracı - EvrakFix',
-    description: 'Büyük PDF dosyalarınızı belirlediğiniz sayfa aralıklarına göre (tek-çift sayfalar, özel aralıklar) tarayıcınızın hızıyla anında bölün ve indirin.'
+    title: 'PDF Böl | Ücretsiz ve Güvenli PDF Sayfa Ayırma - EvrakFix',
+    description: 'PDF dosyanızdan istediğiniz sayfaları veya sayfa aralıklarını cihazınızda güvenle ayırın. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
   },
   {
     path: '/image-to-pdf',
     component: <ImageToPdfPage />,
-    title: 'Görseli PDF\'e Çevir | JPG, PNG ve WebP\'den PDF Yap - EvrakFix',
-    description: 'JPG, JPEG, PNG veya WebP formatındaki resimlerinizi sürükleyip bırakın, sıralayın, A4 veya orijinal boyutta yüksek kaliteli PDF belgelerine dönüştürün.'
+    title: 'Görseli PDF’e Çevir | JPG, PNG ve WebP PDF Yapma - EvrakFix',
+    description: 'JPG, PNG ve WebP görsellerinizi cihazınızda güvenle tek PDF dosyasına dönüştürün. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
   },
   {
     path: '/pdf-sign',
     component: <PdfSignPage />,
-    title: 'PDF İmzalama | PDF Belgelerine Islak İmza Ekleme - EvrakFix',
-    description: 'PDF belgelerinizin üzerine fare veya dokunmatik ekranla ıslak imzanızı çizin, imza konumunu ve boyutunu seçip dökümana güvenle yerleştirin.'
+    title: 'PDF’e İmza Ekle | Ücretsiz ve Güvenli PDF İmzalama - EvrakFix',
+    description: 'PDF dosyanıza tarayıcınızda imza çizin, istediğiniz sayfaya ekleyin ve imzalı PDF olarak indirin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
   },
   {
     path: '/pdf-watermark',
     component: <PdfWatermarkPage />,
-    title: 'PDF Filigran Ekleme | PDF\'e Tarih, Metin ve Logo Ekle - EvrakFix',
-    description: 'PDF belgelerinizin tüm sayfalarına 45 derece eğik çapraz filigran metinleri basarak veya seçtiğiniz konuma tarih/onay metni yerleştirerek telifinizi koruyun.'
+    title: 'PDF Filigran Ekle | Ücretsiz ve Güvenli PDF Watermark - EvrakFix',
+    description: 'PDF dosyanıza cihazınızda güvenle filigran, tarih veya metin ekleyin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
   },
   {
     path: '/document-generator',
@@ -80,14 +80,14 @@ export const routes: Route[] = [
   {
     path: '/pdf-organizer',
     component: <PdfOrganizerPage />,
-    title: 'PDF Sayfa Düzenleyici | Sayfa Döndürme, Silme ve Sıralama - EvrakFix',
-    description: 'PDF dökümanlarınızın sayfalarını visual grid üzerinde görün, sayfaları silin, 90/180 derece döndürün, sıralarını yön butonlarıyla kolayca düzenleyin.'
+    title: 'PDF Sayfa Düzenleyici | PDF Sayfa Silme, Döndürme ve Sıralama - EvrakFix',
+    description: 'PDF sayfalarını cihazınızda güvenle silin, döndürün, sıralayın ve düzenlenmiş PDF olarak indirin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
   },
   {
     path: '/pdf-to-image',
     component: <PdfToImagePage />,
-    title: "PDF'i Görsele Çevir | PDF Sayfalarını PNG ve JPG Yapma - EvrakFix",
-    description: 'PDF dökümanınızın sayfalarını yüksek çözünürlüklü PNG veya JPG görsellerine dönüştürün, tek tek veya toplu olarak ZIP arşivi şeklinde güvenle indirin.'
+    title: 'PDF’i Görsele Çevir | PDF JPG ve PNG Dönüştürme - EvrakFix',
+    description: 'PDF sayfalarını cihazınızda güvenle JPG veya PNG görsel olarak indirin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
   },
   {
     path: '/image-compressor',

@@ -350,7 +350,31 @@ export const PdfOrganizerPage = () => {
 
       <ToolSEOInfo
         toolName="PDF Sayfa Düzenleyici"
-        description="PDF Sayfa Düzenleme modülümüz, PDF belgelerinizin sayfa yapısını görsel bir panel üzerinden dilediğiniz gibi şekillendirmenizi sağlar. Yüklediğiniz PDF dosyasının tüm sayfalarını küçük resim önizlemeleri (thumbnails) halinde görebilir, gereksiz sayfaları silebilir, sayfaları 90 derece açılarla döndürebilir` ve sayfaların sırasını sürüklemeye gerek kalmadan yön butonlarıyla değiştirebilirsiniz. Tamamen yerel çalışan (client-side) sistemimiz sayesinde gizli dosyalarınızın gizliliği tam güvence altındadır."
+        description="PDF Sayfa Düzenleme modülümüz, PDF belgelerinizin sayfa yapısını görsel bir panel üzerinden dilediğiniz gibi şekillendirmenizi sağlar. Yüklediğiniz PDF dosyasının tüm sayfalarını küçük resim önizlemeleri (thumbnails) halinde görebilir, gereksiz sayfaları silebilir, sayfaları 90 derece açılarla döndürebilir ve sayfaların sırasını yön butonlarıyla kolayca değiştirebilirsiniz.
+
+■ PDF sayfa düzenleyici nedir?
+PDF sayfa düzenleyici (PDF organizer), bir PDF belgesinin sayfalarını silme, yönünü döndürme, sırasını değiştirme veya yeniden organize etme işlemlerini gerçekleştiren pratik bir araçtır. EvrakFix, bu işlemleri tamamen cihazınızda yaparak belgelerinizi saniyeler içinde düzenlemenize olanak tanır.
+
+■ PDF sayfaları nasıl silinir?
+EvrakFix PDF Düzenleyici'ye belgenizi yükledikten sonra, görsel panelde silmek istediğiniz sayfanın üzerindeki 'Sil' butonuna tıklayarak o sayfayı işaretleyebilirsiniz. Yanlışlıkla sildiğiniz sayfaları 'Geri Al' seçeneği ile kurtarabilirsiniz. İşlem bittiğinde yeni PDF'inizi indirebilirsiniz.
+
+■ PDF sayfası nasıl döndürülür?
+Yanlış taranmış veya ters duran PDF sayfalarını düzeltmek için ilgili sayfa kartında bulunan 'Döndür' butonunu kullanabilirsiniz. Her tıklama sayfayı saat yönünde 90 derece döndürür. Dökümanı indirdiğinizde bu yön ayarı kalıcı olarak yeni PDF dosyasına kaydedilir.
+
+■ PDF sayfa sırası nasıl değiştirilir?
+Sürükle-bırak karmaşası olmadan, sayfa kartlarının altındaki sola ve sağa taşıma yön butonlarını kullanarak sayfaların sırasını dilediğiniz gibi değiştirebilirsiniz. Bu sayede sayfaları sırayla dizmek son derece kolay ve hatasız hale gelir.
+
+■ Hangi durumlarda PDF sayfa düzenleme kullanılır?
+Taramadan kaynaklı ters sayfaları düzeltmek, çok sayfalı raporlardaki boş sayfaları temizlemek, fatura veya ders notlarının sırasını düzenlemek ya da sadece belirli sayfaları ayırarak yeni bir belge oluşturmak için kullanılır.
+
+■ PDF sayfa düzenleme güvenli mi?
+Evet, %100 güvenlidir. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Yüklediğiniz PDF dökümanları internetteki hiçbir sunucuya yüklenmez, depolanmaz ve üçüncü şahıslarla paylaşılmaz. Tüm işlemler doğrudan tarayıcı belleğinizde (RAM) tamamlanır.
+
+■ Mobil cihazdan PDF sayfa düzenleme yapılabilir mi?
+Evet. EvrakFix, tüm modern mobil tarayıcılarla (iOS ve Android) tam uyumludur. Akıllı telefon veya tabletlerinizden ek bir uygulama indirmeden PDF sayfalarınızı kolayca silebilir, döndürebilir ve sıralayabilirsiniz.
+
+■ EvrakFix ile PDF sayfa düzenlemenin avantajları
+Üyelik gerektirmeyen, sınırsız ve tamamen ücretsiz hizmet sunar. Dosyalar sunucuya yüklenmediği için internet hızından bağımsız olarak anında sonuç alınır ve hassas dökümanlarınız tamamen cihazınızda güvende kalır."
         exampleUsage="Ters taranmış bir dökümandaki 3. ve 7. sayfaları 90 derece sağa döndürebilir, aradaki boş ve gereksiz sayfayı silebilir ve dökümanın sayfa sıralamasını yön butonlarıyla düzelterek kaydedebilirsiniz."
         steps={[
           {
@@ -368,16 +392,24 @@ export const PdfOrganizerPage = () => {
         ]}
         faqs={[
           {
-            question: "Bir sayfayı yanlışlıkla silersem geri getirebilir miyim?",
-            description: "Evet! Sayfa üzerinde yer alan 'Geri Al' butonuna veya üst menüdeki 'Silinenleri Kurtar' butonuna tıklayarak sildiğiniz sayfaları dilediğiniz zaman kurtarabilirsiniz."
+            question: "PDF dosyam sunucuya yükleniyor mu?",
+            description: "Hayır, tarayıcı tabanlı çalışır ve PDF dosyanız hiçbir sunucuya yüklenmez. Büyük boyutlu dosyaların işlenmesi tamamen cihazınızın donanım performansına (RAM ve işlemci) bağlıdır."
           },
           {
-            question: "Sayfa döndürme işlemi kalıcı mıdır?",
-            description: "Evet. Döndürdüğünüz sayfalar (90°, 180°, 270°), belgenin orijinal metadata katmanına işlenir ve dökümanı indirdiğinizde tüm PDF okuyucularda döndürülmüş haliyle görüntülenir."
+            question: "PDF sayfalarını silebilir miyim?",
+            description: "Evet. Yüklediğiniz belgedeki istemediğiniz sayfaları tek tek silebilirsiniz. Eğer yanlışlıkla silerseniz, 'Geri Al' butonuyla sayfayı kolayca geri getirebilirsiniz."
           },
           {
-            question: "Dosyalarım üzerinde yapılan işlemler sunucuya gönderilir mi?",
-            description: "Kesinlikle hayır. EvrakFix sunucusuz çalışan bağımsız bir frontend aracıdır. PDF yükleme, görsel önizleme oluşturma ve kopyalama işlemleri tarayıcınızın kendi bellek ortamında gerçekleştirilir."
+            question: "PDF sayfalarını döndürebilir miyim?",
+            description: "Evet. Ters taranmış sayfaları düzeltmek için 90, 180 veya 270 derece döndürme yapabilirsiniz. Bu yön değişiklikleri yeni PDF dosyasına kalıcı olarak işlenir."
+          },
+          {
+            question: "PDF sayfalarının sırasını değiştirebilir miyim?",
+            description: "Evet. Sayfa önizlemelerinin altında bulunan yön butonları sayesinde sayfaların sıralamasını kolayca değiştirebilir ve dilediğiniz sırada dizebilirsiniz."
+          },
+          {
+            question: "Düzenlenmiş PDF dosyasını hemen indirebilir miyim?",
+            description: "Evet. Düzenleme işlemini bitirip 'Düzenlenmiş PDF'i İndir' butonuna tıkladığınızda işlem saniyeler içinde tamamlanır ve indirme başlar. Büyük PDF dosyalarında işlem süresi cihazınızın performansına bağlı olarak değişebilir."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />

@@ -232,7 +232,28 @@ export const PdfMergePage = () => {
 
       <ToolSEOInfo
         toolName="PDF Birleştirme"
-        description="PDF Birleştirici aracımız, birden fazla PDF dökümanını tek bir belge haline getirmenizi kolaylaştırır. Resmi yazışmalar, e-kitaplar, faturalar veya ders notları gibi farklı PDF dosyalarını sıraya dizerek tek tıkla birleştirebilirsiniz. Tamamen yerel (client-side) çalışan bu araç sayesinde, hassas veriler içeren kişisel veya kurumsal PDF dosyalarınız hiçbir internet sunucusuna gönderilmez, gizliliğiniz %100 oranında korunur."
+        description="PDF Birleştirici aracımız, birden fazla PDF dökümanını tek bir belge haline getirmenizi kolaylaştırır. Resmi yazışmalar, e-kitaplar, faturalar veya ders notları gibi farklı PDF dosyalarını sıraya dizerek tek tıkla birleştirebilirsiniz. Tamamen yerel (client-side) çalışan bu araç sayesinde, hassas veriler içeren kişisel veya kurumsal PDF dosyalarınız hiçbir internet sunucusuna gönderilmez, gizliliğiniz %100 oranında korunur.
+
+■ PDF Birleştirme Nedir?
+PDF birleştirme, ayrı ayrı duran birden fazla PDF belgesinin (sayfa yapıları, yazı tipleri ve görsel kaliteleri korunarak) tek bir ardışık PDF dosyası halinde uç uca eklenmesi işlemidir.
+
+■ PDF Dosyaları Nasıl Birleştirilir?
+EvrakFix PDF Birleştirici'ye birleştirmek istediğiniz PDF belgelerini sürükleyip bırakın veya seçin. Yön tuşlarını kullanarak dosyaların sıralamasını dilediğiniz gibi ayarlayın. Ardından 'PDF'leri Birleştir' butonuna tıklayarak saniyeler içinde birleşik PDF dosyanızı indirin.
+
+■ Hangi Durumlarda PDF Birleştirme Kullanılır?
+İş başvurularında özgeçmiş, transkript ve sertifikaları tek döküman yapmak; mali belgeleri, faturaları veya sözleşme eklerini bir araya getirmek; ders notlarını veya e-kitap bölümlerini tek kitap haline getirmek gibi durumlarda sıklıkla kullanılır.
+
+■ PDF Birleştirme Güvenli mi?
+Evet. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Yüklediğiniz PDF dosyaları internetteki hiçbir uzak sunucuya aktarılmaz, kaydedilmez ve üçüncü taraflarla paylaşılmaz. Tüm süreç doğrudan sizin bilgisayarınızda veya telefonunuzda gerçekleştirilir.
+
+■ Birleştirilen PDF Dosyasının Sırası Değiştirilebilir mi?
+Evet. Dosyaları seçtikten sonra, listede yer alan yukarı ve aşağı taşı yön butonlarını kullanarak dökümanların birleşme sırasını işlem öncesinde dilediğiniz gibi serbestçe düzenleyebilirsiniz.
+
+■ Mobil Cihazdan PDF Birleştirme Yapılabilir mi?
+Evet, EvrakFix responsive mobil uyumlu tasarımı sayesinde Android veya iPhone/iPad cihazlarınızdan da ek uygulama indirmeden fotoğraflarınızı veya PDF belgelerinizi anında seçip birleştirebilirsiniz.
+
+■ EvrakFix ile PDF Birleştirmenin Avantajları
+EvrakFix ile üyelik, limit veya ücret olmadan tamamen ücretsiz PDF birleştirebilirsiniz. Sunucu yüklemesi olmadığı için internet hızınızdan bağımsız olarak anında sonuç alırsınız ve hassas belgeleriniz tamamen cihazınızda güvende kalır."
         exampleUsage="Üniversite veya iş başvurusu için hazırladığınız özgeçmiş, transkript ve sertifika PDF dosyalarını sırasıyla yükleyip tek bir döküman haline getirerek tek bir dosya şeklinde sisteme yükleyebilirsiniz."
         steps={[
           {
@@ -250,16 +271,24 @@ export const PdfMergePage = () => {
         ]}
         faqs={[
           {
-            question: "Bir kerede en fazla kaç PDF dökümanını birleştirebilirim?",
-            description: "Herhangi bir dosya sayısı sınırı yoktur. Tarayıcınızın işlemci ve bellek sınırları dahilinde dilediğiniz sayıda PDF dökümanını birleştirebilirsiniz."
+            question: "PDF dosyalarım sunucuya yükleniyor mu?",
+            description: "Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz dökümanlar hiçbir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde birleştirilir."
           },
           {
-            question: "Birleştirilen PDF dosyalarında sayfa kaybı veya çözünürlük bozulması olur mu?",
-            description: "Hayır. pdf-lib motoru ile sayfalar orijinal piksel kalitesiyle, yazı tipleri, vektör çizimleri ve tüm döküman detaylarıyla birebir kopyalanarak birleştirilir."
+            question: "Birden fazla PDF’i tek dosya yapabilir miyim?",
+            description: "Evet. Dilediğiniz sayıda PDF dosyasını aynı anda yükleyerek tek bir tuşla birleştirebilir ve tek bir PDF belgesi elde edebilirsiniz."
           },
           {
-            question: "Yüklediğim PDF dosyaları sisteminize kaydedilir mi veya başkası görebilir mi?",
-            description: "Kesinlikle hayır. EvrakFix sunucusuz çalışan (client-side) bir sistemdir. Dosyalarınız tamamen bilgisayarınızın veya telefonunuzun yerel belleğinde işlenir ve asla internete aktarılmaz."
+            question: "PDF sırasını değiştirebilir miyim?",
+            description: "Evet. Dosyalarınızı yükledikten sonra, liste üzerindeki yön oklarını kullanarak birleşmesini istediğiniz sıralamayı kolayca belirleyebilirsiniz."
+          },
+          {
+            question: "PDF birleştirme işlemi mobilde çalışır mı?",
+            description: "Evet. EvrakFix mobil tarayıcılarla %100 uyumludur. Akıllı telefon veya tabletinizden tarayıcınız üzerinden PDF'lerinizi anında birleştirebilirsiniz."
+          },
+          {
+            question: "Birleştirilen PDF dosyasını hemen indirebilir miyim?",
+            description: "Evet. PDF'leri Birleştir butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme butonu saniyeler içinde görünür."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />

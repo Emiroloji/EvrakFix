@@ -243,7 +243,28 @@ export const PdfSplitPage = () => {
 
       <ToolSEOInfo
         toolName="PDF Bölme ve Sayfa Ayıklama"
-        description="PDF Bölme aracımız, geniş sayfalı PDF belgelerinden ihtiyacınız olan sayfaları ayıklayarak yeni bir PDF dosyası üretmenizi sağlar. İster belirli bir sayfa aralığı (örn: 1-5), ister tekil sayfalar (örn: 3, 5, 9), isterseniz de tek/çift sayfa numaralarını hedefleyin; akıllı algoritmamız seçtiğiniz sayfaları dökümandan kusursuzca koparır. Tüm işlemler tarayıcınızda ve yerel belleğinizde gerçekleştiği için yüksek boyutlu gizli dosyalarınızın güvenliği tam koruma altındadır."
+        description="PDF Bölme aracımız, geniş sayfa sayısına sahip PDF belgelerinden ihtiyacınız olan sayfaları ayıklayarak yeni bir PDF dosyası üretmenizi sağlar.
+
+■ PDF Bölme Nedir?
+PDF bölme, tek bir büyük PDF dosyasının belirli sayfalarını veya sayfa aralıklarını seçerek, orijinal döküman kalitesini (yazı tipi, görsel çözünürlüğü ve mizanpaj) bozmadan yeni bir PDF dosyası halinde ayırma işlemidir.
+
+■ PDF Dosyasından Sayfa Ayırma Nasıl Yapılır?
+EvrakFix PDF Bölücü aracına ayırmak istediğiniz PDF dosyasını sürükleyip bırakın veya seçin. Ardından ayıklamak istediğiniz sayfa numaralarını veya sayfa aralıklarını girin. 'PDF'i Böl' butonuna tıklayarak saniyeler içinde yeni dökümanınızı indirin.
+
+■ Hangi Durumlarda PDF Bölme Kullanılır?
+Büyük e-kitaplardan veya ders notlarından sadece belirli bölümleri almak, çoklu fatura veya sözleşme içeren PDF'lerden tek bir sayfayı ayıklamak ya da büyük boyutlu tarama dosyalarından gereksiz sayfaları temizlemek için sıklıkla kullanılır.
+
+■ Sayfa Aralığı Seçerek PDF Ayırmak Mümkün mü?
+Evet. EvrakFix gelişmiş sayfa seçici motoru sayesinde '1-5', '8,12' veya '15-20' gibi virgülle ayrılmış özel sayfa aralıkları belirleyerek tek seferde karmaşık sayfaları kolayca ayıklayabilirsiniz.
+
+■ PDF Bölme İşlemi Güvenli mi?
+Evet, tamamen güvenlidir. EvrakFix sunucusuz (client-side) çalışır. Yüklediğiniz PDF dosyası hiçbir uzak internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcısında (RAM bellek) işlenir. Bu sayede gizli ve hassas belgeleriniz tamamen güvende kalır.
+
+■ Mobil Cihazdan PDF Bölme Yapılabilir mi?
+Evet. EvrakFix responsive mobil uyumlu yapısıyla Android, iPhone veya iPad cihazlarınızdan da ek uygulama kurmadan tarayıcınız aracılığıyla dilediğiniz PDF dökümanını anında bölebilmenizi sağlar.
+
+■ EvrakFix ile PDF Bölmenin Avantajları
+EvrakFix ile üyelik, limit veya hiçbir ücret olmadan tamamen ücretsiz PDF bölebilirsiniz. İşlemler yerel gerçekleştiği için internet hızınızdan bağımsız olarak anında tamamlanır ve verileriniz hiçbir zaman cihazınızdan dışarı çıkmaz."
         exampleUsage="100 sayfalık bir ders kitabından sadece sınavda sorumlu olduğunuz 15-25 arası sayfaları ayıklayıp, cihazınızda yer kaplamayan yeni ve küçük bir PDF belgesi elde edebilirsiniz."
         steps={[
           {
@@ -261,16 +282,24 @@ export const PdfSplitPage = () => {
         ]}
         faqs={[
           {
-            question: "Belirli sayfa aralıklarını (örn: 3-8, 12, 15-20) nasıl girebilirim?",
-            description: "Sayfa aralığı giriş alanına aralarına virgül koyarak yazabilirsiniz. Örneğin '3-8, 12, 15-20' yazarak 3 ile 8 arasındaki sayfaları, 12. sayfayı ve 15 ile 20 arasındaki sayfaları tek bir PDF halinde ayıklayabilirsiniz."
+            question: "PDF dosyam sunucuya yükleniyor mu?",
+            description: "Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz dökümanlar hiçbir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde bölünür."
           },
           {
-            question: "Bölünen PDF sayfalarının kalitesinde veya çözünürlüğünde azalma olur mu?",
-            description: "Kesinlikle hayır. Bu işlem, sayfaların yeniden çizilmesiyle değil, PDF döküman yapısının kayıpsız kopyalanmasıyla yapılır. Vektörel grafikler, yazılar ve resimler tam kalitesini korur."
+            question: "PDF içinden sadece belirli sayfaları ayırabilir miyim?",
+            description: "Evet. Dilediğiniz sayfa numarasını girerek veya aralık seçerek PDF dosyanızın içinden sadece ihtiyacınız olan sayfaları ayıklayıp yeni bir PDF olarak kaydedebilirsiniz."
           },
           {
-            question: "Yüklediğim belgeler internete sızar mı veya üçüncü şahıslar görebilir mi?",
-            description: "Hayır. EvrakFix tamamen client-side mimariyle kurulmuştur. Dökümanlarınız sunucuya yüklenmez, sunucumuz yoktur. İşlemler doğrudan kullandığınız bilgisayarın veya mobil cihazın işlemcisiyle yapılır."
+            question: "1-3 veya 1,3,5 gibi sayfa aralıkları kullanabilir miyim?",
+            description: "Evet. Sayfa seçici alanına '1-3' yazarak ilk 3 sayfayı veya '1,3,5' yazarak sadece 1., 3. ve 5. sayfaları ayıklayabilirsiniz. İkisini birleştirip '1-3, 5' şeklinde de kullanabilirsiniz."
+          },
+          {
+            question: "PDF bölme işlemi mobilde çalışır mı?",
+            description: "Evet. EvrakFix mobil tarayıcılarla %100 uyumludur. Akıllı telefon veya tabletinizden ek uygulama indirmeden PDF'lerinizi anında bölebilirsiniz."
+          },
+          {
+            question: "Bölünen PDF dosyasını hemen indirebilir miyim?",
+            description: "Evet. PDF'i Böl butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme butonu saniyeler içinde görünür."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />

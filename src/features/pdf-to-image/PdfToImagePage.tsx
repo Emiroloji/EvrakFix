@@ -316,7 +316,31 @@ export const PdfToImagePage = () => {
 
       <ToolSEOInfo
         toolName="PDF'i Görsele Çevir"
-        description="PDF'i Görsele Çevir aracımız; PDF belgelerinizdeki sayfaları yüksek kaliteli bağımsız resim dosyalarına (PNG veya JPG) dönüştürmenizi sağlar. İster belirli sayfaları tek tek seçin, isterseniz tüm sayfaları tek tıkla yüksek çözünürlüklü görsellere dönüştürerek ZIP arşivi halinde toplu indirin. Kalite (Düşük/Orta/Yüksek) ve çözünürlük ölçeklerini (1x, 2x, 3x) dilediğiniz gibi belirleyebilirsiniz. Tüm görselleştirme işlemleri tamamen tarayıcınızın render motoruyla yerel olarak gerçekleştirilir."
+        description="PDF'i Görsele Çevir aracımız; PDF belgelerinizdeki sayfaları yüksek kaliteli bağımsız resim dosyalarına (PNG veya JPG) dönüştürmenizi sağlar. İster belirli sayfaları tek tek seçin, isterseniz tüm sayfaları tek tıkla yüksek çözünürlüklü görsellere dönüştürerek ZIP arşivi halinde toplu indirin. Kalite (Düşük/Orta/Yüksek) ve çözünürlük ölçeklerini (1x, 2x, 3x) dilediğiniz gibi belirleyebilirsiniz. Tüm görselleştirme işlemleri tamamen tarayıcınızın render motoruyla yerel olarak gerçekleştirilir.
+
+■ PDF’i görsele çevirme nedir?
+PDF’i görsele çevirme, bir PDF belgesindeki sayfaların her birini bağımsız JPG, JPEG veya PNG resim formatına dönüştürme işlemidir. Bu sayede belgenin içeriğini resim dosyası olarak paylaşabilir, sunumlarınıza veya web sitelerinize doğrudan ekleyebilirsiniz.
+
+■ PDF sayfası JPG veya PNG olarak nasıl indirilir?
+EvrakFix PDF'i Görsele Çevir aracına belgenizi yükleyin. Sayfa listesindeki önizleme kartlarının altında yer alan çıktı formatını (PNG veya JPG) seçin. Tek bir sayfayı indirmek için o sayfanın üzerindeki 'Görsel Al' butonuna tıklayarak doğrudan resim olarak indirebilirsiniz.
+
+■ PDF içinden tek sayfa görsel olarak alınabilir mi?
+Evet. Tüm PDF belgesini dönüştürmek yerine, sadece ihtiyacınız olan sayfaları tek tek seçerek bağımsız birer görsel dosyası olarak bilgisayarınıza veya telefonunuza anında kaydedebilirsiniz.
+
+■ Birden fazla PDF sayfası görsel olarak indirilebilir mi?
+Evet. Dönüştürmek istediğiniz birden fazla sayfayı veya tüm dökümanı seçtikten sonra 'Seçili Sayfaları ZIP İndir' butonunu kullanarak tüm görselleri tek bir sıkıştırılmış ZIP arşivi halinde toplu olarak indirebilirsiniz.
+
+■ JPG ve PNG çıktı farkı nedir?
+PNG formatı kayıpsız sıkıştırma sunar; özellikle yazılar, logolar, tablolar ve şablonlar içeren dökümanlarda mükemmel netlik sağlar. JPG ise dosya boyutunu oldukça küçültür ve fotoğraflı, renkli veya taranmış dökümanlar için daha uygundur.
+
+■ PDF’i görsele çevirmek güvenli mi?
+Evet, tamamen güvenlidir. EvrakFix yerel (client-side) çalışmaktadır. Yüklediğiniz PDF belgesi hiçbir uzak internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde (RAM) işlenerek görsele dönüştürülür. Gizli verileriniz tamamen cihazınızda kalır.
+
+■ Mobil cihazdan PDF’i görsele çevirme yapılabilir mi?
+Evet. EvrakFix mobil uyumlu bir tasarıma sahiptir. iOS ve Android cihazlarınızın tarayıcıları üzerinden ek bir program indirmeden PDF belgelerinizi saniyeler içinde JPG veya PNG resim formatına çevirebilirsiniz.
+
+■ EvrakFix ile PDF’i görsele çevirmenin avantajları
+Üyelik ve sınır olmadan tamamen ücretsizdir. Sunucu yüklemesi olmadığı için işlemler anında tamamlanır, internet kotanızı harcamaz ve döküman güvenliğinizi en üst düzeyde (yerel cihazda) korur."
         exampleUsage="Sunumunuza eklemek istediğiniz 50 sayfalık bir rapor PDF'inin sadece 12. sayfasını yüksek kaliteli bir JPG resmi haline getirerek doğrudan sunum slaytınıza sürükleyebilirsiniz."
         steps={[
           {
@@ -334,16 +358,24 @@ export const PdfToImagePage = () => {
         ]}
         faqs={[
           {
-            question: "PNG ile JPG arasında ne fark vardır ve hangisini seçmeliyim?",
-            description: "PNG formatı kayıpsız sıkıştırma sunar; şablonlar, logolar veya metin ağırlıklı dökümanlar için mükemmel netlik sağlar. JPG ise dosya boyutunu küçültür ve fotoğraf içeren taranmış renkli dökümanlar için daha uygundur."
+            question: "PDF dosyam sunucuya yükleniyor mu?",
+            description: "Hayır, tarayıcı tabanlı çalışır ve PDF dosyanız hiçbir sunucuya yüklenmez. Çok sayfalı veya yüksek boyutlu PDF belgelerinde dönüştürme hızı cihazınızın işlemci ve bellek (RAM) performansına bağlıdır."
           },
           {
-            question: "Çözünürlük ölçeği (scale) ne anlama gelir?",
-            description: "Ölçeklendirme katsayısı, oluşturulacak görselin piksel çözünürlüğünü katlar. 1x standart çözünürlük sağlarken, 2x ve 3x ölçekler çok daha net, pikselleşmeyen, sunum veya baskıya uygun ultra yüksek çözünürlüklü görseller üretir."
+            question: "PDF sayfalarını JPG olarak indirebilir miyim?",
+            description: "Evet. Çıktı seçeneklerinden JPG formatını seçerek PDF sayfalarınızı yüksek veya standart kalitede JPG resimleri olarak cihazınıza kaydedebilirsiniz."
           },
           {
-            question: "Büyük PDF'lerde tarayıcının kilitlenme veya çökme riski var mıdır?",
-            description: "Hayır. EvrakFix bünyesindeki dönüşüm algoritması sayfaları paralel değil, ardışık (sıralı) işler. Bu akıllı bellek yönetimi (sequential processing) sayesinde bellek tepe değerleri kontrol altında tutulur ve yüksek boyutlu PDF'ler bile kilitlenme olmadan başarıyla tamamlanır."
+            question: "PDF sayfalarını PNG olarak indirebilir miyim?",
+            description: "Evet. Özellikle metinlerin, logoların ve çizgilerin net görünmesini istediğiniz dökümanlar için çıktı formatını PNG olarak belirleyip indirebilirsiniz."
+          },
+          {
+            question: "Sadece seçtiğim sayfaları görsele çevirebilir miyim?",
+            description: "Evet. Sayfa önizleme panelinden sadece dönüştürmek istediğiniz sayfaları seçebilir ve sadece bu sayfaları tek tek veya topluca ZIP halinde indirebilirsiniz."
+          },
+          {
+            question: "Görsel çıktı dosyalarını hemen indirebilir miyim?",
+            description: "Evet. Sayfaları dönüştür butonuna bastığınız anda işlemler tarayıcı hızında yerel olarak tamamlanır ve indirme saniyeler içinde başlar. Çok yüksek çözünürlüklü ve çok sayfalı işlemlerde cihazınızın performansına bağlı olarak birkaç saniye sürebilir."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />

@@ -28,44 +28,44 @@ const routeConfigs = [
   },
   {
     path: '/pdf-merge',
-    title: 'PDF Birleştirici | Ücretsiz & Güvenli Çoklu PDF Birleştirme - EvrakFix',
-    description: 'Birden fazla PDF dökümanını dilediğiniz sıraya dizin ve sunuculara yüklemeden, tarayıcınızda %100 güvenli ve hızlı şekilde tek bir PDF olarak birleştirin.',
+    title: 'PDF Birleştir | Ücretsiz ve Güvenli PDF Birleştirme - EvrakFix',
+    description: 'Birden fazla PDF dosyasını cihazınızda güvenle tek PDF haline getirin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
     sourceFile: 'src/features/pdf-merge/PdfMergePage.tsx'
   },
   {
     path: '/pdf-split',
-    title: 'PDF Bölücü | PDF Sayfalarını Ayırma ve Ayıklama Aracı - EvrakFix',
-    description: 'Büyük PDF dosyalarınızı belirlediğiniz sayfa aralıklarına göre (tek-çift sayfalar, özel aralıklar) tarayıcınızın hızıyla anında bölün ve indirin.',
+    title: 'PDF Böl | Ücretsiz ve Güvenli PDF Sayfa Ayırma - EvrakFix',
+    description: 'PDF dosyanızdan istediğiniz sayfaları veya sayfa aralıklarını cihazınızda güvenle ayırın. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
     sourceFile: 'src/features/pdf-split/PdfSplitPage.tsx'
   },
   {
     path: '/image-to-pdf',
-    title: 'Görseli PDF\'e Çevir | JPG, PNG ve WebP\'den PDF Yap - EvrakFix',
-    description: 'JPG, JPEG, PNG veya WebP formatındaki resimlerinizi sürükleyip bırakın, sıralayın, A4 veya orijinal boyutta yüksek kaliteli PDF belgelerine dönüştürün.',
+    title: 'Görseli PDF’e Çevir | JPG, PNG ve WebP PDF Yapma - EvrakFix',
+    description: 'JPG, PNG ve WebP görsellerinizi cihazınızda güvenle tek PDF dosyasına dönüştürün. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
     sourceFile: 'src/features/image-to-pdf/ImageToPdfPage.tsx'
   },
   {
     path: '/pdf-sign',
-    title: 'PDF İmzalama | PDF Belgelerine Islak İmza Ekleme - EvrakFix',
-    description: 'PDF belgelerininizin üzerine fare veya dokunmatik ekranla ıslak imzanızı çizin, imza konumunu ve boyutunu seçip dökümana güvenle yerleştirin.',
+    title: 'PDF’e İmza Ekle | Ücretsiz ve Güvenli PDF İmzalama - EvrakFix',
+    description: 'PDF dosyanıza tarayıcınızda imza çizin, istediğiniz sayfaya ekleyin ve imzalı PDF olarak indirin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
     sourceFile: 'src/features/pdf-sign/PdfSignPage.tsx'
   },
   {
     path: '/pdf-watermark',
-    title: 'PDF Filigran Ekleme | PDF\'e Tarih, Metin ve Logo Ekle - EvrakFix',
-    description: 'PDF belgelerinizin tüm sayfalarına 45 derece eğik çapraz filigran metinleri basarak veya seçtiğiniz konuma tarih/onay metni yerleştirerek telifinizi koruyun.',
+    title: 'PDF Filigran Ekle | Ücretsiz ve Güvenli PDF Watermark - EvrakFix',
+    description: 'PDF dosyanıza cihazınızda güvenle filigran, tarih veya metin ekleyin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
     sourceFile: 'src/features/pdf-tools/PdfWatermarkPage.tsx'
   },
   {
     path: '/pdf-organizer',
-    title: 'PDF Sayfa Düzenleyici | Sayfa Döndürme, Silme ve Sıralama - EvrakFix',
-    description: 'PDF dökümanlarınızın sayfalarını visual grid üzerinde görün, sayfaları silin, 90/180 derece döndürün, sıralarını yön butonlarıyla kolayca düzenleyin.',
+    title: 'PDF Sayfa Düzenleyici | PDF Sayfa Silme, Döndürme ve Sıralama - EvrakFix',
+    description: 'PDF sayfalarını cihazınızda güvenle silin, döndürün, sıralayın ve düzenlenmiş PDF olarak indirin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
     sourceFile: 'src/features/pdf-organizer/PdfOrganizerPage.tsx'
   },
   {
     path: '/pdf-to-image',
-    title: "PDF'i Görsele Çevir | PDF Sayfalarını PNG ve JPG Yapma - EvrakFix",
-    description: 'PDF dökümanınızın sayfalarını yüksek çözünürlüklü PNG veya JPG görsellerine dönüştürün, tek tek veya toplu olarak ZIP arşivi şeklinde güvenle indirin.',
+    title: 'PDF’i Görsele Çevir | PDF JPG ve PNG Dönüştürme - EvrakFix',
+    description: 'PDF sayfalarını cihazınızda güvenle JPG veya PNG görsel olarak indirin. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
     sourceFile: 'src/features/pdf-to-image/PdfToImagePage.tsx'
   },
   {
@@ -86,29 +86,76 @@ const routeConfigs = [
 const fallbackData = {
   '/pdf-merge': {
     toolName: 'PDF Birleştirme',
-    description: 'PDF Birleştirici aracımız, birden fazla PDF dökümanını tek bir belge haline getirmenizi kolaylaştırır. Farklı PDF dosyalarını sıraya dizerek tek tıkla birleştirebilirsiniz. Tamamen yerel çalışan bu araç sayesinde dosyalarınız internet sunucusuna gönderilmez, gizliliğiniz %100 korunur.',
+    description: `PDF Birleştirici aracımız, birden fazla PDF dökümanını tek bir belge haline getirmenizi kolaylaştırır. Resmi yazışmalar, e-kitaplar, faturalar veya ders notları gibi farklı PDF dosyalarını sıraya dizerek tek tıkla birleştirebilirsiniz. Tamamen yerel (client-side) çalışan bu araç sayesinde, hassas veriler içeren kişisel veya kurumsal PDF dosyalarınız hiçbir internet sunucusuna gönderilmez, gizliliğiniz %100 oranında korunur.
+
+■ PDF Birleştirme Nedir?
+PDF birleştirme, ayrı ayrı duran birden fazla PDF belgesinin (sayfa yapıları, yazı tipleri ve görsel kaliteleri korunarak) tek bir ardışık PDF dosyası halinde uç uca eklenmesi işlemidir.
+
+■ PDF Dosyaları Nasıl Birleştirilir?
+EvrakFix PDF Birleştirici'ye birleştirmek istediğiniz PDF belgelerini sürükleyip bırakın veya seçin. Yön tuşlarını kullanarak dosyaların sıralamasını dilediğiniz gibi ayarlayın. Ardından 'PDF'leri Birleştir' butonuna tıklayarak saniyeler içinde birleşik PDF dosyanızı indirin.
+
+■ Hangi Durumlarda PDF Birleştirme Kullanılır?
+İş başvurularında özgeçmiş, transkript ve sertifikaları tek döküman yapmak; mali belgeleri, faturaları veya sözleşme eklerini bir araya getirmek; ders notlarını veya e-kitap bölümlerini tek kitap haline getirmek gibi durumlarda sıklıkla kullanılır.
+
+■ PDF Birleştirme Güvenli mi?
+Evet. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Yüklediğiniz PDF dosyaları internetteki hiçbir uzak sunucuya aktarılmaz, kaydedilmez ve üçüncü taraflarla paylaşılmaz. Tüm süreç doğrudan sizin bilgisayarınızda veya telefonunuzda gerçekleştirilir.
+
+■ Birleştirilen PDF Dosyasının Sırası Değiştirilebilir mi?
+Evet. Dosyaları seçtikten sonra, listede yer alan yukarı ve aşağı taşı yön butonlarını kullanarak dökümanların birleşme sırasını işlem öncesinde dilediğiniz gibi serbestçe düzenleyebilirsiniz.
+
+■ Mobil Cihazdan PDF Birleştirme Yapılabilir mi?
+Evet, EvrakFix responsive mobil uyumlu tasarımı sayesinde Android veya iPhone/iPad cihazlarınızdan da ek uygulama indirmeden fotoğraflarınızı veya PDF belgelerinizi anında seçip birleştirebilirsiniz.
+
+■ EvrakFix ile PDF Birleştirmenin Avantajları
+EvrakFix ile üyelik, limit veya ücret olmadan tamamen ücretsiz PDF birleştirebilirsiniz. Sunucu yüklemesi olmadığı için internet hızınızdan bağımsız olarak anında sonuç alırsınız ve hassas belgeleriniz tamamen cihazınızda güvende kalır.`,
     steps: [
-      { title: 'Dosyalarınızı Seçin', description: 'PDF Birleştirme aracımıza sürükleyip bırakarak veya cihazınızdan seçerek PDF dosyalarını ekleyin.' },
-      { title: 'Sıralamayı Düzenleyin', description: 'Taşı yön butonlarını kullanarak dökümanların birleşme sırasını dilediğiniz gibi süratle düzenleyin.' },
-      { title: 'Birleştirip İndirin', description: 'PDF\'leri Birleştir butonuna tıklayın, dökümanlarınız saniyeler içinde tarayıcınızda birleştirilip indirmeye hazır hale gelsin.' }
+      { title: 'Dosyalarınızı Seçin', description: 'PDF Birleştirme aracımıza sürükleyip bırakarak veya cihazınızdan seçerek dilediğiniz kadar PDF dosyası ekleyin.' },
+      { title: 'Sıralamayı Düzenleyin', description: 'Yukarı ve Aşağı Taşı yön butonlarını kullanarak dökümanların birleşme sırasını dilediğiniz gibi süratle düzenleyin.' },
+      { title: 'Birleştirip İndirin', description: '\'PDF\'leri Birleştir\' butonuna tıklayın, dökümanlarınız saniyeler içinde tarayıcınızda birleştirilip indirmeye hazır hale gelsin.' }
     ],
     faqs: [
-      { question: 'Bir kerede en fazla kaç PDF birleştirebilirim?', answer: 'Herhangi bir dosya sayısı sınırı yoktur. Tarayıcınızın işlemci ve bellek sınırları dahilinde dilediğiniz sayıda PDF dökümanını birleştirebilirsiniz.' },
-      { question: 'Birleştirilen PDF dosyalarında çözünürlük bozulması olur mu?', answer: 'Hayır. Sayfalar orijinal piksel kalitesiyle, yazı tipleri, vektör çizimleri ve tüm döküman detaylarıyla birebir kopyalanarak birleştirilir.' },
-      { question: 'Yüklediğim PDF dosyaları sisteminize kaydedilir mi?', answer: 'Kesinlikle hayır. EvrakFix sunucusuz çalışan bir sistemdir. Dosyalarınız tamamen bilgisayarınızın veya telefonunuzun yerel belleğinde işlenir ve asla internete aktarılmaz.' }
+      { question: 'PDF dosyalarım sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz dökümanlar hiçbir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde birleştirilir.' },
+      { question: 'Birden fazla PDF’i tek dosya yapabilir miyim?', answer: 'Evet. Dilediğiniz sayıda PDF dosyasını aynı anda yükleyerek tek bir tuşla birleştirebilir ve tek bir PDF belgesi elde edebilirsiniz.' },
+      { question: 'PDF sırasını değiştirebilir miyim?', answer: 'Evet. Dosyalarınızı yükledikten sonra, liste üzerindeki yön oklarını kullanarak birleşmesini istediğiniz sıralamayı kolayca belirleyebilirsiniz.' },
+      { question: 'PDF birleştirme işlemi mobilde çalışır mı?', answer: 'Evet. EvrakFix mobil tarayıcılarla %100 uyumludur. Akıllı telefon veya tabletinizden tarayıcınız üzerinden PDF\'lerinizi anında birleştirebilirsiniz.' },
+      { question: 'Birleştirilen PDF dosyasını hemen indirebilir miyim?', answer: 'Evet. PDF\'leri Birleştir butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme butonu saniyeler içinde görünür.' }
     ]
   },
   '/pdf-split': {
     toolName: 'PDF Bölme ve Sayfa Ayıklama',
-    description: 'PDF Bölme aracımız, geniş sayfalı PDF belgelerinden ihtiyacınız olan sayfaları ayıklayarak yeni bir PDF dosyası üretmenizi sağlar. İster belirli bir sayfa aralığı, ister tekil sayfalar, isterseniz de tek/çift sayfa numaralarını hedefleyin; sayfaları dökümandan kusursuzca koparır.',
+    description: `PDF Bölme aracımız, geniş sayfa sayısına sahip PDF belgelerinden ihtiyacınız olan sayfaları ayıklayarak yeni bir PDF dosyası üretmenizi sağlar.
+
+■ PDF Bölme Nedir?
+PDF bölme, tek bir büyük PDF dosyasının belirli sayfalarını veya sayfa aralıklarını seçerek, orijinal döküman kalitesini (yazı tipi, görsel çözünürlüğü ve mizanpaj) bozmadan yeni bir PDF dosyası halinde ayırma işlemidir.
+
+■ PDF Dosyasından Sayfa Ayırma Nasıl Yapılır?
+EvrakFix PDF Bölücü aracına ayırmak istediğiniz PDF dosyasını sürükleyip bırakın veya seçin. Ardından ayıklamak istediğiniz sayfa numaralarını veya sayfa aralıklarını girin. 'PDF'i Böl' butonuna tıklayarak saniyeler içinde yeni dökümanınızı indirin.
+
+■ Hangi Durumlarda PDF Bölme Kullanılır?
+Büyük e-kitaplardan veya ders notlarından sadece belirli bölümleri almak, çoklu fatura veya sözleşme içeren PDF'lerden tek bir sayfayı ayıklamak ya da büyük boyutlu tarama dosyalarından gereksiz sayfaları temizlemek için sıklıkla kullanılır.
+
+■ Sayfa Aralığı Seçerek PDF Ayırmak Mümkün mü?
+Evet. EvrakFix gelişmiş sayfa seçici motoru sayesinde '1-5', '8,12' veya '15-20' gibi virgülle ayrılmış özel sayfa aralıkları belirleyerek tek seferde karmaşık sayfaları kolayca ayıklayabilirsiniz.
+
+■ PDF Bölme İşlemi Güvenli mi?
+Evet, tamamen güvenlidir. EvrakFix sunucusuz (client-side) çalışır. Yüklediğiniz PDF dosyası hiçbir uzak internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcısında (RAM bellek) işlenir. Bu sayede gizli ve hassas belgeleriniz tamamen güvende kalır.
+
+■ Mobil Cihazdan PDF Bölme Yapılabilir mi?
+Evet. EvrakFix responsive mobil uyumlu yapısıyla Android, iPhone veya iPad cihazlarınızdan da ek uygulama kurmadan tarayıcınız aracılığıyla dilediğiniz PDF dökümanını anında bölebilmenizi sağlar.
+
+■ EvrakFix ile PDF Bölmenin Avantajları
+EvrakFix ile üyelik, limit veya hiçbir ücret olmadan tamamen ücretsiz PDF bölebilirsiniz. İşlemler yerel gerçekleştiği için internet hızınızdan bağımsız olarak anında tamamlanır ve verileriniz hiçbir zaman cihazınızdan dışarı çıkmaz.`,
     steps: [
       { title: 'PDF Belgenizi Yükleyin', description: 'Bölmek istediğiniz PDF dökümanını sürükleyip bırakarak veya cihazınızdan seçerek sisteme güvenle yükleyin.' },
       { title: 'Sayfa Seçimini Yapın', description: 'Dilediğiniz sayfa aralığını yazın veya Tek Sayfalar, Çift Sayfalar gibi hızlı preset tuşlarını kullanarak sayfaları belirleyin.' },
       { title: 'Bölün ve İndirin', description: 'PDF\'i Böl butonuna tıklayarak seçtiğiniz sayfalardan oluşan yeni PDF belgesini tarayıcı hızında anında indirin.' }
     ],
     faqs: [
-      { question: 'Belirli sayfa aralıklarını nasıl girebilirim?', answer: 'Sayfa aralığı giriş alanına aralarına virgül koyarak yazabilirsiniz. Örneğin "3-8, 12, 15-20" yazarak 3 ile 8 arasındaki sayfaları, 12. sayfayı ve 15 ile 20 arasındaki sayfaları tek bir PDF halinde ayıklayabilirsiniz.' },
-      { question: 'Bölünen PDF sayfalarının kalitesinde veya çözünürlüğünde azalma olur mu?', answer: 'Kesinlikle hayır. Bu işlem, sayfaların yeniden çizilmesiyle değil, PDF döküman yapısının kayıpsız kopyalanmasıyla yapılır. Vektörel grafikler, yazılar ve resimler tam kalitesini korur.' }
+      { question: 'PDF dosyam sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz dökümanlar hiçbir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde bölünür.' },
+      { question: 'PDF içinden sadece belirli sayfaları ayırabilir miyim?', answer: 'Evet. Dilediğiniz sayfa numarasını girerek veya aralık seçerek PDF dosyanızın içinden sadece ihtiyacınız olan sayfaları ayıklayıp yeni bir PDF olarak kaydedebilirsiniz.' },
+      { question: '1-3 veya 1,3,5 gibi sayfa aralıkları kullanabilir miyim?', answer: 'Evet. Sayfa seçici alanına \'1-3\' yazarak ilk 3 sayfayı veya \'1,3,5\' yazarak sadece 1., 3. ve 5. sayfaları ayıklayabilirsiniz. İkisini birleştirip \'1-3, 5\' şeklinde de kullanabilirsiniz.' },
+      { question: 'PDF bölme işlemi mobilde çalışır mı?', answer: 'Evet. EvrakFix mobil tarayıcılarla %100 uyumludur. Akıllı telefon veya tabletinizden ek uygulama indirmeden PDF\'lerinizi anında bölebilirsiniz.' },
+      { question: 'Bölünen PDF dosyasını hemen indirebilir miyim?', answer: 'Evet. PDF\'i Böl butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme butonu saniyeler içinde görünür.' }
     ]
   },
   '/image-compressor': {
@@ -184,6 +231,206 @@ EvrakFix ile üyelik veya ücret ödemeden hızlıca dilekçe oluşturabilirsini
       { question: 'İstifa dilekçesi ve iade talep dilekçesi oluşturabilir miyim?', answer: 'Evet. Sistemimizde hazır bulunan İstifa Dilekçesi, İade Talebi, İzin Dilekçesi, Şikayet Dilekçesi gibi hazır şablonları kullanarak kendinize uygun resmi yazıları kolayca oluşturabilirsiniz.' },
       { question: 'Dilekçe şablonlarını düzenleyebilir miyim?', answer: 'Evet. Form alanlarındaki bilgileri istediğiniz zaman değiştirebilirsiniz. Sağ taraftaki canlı önizleme alanında yaptığınız tüm değişiklikler anında güncellenmektedir.' }
     ]
+  },
+  '/image-to-pdf': {
+    toolName: 'Görseli PDF’e Çevir',
+    description: `Görseli PDF'e Çevir aracımız; elinizdeki makbuz, ders notları, kimlik fotokopileri veya taranmış evrak görsellerini hızlıca resmi PDF belgelerine dönüştürmenizi sağlar.
+
+■ Görseli PDF’e Çevirme Nedir?
+Görseli PDF'e çevirme; JPG, PNG veya WebP formatındaki resimlerin, döküman standartlarına uygun biçimde pikselleri korunarak PDF sayfaları haline getirilmesi ve tek veya çok sayfalı bir döküman olarak kaydedilmesidir.
+
+■ JPG ve PNG Dosyaları PDF’e Nasıl Çevrilir?
+EvrakFix Görseli PDF'e Çevir aracına resimlerinizi sürükleyip bırakın veya cihazınızdan seçin. Kenar boşluğu ve sayfa yönünü isteğinize göre yapılandırdıktan sonra 'PDF Oluştur' butonuna tıklayarak saniyeler içinde çıktıyı indirebilirsiniz.
+
+■ Birden fazla görsel tek PDF yapılabilir mi?
+Evet. İstediğiniz kadar görsel dosyasını tek seferde yükleyerek hepsinin sırayla birer sayfa halinde yer aldığı tek bir birleşik PDF belgesi oluşturabilirsiniz.
+
+■ Görsellerin sırası değiştirilebilir mi?
+Evet. Görselleri yükledikten sonra, liste üzerinde yer alan yukarı ve aşağı taşıma butonlarını kullanarak görsellerin PDF belgesindeki sayfa sırasını kolayca düzenleyebilirsiniz.
+
+■ A4 ve Orijinal Boyut Farkı Nedir?
+A4 seçeneği, görselleri standart A4 kağıt boyutuna (sığacak şekilde) boyutlandırıp hizalar. Orijinal Boyut seçeneği ise her görselin kendi piksel çözünürlüğündeki en ve boy oranını koruyarak sayfa sınırlarını görselin kendisine göre ayarlar.
+
+■ Görseli PDF’e Çevirmek Güvenli mi?
+Evet. EvrakFix yerel (client-side) teknoloji kullanır. Yüklediğiniz görseller uzak bir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcısında işlenir. Gizli veya kişisel belgelerinizin güvenliği tamamen sizin kontrolünüzdedir.
+
+■ Mobil Cihazdan Görsel PDF Yapma Mümkün mü?
+Evet. EvrakFix mobil tarayıcılarla tam uyumludur. Akıllı telefon veya tabletinizin kamerasıyla çektiğiniz evrak fotoğraflarını ek bir uygulama yüklemeden anında seçip PDF belgesine dönüştürebilirsiniz.
+
+■ EvrakFix ile Görseli PDF’e Çevirmenin Avantajları
+EvrakFix tamamen ücretsizdir, üyelik veya kullanım limiti yoktur. Dosyalar yerel işlendiği için internete yükleme bekleme süresi yoktur ve gizliliğiniz %100 güvence altındadır.`,
+    steps: [
+      { title: 'Görsellerinizi Yükleyin', description: 'PDF\'e dönüştürmek istediğiniz JPG, JPEG, PNG veya WebP resimlerinizi sürükleyip bırakın veya cihazınızdan seçin.' },
+      { title: 'Sayfa Düzenini Ayarlayın', description: 'PDF sayfa boyutunu (A4 veya orijinal boyutta), dikey/yatay yönü ve kenar payı genişliklerini dilediğiniz gibi seçin.' },
+      { title: 'PDF Yapın ve İndirin', description: 'Dosya sıralamasını yön butonlarıyla netleştirip \'PDF Oluştur\' butonuna tıklayarak tek tıkla resmi PDF belgenizi indirin.' }
+    ],
+    faqs: [
+      { question: 'Görsellerim sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Görselleriniz hiçbir sunucuya yüklenmez, doğrudan cihazınızın tarayıcı belleğinde işlenir.' },
+      { question: 'JPG, PNG ve WebP dosyalarını PDF’e çevirebilir miyim?', answer: 'Evet. JPG, JPEG, PNG ve WebP formatındaki tüm popüler resim dosyalarını sorunsuz bir şekilde PDF formatına dönüştürebilirsiniz.' },
+      { question: 'Birden fazla görseli tek PDF yapabilir miyim?', answer: 'Evet. Dilediğiniz sayıda görseli yükleyerek bunları sıralı sayfalar halinde tek bir PDF dökümanı haline getirebilirsiniz.' },
+      { question: 'Görsel sırasını değiştirebilir miyim?', answer: 'Evet. Görselleri yükledikten sonra liste üzerindeki ok butonlarını kullanarak sayfaların sıralamasını dilediğiniz gibi düzenleyebilirsiniz.' },
+      { question: 'PDF çıktısını hemen indirebilir miyim?', answer: 'Evet. \'PDF Oluştur\' butonuna bastıktan sonra dönüştürme işlemi tarayıcı hızında yerel olarak gerçekleşir. Çok sayıda veya yüksek çözünürlüklü görsellerde işlem süresi cihazınızın donanım performansına bağlı olarak birkaç saniye sürebilir ve tamamlandığında indirme butonu görünür.' }
+    ]
+  },
+  '/pdf-sign': {
+    toolName: 'PDF Belge İmzalama',
+    description: `PDF İmzalama aracımız; sözleşmeler, teklifler, dilekçeler ve onay formları gibi resmi veya özel belgelerinizi tarayıcı ortamında kolayca imzalamanızı sağlar.
+
+■ PDF’e İmza Ekleme Nedir?
+PDF'e imza ekleme, dijital ortamdaki bir PDF belgesinin üzerine, belgenin içeriğini ve orijinal mizanpajını bozmadan, çizilen veya yüklenen bir imza görselinin eklenmesi işlemidir.
+
+■ PDF Dosyasına İmza Nasıl Edinir?
+EvrakFix PDF İmzalama aracına belgenizi yükleyin. Çizim alanını kullanarak imzanızı çizin ve kaydedin. İmzanın yer alacağı sayfa numarasını, konumunu ve boyutunu seçip 'Belgeyi İmzala' butonuna tıklayarak işlemi tamamlayın.
+
+■ Tarayıcıda İmza Çizmek Güvenli mi?
+Evet. EvrakFix tamamen yerel (client-side) çalıştığı için son derece güvenlidir. Çizdiğiniz imza görseli veya yüklediğiniz PDF belgesi hiçbir uzak sunucuya yüklenmez. Tüm süreç tarayıcınızın geçici belleğinde gerçekleşir.
+
+■ Hangi Durumlarda PDF İmzalama Kullanılır?
+Uzaktan iş sözleşmeleri, teklif onay formları, dilekçeler, teslim tutanakları, okul ve izin belgeleri gibi çıktı alıp fiziksel imza atmanın zahmetli olduğu tüm durumlarda pratik bir çözüm olarak kullanılır.
+
+■ İmza Konumu ve Boyutu Ayarlanabilir mi?
+Evet. İmzanın yer alacağı sayfa numarasını serbestçe belirleyebilir; Sol Alt, Orta Alt veya Sağ Alt gibi popüler hizalama konumları ile Küçük, Orta veya Büyük boyut seçeneklerinden birini tercih edebilirsiniz.
+
+■ Mobil Cihazdan PDF’e İmza Eklenebilir mi?
+Evet. EvrakFix responsive mobil uyumludur. Akıllı telefon veya tabletleriniz üzerinden dokunmatik ekran hassasiyeti sayesinde parmağınızla veya stylus kalemle son derece pürüzsüz ve gerçekçi ıslak imzalar oluşturabilirsiniz.
+
+■ EvrakFix ile PDF’e İmza Ekleyenin Avantajları
+Ücretsiz, limitsiz ve üyelik gerektirmeyen yapısıyla saniyeler içinde imzalama yapabilirsiniz. Sunucu yüklemesi olmadığı için işlemler anında tamamlanır ve verileriniz tamamen cihazınızda güvende kalır.
+
+■ PDF’e Eklenen İmza Hukuki Geçerlilik Sağlar mı?
+EvrakFix ile PDF belgesine eklenen imza görsel niteliktedir. Nitelikli elektronik imza (e-imza) veya mobil imza statüsünde değildir. Bu nedenle resmi makamlarca nitelikli e-imza şartı koşulan yasal işlemlerde resmi bir geçerliliği olmayabilir; basit sözleşmeler ve kurum içi onaylar için taslak niteliğindedir.`,
+    steps: [
+      { title: 'Belgenizi Yükleyin', description: 'İmzalamak istediğiniz resmi veya özel PDF dökümanını sürükleyip bırakarak veya cihazınızdan seçerek sisteme yükleyin.' },
+      { title: 'İmzanızı Çizin', description: 'Çizim alanına farenizle veya dokunmatik ekranlı mobil cihazınızda parmağınızla imzanızı atın ve \'İmza Olarak Kaydet\' butonuna tıklayarak bu imzayı kaydedin.' },
+      { title: 'Konumu Seçip İndirin', description: 'İmzanın uygulanacağı sayfa numarasını, konum açısını (Sol Alt, Orta Alt, Sağ Alt) ve boyutunu seçip \'Belgeyi İmzala\' diyerek indirin.' }
+    ],
+    faqs: [
+      { question: 'PDF dosyam sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz PDF dökümanları ve çizdiğiniz imza verileri hiçbir internet sunucusuna aktarılmaz, doğrudan tarayıcınızın geçici belleğinde işlenir.' },
+      { question: 'İmzayı tarayıcıda çizebilir miyim?', answer: 'Evet. İmza çizim alanını kullanarak farenizle veya dokunmatik ekranlı cihazlarda parmağınızla/kaleminizle kolayca ıslak imza çizerek dökümana ekleyebilirsiniz.' },
+      { question: 'İmzayı istediğim sayfaya ekleyebilir miyim?', answer: 'Evet. Seçenekler bölümünden imzanın yer almasını istediğiniz sayfa numarasını belirleyebilir ve o sayfadaki konumu (Sol Alt, Orta Alt, Sağ Alt) seçebilirsiniz.' },
+      { question: 'PDF’e eklenen imza resmi elektronik imza yerine geçer mi?', answer: 'Bu araç, PDF üzerine görsel imza eklemek için hazırlanmıştır. Nitelikli elektronik imza veya resmi e-imza yerine geçmez. Resmi işlemler için ilgili kurumun imza şartlarını kontrol etmeniz önerilir.' },
+      { question: 'İmzalı PDF dosyasını hemen indirebilir miyim?', answer: 'Evet. Belgeyi İmzala butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme butonu saniyeler içinde görünür.' }
+    ]
+  },
+  '/pdf-watermark': {
+    toolName: 'PDF Filigran ve Metin Ekleme',
+    description: `PDF Filigran aracımız, telif haklarınızı korumak ve belgelerinize kurumsal kimlik kazandırmak için ideal bir çözümdür.
+
+■ PDF Filigran Ekleme Nedir?
+PDF filigran ekleme, bir PDF dökümanının sayfalarının üzerine, içeriğin kopyalanmasını veya izinsiz kullanımını önlemek amacıyla yarı saydam bir metin, logo veya işaretin (watermark) basılması işlemidir.
+
+■ PDF Dosyasına Filigran Nasıl Eklenir?
+EvrakFix PDF Filigran Ekleme aracına belgenizi yükleyin. Metin kutusuna filigran yapmak istediğiniz kelimeyi girin. Opaklık ve boyut ayarlarını yaptıktan sonra 'Filigran Ekle' butonuna tıklayarak saniyeler içinde yeni belgenizi indirin.
+
+■ PDF Üzerine Tarih veya Metin Eklenebilir mi?
+Evet. Aracımızda bulunan 'Tarih / Metin Ekle' modunu kullanarak belgenizin ilk sayfasının istediğiniz köşesine günün tarihini, ad-soyad bilgisini veya 'ONAYLANDI' gibi özel durum kaşelerini kolayca ekleyebilirsiniz.
+
+■ Hangi Durumlarda PDF Filigran Kullanılır?
+Gizli şirket yazışmalarında, teklif taslaklarında, fatura kopyalarında, ders notlarında, telif hakkı korunan dokümanlarda veya 'KOPYADIR', 'TASLAK' gibi durum bildirimlerinin gerektiği tüm senaryolarda kullanılır.
+
+■ Filigran Metni ve Opaklık Ayarlanabilir mi?
+Evet. Yazacağınız filigranın opaklığını (şeffaflığını) oransal olarak ayarlayabilirsiniz. Bu sayede belgenin altındaki metinlerin ve resimlerin okunurluğunu bozmayacak en ideal şeffaflık derecesini (örneğin %20) kolayca belirleyebilirsiniz.
+
+■ PDF Filigran Ekleme Güvenli mi?
+Evet. EvrakFix yerel (client-side) teknolojiyle çalışır. Yüklediğiniz PDF dosyaları internetteki hiçbir sunucuya yüklenmez, depolanmaz ve üçüncü şahıslarla paylaşılmaz. Süreç tamamen cihazınızda (tarayıcı RAM belleğinde) sonlanır.
+
+■ Mobil Cihazdan PDF Filigran Eklenebilir mi?
+Evet. EvrakFix mobil uyumlu tasarıma sahiptir. Android, iPhone veya iPad cihazlarınızın tarayıcısı üzerinden ek bir uygulama indirme gereksinimi olmadan PDF belgelerinize anında filigran basabilirsiniz.
+
+■ EvrakFix ile PDF Filigran Eklemenin Avantajları
+EvrakFix ile üyelik, limit veya hiçbir ücret ödemeden tamamen ücretsiz filigran ekleyebilirsiniz. İşlemler sunucusuz yapıldığı için internet hızınızdan bağımsız olarak anında sonuçlanır ve döküman güvenliğiniz en üst düzeyde korunur.`,
+    steps: [
+      { title: 'PDF Dökümanını Yükleyin', description: 'Filigran basmak veya tarih/metin eklemek istediğiniz PDF dökümanını sürükleyip bırakarak sisteme yükleyin.' },
+      { title: 'Filigran / Metin Ayarlarını Girin', description: 'İster tüm sayfalara \'KOPYA\' veya \'TASLAK\' gibi çapraz filigranlar yazın, ister tek bir köşeye özel tarih ve metin ekleyin.' },
+      { title: 'Filigranı Basıp İndirin', description: 'Filigran opaklığı (saydamlığı) ve metin boyutunu belirledikten sonra \'Filigran Ekle\' diyerek anında yeni PDF dosyanızı indirin.' }
+    ],
+    faqs: [
+      { question: 'PDF dosyam sunucuya yükleniyor mu?', answer: 'Hayır, tarayıcı tabanlı çalışır ve PDF dosyanız hiçbir sunucuya yüklenmez.' },
+      { question: 'PDF üzerine filigran metni ekleyebilir miyim?', answer: 'Evet. \'Çapraz Filigran Ekle\' modunu kullanarak belgenizin tüm sayfalarına 45 derece eğimle otomatik olarak filigran metni ekleyebilirsiniz.' },
+      { question: 'Filigranın opaklığını ayarlayabilir miyim?', answer: 'Evet. Filigranın saydamlık derecesini (opaklığını) dilediğiniz gibi ayarlayarak alttaki döküman metinlerinin okunurluğunu engellemeyecek şekilde ayarlayabilirsiniz.' },
+      { question: 'PDF’e tarih veya kısa metin ekleyebilir miyim?', answer: 'Evet. \'Tarih / Metin Ekle\' moduna geçerek dökümanın ilk sayfasında dilediğiniz köşeye bugünün tarihini veya kısa bir onay metnini kolayca basabilirsiniz.' },
+      { question: 'Filigranlı PDF dosyasını hemen indirebilir miyim?', answer: 'Evet. \'Filigran Ekle\' butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme butonu görünür. Çok sayfalı veya yüksek boyutlu PDF dosyalarında işlem süresi cihazınızın donanım performansına bağlı olarak birkaç saniye sürebilir.' }
+    ]
+  },
+  '/pdf-organizer': {
+    toolName: 'PDF Sayfa Düzenleyici',
+    description: `PDF Sayfa Düzenleme modülümüz, PDF belgelerinizin sayfa yapısını görsel bir panel üzerinden dilediğiniz gibi şekillendirmenizi sağlar. Yüklediğiniz PDF dosyasının tüm sayfalarını küçük resim önizlemeleri (thumbnails) halinde görebilir, gereksiz sayfaları silebilir, sayfaları 90 derece açılarla döndürebilir ve sayfaların sırasını yön butonlarıyla kolayca değiştirebilirsiniz.
+
+■ PDF sayfa düzenleyici nedir?
+PDF sayfa düzenleyici (PDF organizer), bir PDF belgesinin sayfalarını silme, yönünü döndürme, sırasını değiştirme veya yeniden organize etme işlemlerini gerçekleştiren pratik bir araçtır. EvrakFix, bu işlemleri tamamen cihazınızda yaparak belgelerinizi saniyeler içinde düzenlemenize olanak tanır.
+
+■ PDF sayfaları nasıl silinir?
+EvrakFix PDF Düzenleyici'ye belgenizi yükledikten sonra, görsel panelde silmek istediğiniz sayfanın üzerindeki 'Sil' butonuna tıklayarak o sayfayı işaretleyebilirsiniz. Yanlışlıkla sildiğiniz sayfaları 'Geri Al' seçeneği ile kurtarabilirsiniz. İşlem bittiğinde yeni PDF'inizi indirebilirsiniz.
+
+■ PDF sayfası nasıl döndürülür?
+Yanlış taranmış veya ters duran PDF sayfalarını düzeltmek için ilgili sayfa kartında bulunan 'Döndür' butonunu kullanabilirsiniz. Her tıklama sayfayı saat yönünde 90 derece döndürür. Dökümanı indirdiğinizde bu yön ayarı kalıcı olarak yeni PDF dosyasına kaydedilir.
+
+■ PDF sayfa sırası nasıl değiştirilir?
+Sürükle-bırak karmaşası olmadan, sayfa kartlarının altındaki sola ve sağa taşıma yön butonlarını kullanarak sayfaların sırasını dilediğiniz gibi değiştirebilirsiniz. Bu sayede sayfaları sırayla dizmek son derece kolay ve hatasız hale gelir.
+
+■ Hangi durumlarda PDF sayfa düzenleme kullanılır?
+Taramadan kaynaklı ters sayfaları düzeltmek, çok sayfalı raporlardaki boş sayfaları temizlemek, fatura veya ders notlarının sırasını düzenlemek ya da sadece belirli sayfaları ayırarak yeni bir belge oluşturmak için kullanılır.
+
+■ PDF sayfa düzenleme güvenli mi?
+Evet, %100 güvenlidir. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Yüklediğiniz PDF dökümanları internetteki hiçbir sunucuya yüklenmez, depolanmaz ve üçüncü şahıslarla paylaşılmaz. Tüm işlemler doğrudan tarayıcı belleğinizde (RAM) tamamlanır.
+
+■ Mobil cihazdan PDF sayfa düzenleme yapılabilir mi?
+Evet. EvrakFix, tüm modern mobil tarayıcılarla (iOS ve Android) tam uyumludur. Akıllı telefon veya tabletlerinizden ek bir uygulama indirmeden PDF sayfalarınızı kolayca silebilir, döndürebilir ve sıralayabilirsiniz.
+
+■ EvrakFix ile PDF sayfa düzenlemenin avantajları
+Üyelik gerektirmeyen, sınırsız ve tamamen ücretsiz hizmet sunar. Dosyalar sunucuya yüklenmediği için internet hızından bağımsız olarak anında sonuç alınır ve hassas dökümanlarınız tamamen cihazınızda güvende kalır.`,
+    steps: [
+      { title: 'PDF Belgenizi Yükleyin', description: 'Sayfa düzenlemesi yapmak istediğiniz tek PDF dökümanını sürükleyip bırakarak veya seçerek yükleyin.' },
+      { title: 'Sayfaları Yönetin (Sil, Döndür, Taşı)', description: 'Görsel ızgarada sayfaları yön butonlarıyla sola/sağa taşıyın, 90° döndürün veya istemediğiniz sayfaları anında silin.' },
+      { title: 'Değişiklikleri Kaydedip İndirin', description: 'İşlem bittiğinde \'Düzenlenmiş PDF\'i İndir\' butonuna tıklayarak yeni dökümanınızı saniyeler içinde bilgisayarınıza kaydedin.' }
+    ],
+    faqs: [
+      { question: 'PDF dosyam sunucuya yükleniyor mu?', answer: 'Hayır, tarayıcı tabanlı çalışır ve PDF dosyanız hiçbir sunucuya yüklenmez. Büyük boyutlu dosyaların işlenmesi tamamen cihazınızın donanım performansına (RAM ve işlemci) bağlıdır.' },
+      { question: 'PDF sayfalarını silebilir miyim?', answer: 'Evet. Yüklediğiniz belgedeki istemediğiniz sayfaları tek tek silebilirsiniz. Eğer yanlışlıkla silerseniz, \'Geri Al\' butonuyla sayfayı kolayca geri getirebilirsiniz.' },
+      { question: 'PDF sayfalarını döndürebilir miyim?', answer: 'Evet. Ters taranmış sayfaları düzeltmek için 90, 180 veya 270 derece döndürme yapabilirsiniz. Bu yön değişiklikleri yeni PDF dosyasına kalıcı olarak işlenir.' },
+      { question: 'PDF sayfalarının sırasını değiştirebilir miyim?', answer: 'Evet. Sayfa önizlemelerinin altında bulunan yön butonları sayesinde sayfaların sıralamasını kolayca değiştirebilir ve dilediğiniz sırada dizebilirsiniz.' },
+      { question: 'Düzenlenmiş PDF dosyasını hemen indirebilir miyim?', answer: 'Evet. Düzenleme işlemini bitirip \'Düzenlenmiş PDF\'i İndir\' butonuna tıkladığınızda işlem saniyeler içinde tamamlanır ve indirme başlar. Büyük PDF dosyalarında işlem süresi cihazınızın performansına bağlı olarak değişebilir.' }
+    ]
+  },
+  '/pdf-to-image': {
+    toolName: "PDF'i Görsele Çevir",
+    description: `PDF'i Görsele Çevir aracımız; PDF belgelerinizin sayfalarını yüksek kaliteli bağımsız resim dosyalarına (PNG veya JPG) dönüştürmenizi sağlar. İster belirli sayfaları tek tek seçin, isterseniz tüm sayfaları tek tıkla yüksek çözünürlüklü görsellere dönüştürerek ZIP arşivi halinde toplu indirin. Kalite (Düşük/Orta/Yüksek) ve çözünürlük ölçeklerini (1x, 2x, 3x) dilediğiniz gibi belirleyebilirsiniz. Tüm görselleştirme işlemleri tamamen tarayıcınızın render motoruyla yerel olarak gerçekleştirilir.
+
+■ PDF’i görsele çevirme nedir?
+PDF’i görsele çevirme, bir PDF belgesindeki sayfaların her birini bağımsız JPG, JPEG veya PNG resim formatına dönüştürme işlemidir. Bu sayede belgenin içeriğini resim dosyası olarak paylaşabilir, sunumlarınıza veya web sitelerinize doğrudan ekleyebilirsiniz.
+
+■ PDF sayfası JPG veya PNG olarak nasıl indirilir?
+EvrakFix PDF'i Görsele Çevir aracına belgenizi yükleyin. Sayfa listesindeki önizleme kartlarının altında yer alan çıktı formatını (PNG veya JPG) seçin. Tek bir sayfayı indirmek için o sayfanın üzerindeki 'Görsel Al' butonuna tıklayarak doğrudan resim olarak indirebilirsiniz.
+
+■ PDF içinden tek sayfa görsel olarak alınabilir mi?
+Evet. Tüm PDF belgesini dönüştürmek yerine, sadece ihtiyacınız olan sayfaları tek tek seçerek bağımsız birer görsel dosyası olarak bilgisayarınıza veya telefonunuza anında kaydedebilirsiniz.
+
+■ Birden fazla PDF sayfası görsel olarak indirilebilir mi?
+Evet. Dönüştürmek istediğiniz birden fazla sayfayı veya tüm dökümanı seçtikten sonra 'Seçili Sayfaları ZIP İndir' butonunu kullanarak tüm görselleri tek bir sıkıştırılmış ZIP arşivi halinde toplu olarak indirebilirsiniz.
+
+■ JPG ve PNG çıktı farkı nedir?
+PNG formatı kayıpsız sıkıştırma sunar; özellikle yazılar, logolar, tablolar ve şablonlar içeren dökümanlarda mükemmel netlik sağlar. JPG ise dosya boyutunu oldukça küçültür ve fotoğraflı, renkli veya taranmış dökümanlar için daha uygundur.
+
+■ PDF’i görsele çevirmek güvenli mi?
+Evet, tamamen güvenlidir. EvrakFix yerel (client-side) çalışmaktadır. Yüklediğiniz PDF belgesi hiçbir uzak internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde (RAM) işlenerek görsele dönüştürülür. Gizli verileriniz tamamen cihazınızda kalır.
+
+■ Mobil cihazdan PDF’i görsele çevirme yapılabilir mi?
+Evet. EvrakFix mobil uyumlu bir tasarıma sahiptir. iOS ve Android cihazlarınızın tarayıcıları üzerinden ek bir program indirmeden PDF belgelerinizi saniyeler içinde JPG veya PNG resim formatına çevirebilirsiniz.
+
+■ EvrakFix ile PDF’i görsele çevirmenin avantajları
+Üyelik ve sınır olmadan tamamen ücretsizdir. Sunucu yüklemesi olmadığı için işlemler anında tamamlanır, internet kotanızı harcamaz ve döküman güvenliğinizi en üst düzeyde (yerel cihazda) korur.`,
+    steps: [
+      { title: 'PDF Dökümanını Yükleyin', description: 'Sayfalarını resme dönüştürmek istediğiniz tek PDF dökümanını sürükleyip bırakarak veya seçerek yükleyin.' },
+      { title: 'Format ve Çözünürlüğü Belirleyin', description: 'Çıktı formatını (PNG / JPG), görsel kalitesini ve netlik ölçeğini (1x, 2x, 3x ultra çözünürlük) kontrol panelinden ayarlayın.' },
+      { title: 'Görsel Olarak İndirin', description: 'Dönüştürmek istediğiniz sayfaları işaretleyin. Tekil olarak \'Görsel Al\' ile veya seçilenleri topluca ZIP paketi şeklinde indirin.' }
+    ],
+    faqs: [
+      { question: 'PDF dosyam sunucuya yükleniyor mu?', answer: 'Hayır, tarayıcı tabanlı çalışır ve PDF dosyanız hiçbir sunucuya yüklenmez. Çok sayfalı veya yüksek boyutlu PDF belgelerinde dönüştürme hızı cihazınızın işlemci ve bellek (RAM) performansına bağlıdır.' },
+      { question: 'PDF sayfalarını JPG olarak indirebilir miyim?', answer: 'Evet. Çıktı seçeneklerinden JPG formatını seçerek PDF sayfalarınızı yüksek veya standart kalitede JPG resimleri olarak cihazınıza kaydedebilirsiniz.' },
+      { question: 'PDF sayfalarını PNG olarak indirebilir miyim?', answer: 'Evet. Özellikle metinlerin, logoların ve çizgilerin net görünmesini istediğiniz dökümanlar için çıktı formatını PNG olarak belirleyip indirebilirsiniz.' },
+      { question: 'Sadece seçtiğim sayfaları görsele çevirebilir miyim?', answer: 'Evet. Sayfa önizleme panelinden sadece dönüştürmek istediğiniz sayfaları seçebilir ve sadece bu sayfaları tek tek veya topluca ZIP halinde indirebilirsiniz.' },
+      { question: 'Görsel çıktı dosyalarını hemen indirebilir miyim?', answer: 'Evet. Sayfaları dönüştür butonuna bastığınız anda işlemler tarayıcı hızında yerel olarak tamamlanır ve indirme saniyeler içinde başlar. Çok yüksek çözünürlüklü ve çok sayfalı işlemlerde cihazınızın performansına bağlı olarak birkaç saniye sürebilir.' }
+    ]
   }
 };
 
@@ -203,8 +450,8 @@ function extractSEOFromTSX(filePath, routePath) {
     const block = toolSEOInfoMatch[1];
 
     // Extract toolName
-    const toolNameMatch = block.match(/toolName=["']([^"']+)["']/);
-    const toolName = toolNameMatch ? toolNameMatch[1] : '';
+    const toolNameMatch = block.match(/toolName=(["'])([\s\S]+?)\1/);
+    const toolName = toolNameMatch ? toolNameMatch[2] : '';
 
     // Extract description
     const descMatch = block.match(/description=(["'])([\s\S]+?)\1/);

@@ -346,7 +346,31 @@ export const PdfSignPage = () => {
 
       <ToolSEOInfo
         toolName="PDF Belge İmzalama"
-        description="PDF İmzalama aracımız; sözleşmeler, teklifler, dilekçeler ve onay formları gibi resmi belgelerinizi tarayıcı ortamında kolayca imzalamanızı sağlar. Cihazınızın dokunmatik ekranını veya farenizi kullanarak imzanızı çizebilir, imza görselini dökümanın istediğiniz sayfasına, dilediğiniz konum ve boyutta yerleştirebilirsiniz. Islak imzanız da dahil olmak üzere hiçbir belgeniz veya çizim veriniz internete aktarılmaz; işlemler tamamen yerel bilgisayarınızda derlenir."
+        description="PDF İmzalama aracımız; sözleşmeler, teklifler, dilekçeler ve onay formları gibi resmi veya özel belgelerinizi tarayıcı ortamında kolayca imzalamanızı sağlar.
+
+■ PDF’e İmza Ekleme Nedir?
+PDF'e imza ekleme, dijital ortamdaki bir PDF belgesinin üzerine, belgenin içeriğini ve orijinal mizanpajını bozmadan, çizilen veya yüklenen bir imza görselinin eklenmesi işlemidir.
+
+■ PDF Dosyasına İmza Nasıl Edinir?
+EvrakFix PDF İmzalama aracına belgenizi yükleyin. Çizim alanını kullanarak imzanızı çizin ve kaydedin. İmzanın yer alacağı sayfa numarasını, konumunu ve boyutunu seçip 'Belgeyi İmzala' butonuna tıklayarak işlemi tamamlayın.
+
+■ Tarayıcıda İmza Çizmek Güvenli mi?
+Evet. EvrakFix tamamen yerel (client-side) çalıştığı için son derece güvenlidir. Çizdiğiniz imza görseli veya yüklediğiniz PDF belgesi hiçbir uzak sunucuya yüklenmez. Tüm süreç tarayıcınızın geçici belleğinde gerçekleşir.
+
+■ Hangi Durumlarda PDF İmzalama Kullanılır?
+Uzaktan iş sözleşmeleri, teklif onay formları, dilekçeler, teslim tutanakları, okul ve izin belgeleri gibi çıktı alıp fiziksel imza atmanın zahmetli olduğu tüm durumlarda pratik bir çözüm olarak kullanılır.
+
+■ İmza Konumu ve Boyutu Ayarlanabilir mi?
+Evet. İmzanın yer alacağı sayfa numarasını serbestçe belirleyebilir; Sol Alt, Orta Alt veya Sağ Alt gibi popüler hizalama konumları ile Küçük, Orta veya Büyük boyut seçeneklerinden birini tercih edebilirsiniz.
+
+■ Mobil Cihazdan PDF’e İmza Eklenebilir mi?
+Evet. EvrakFix responsive mobil uyumludur. Akıllı telefon veya tabletleriniz üzerinden dokunmatik ekran hassasiyeti sayesinde parmağınızla veya stylus kalemle son derece pürüzsüz ve gerçekçi ıslak imzalar oluşturabilirsiniz.
+
+■ EvrakFix ile PDF’e İmza Ekleyenin Avantajları
+Ücretsiz, limitsiz ve üyelik gerektirmeyen yapısıyla saniyeler içinde imzalama yapabilirsiniz. Sunucu yüklemesi olmadığı için işlemler anında tamamlanır ve verileriniz tamamen cihazınızda güvende kalır.
+
+■ PDF’e Eklenen İmza Hukuki Geçerlilik Sağlar mı?
+EvrakFix ile PDF belgesine eklenen imza görsel niteliktedir. Nitelikli elektronik imza (e-imza) veya mobil imza statüsünde değildir. Bu nedenle resmi makamlarca nitelikli e-imza şartı koşulan yasal işlemlerde resmi bir geçerliliği olmayabilir; basit sözleşmeler ve kurum içi onaylar için taslak niteliğindedir."
         exampleUsage="E-posta ile gelen iş teklifi veya muvafakatname belgesini açıp, mobil cihazınızın ekranında parmağınızla ıslak imza çizerek saniyeler içinde belgenin imza alanına yerleştirebilirsiniz."
         steps={[
           {
@@ -355,7 +379,7 @@ export const PdfSignPage = () => {
           },
           {
             title: "İmzanızı Çizin",
-            description: "Çizim alanına farenizle veya dokunmatik ekranlı mobil cihazınızda parmağınızla imzanızı atın ve 'İmza Olarak Kaydet' butonuna tıklayın."
+            description: "Çizim alanına farenizle veya dokunmatik ekranlı mobil cihazınızda parmağınızla imzanızı atın ve 'İmza Olarak Kaydet' butonuna tıklayarak bu imzayı kaydedin."
           },
           {
             title: "Konumu Seçip İndirin",
@@ -364,16 +388,24 @@ export const PdfSignPage = () => {
         ]}
         faqs={[
           {
-            question: "Çizdiğim imza sunucunuzda veya sisteminizde saklanır mı?",
-            description: "Kesinlikle hayır. EvrakFix bünyesinde çizdiğiniz ıslak imzalar hiçbir sunucuya yüklenmez ve kaydedilmez. İmza verileriniz sadece tarayıcınızın o anki bellek ortamında geçici olarak tutulur ve PDF'e gömüldüğü anda bellekten silinir."
+            question: "PDF dosyam sunucuya yükleniyor mu?",
+            description: "Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz PDF dökümanları ve çizdiğiniz imza verileri hiçbir internet sunucusuna aktarılmaz, doğrudan tarayıcınızın geçici belleğinde işlenir."
           },
           {
-            question: "Mobil telefon veya tabletten imza atabilir miyim?",
-            description: "Evet! İmza çizim alanımız mobil dokunmatik hassasiyetle tam uyumlu kodlanmıştır. Telefon veya tabletinizden parmağınızla veya akıllı kalemle çok daha hassas ve pürüzsüz imzalar çizebilirsiniz."
+            question: "İmzayı tarayıcıda çizebilir miyim?",
+            description: "Evet. İmza çizim alanını kullanarak farenizle veya dokunmatik ekranlı cihazlarda parmağınızla/kaleminizle kolayca ıslak imza çizerek dökümana ekleyebilirsiniz."
           },
           {
-            question: "İmza konumu ve boyutu üzerinde ince ayar yapabilir miyim?",
-            description: "İmzanın dökümanda yer alacağı sayfa numarasını belirledikten sonra; Sol Alt Köşe, Orta Alt ve Sağ Alt Köşe olmak üzere 3 farklı hizalama konumu ile Küçük, Orta, Büyük ebat seçeneklerinden dilediğinizi seçebilirsiniz."
+            question: "İmzayı istediğim sayfaya ekleyebilir miyim?",
+            description: "Evet. Seçenekler bölümünden imzanın yer almasını istediğiniz sayfa numarasını belirleyebilir ve o sayfadaki konumu (Sol Alt, Orta Alt, Sağ Alt) seçebilirsiniz."
+          },
+          {
+            question: "PDF’e eklenen imza resmi elektronik imza yerine geçer mi?",
+            description: "Bu araç, PDF üzerine görsel imza eklemek için hazırlanmıştır. Nitelikli elektronik imza veya resmi e-imza yerine geçmez. Resmi işlemler için ilgili kurumun imza şartlarını kontrol etmeniz önerilir."
+          },
+          {
+            question: "İmzalı PDF dosyasını hemen indirebilir miyim?",
+            description: "Evet. Belgeyi İmzala butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme butonu saniyeler içinde görünür."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />

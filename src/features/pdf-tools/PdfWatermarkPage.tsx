@@ -410,7 +410,31 @@ export const PdfWatermarkPage = () => {
 
       <ToolSEOInfo
         toolName="PDF Filigran ve Metin Ekleme"
-        description="PDF Filigran aracımız, telif haklarınızı korumak ve belgelerinize kurumsal kimlik kazandırmak için ideal bir çözümdür. Dökümanlarınızın tüm sayfalarına 45 derece eğik açıyla büyük, yarı saydam çapraz filigranlar basabilir veya ilk sayfada dilediğiniz köşeye (Sol Üst, Sağ Üst vb.) tarih, isim, onay veya kaşe gibi özel metinler yerleştirebilirsiniz. Tamamen tarayıcınızda ve yerel belleğinizde derlenen bu sistemde, verileriniz asla sunucularımıza gitmez."
+        description="PDF Filigran aracımız, telif haklarınızı korumak ve belgelerinize kurumsal kimlik kazandırmak için ideal bir çözümdür.
+
+■ PDF Filigran Ekleme Nedir?
+PDF filigran ekleme, bir PDF dökümanının sayfalarının üzerine, içeriğin kopyalanmasını veya izinsiz kullanımını önlemek amacıyla yarı saydam bir metin, logo veya işaretin (watermark) basılması işlemidir.
+
+■ PDF Dosyasına Filigran Nasıl Eklenir?
+EvrakFix PDF Filigran Ekleme aracına belgenizi yükleyin. Metin kutusuna filigran yapmak istediğiniz kelimeyi girin. Opaklık ve boyut ayarlarını yaptıktan sonra 'Filigran Ekle' butonuna tıklayarak saniyeler içinde yeni belgenizi indirin.
+
+■ PDF Üzerine Tarih veya Metin Eklenebilir mi?
+Evet. Aracımızda bulunan 'Tarih / Metin Ekle' modunu kullanarak belgenizin ilk sayfasının istediğiniz köşesine günün tarihini, ad-soyad bilgisini veya 'ONAYLANDI' gibi özel durum kaşelerini kolayca ekleyebilirsiniz.
+
+■ Hangi Durumlarda PDF Filigran Kullanılır?
+Gizli şirket yazışmalarında, teklif taslaklarında, fatura kopyalarında, ders notlarında, telif hakkı korunan dokümanlarda veya 'KOPYADIR', 'TASLAK' gibi durum bildirimlerinin gerektiği tüm senaryolarda kullanılır.
+
+■ Filigran Metni ve Opaklık Ayarlanabilir mi?
+Evet. Yazacağınız filigranın opaklığını (şeffaflığını) oransal olarak ayarlayabilirsiniz. Bu sayede belgenin altındaki metinlerin ve resimlerin okunurluğunu bozmayacak en ideal şeffaflık derecesini (örneğin %20) kolayca belirleyebilirsiniz.
+
+■ PDF Filigran Ekleme Güvenli mi?
+Evet. EvrakFix yerel (client-side) teknolojiyle çalışır. Yüklediğiniz PDF dosyaları internetteki hiçbir sunucuya yüklenmez, depolanmaz ve üçüncü şahıslarla paylaşılmaz. Süreç tamamen cihazınızda (tarayıcı RAM belleğinde) sonlanır.
+
+■ Mobil Cihazdan PDF Filigran Eklenebilir mi?
+Evet. EvrakFix mobil uyumlu tasarıma sahiptir. Android, iPhone veya iPad cihazlarınızın tarayıcısı üzerinden ek bir uygulama indirme gereksinimi olmadan PDF belgelerinize anında filigran basabilirsiniz.
+
+■ EvrakFix ile PDF Filigran Eklemenin Avantajları
+EvrakFix ile üyelik, limit veya hiçbir ücret ödemeden tamamen ücretsiz filigran ekleyebilirsiniz. İşlemler sunucusuz yapıldığı için internet hızınızdan bağımsız olarak anında sonuçlanır ve döküman güvenliğiniz en üst düzeyde korunur."
         exampleUsage="Müşterinize göndereceğiniz fiyat teklifi PDF dökümanının tüm sayfalarına 'GİZLİDİR' veya 'TEKLİF AŞAMASINDADIR' şeklinde çapraz filigran basarak belgenin izinsiz paylaşımını önleyebilirsiniz."
         steps={[
           {
@@ -428,16 +452,24 @@ export const PdfWatermarkPage = () => {
         ]}
         faqs={[
           {
-            question: "Filigran PDF belgesinin tüm sayfalarına otomatik uygulanır mı?",
-            description: "Evet. 'Çapraz Filigran Ekle' modunu kullandığınızda yazdığınız filigran metni PDF belgenizdeki tüm sayfalara otomatik olarak 45 derece eğimle ve orantılı boyutta uygulanır. 'Tarih / Metin Ekle' modu ise sadece dökümanın ilk sayfasına uygulanır."
+            question: "PDF dosyam sunucuya yükleniyor mu?",
+            description: "Hayır, tarayıcı tabanlı çalışır ve PDF dosyanız hiçbir sunucuya yüklenmez."
           },
           {
-            question: "Hızlı doldurma butonları ne işe yarar?",
-            description: "Tarih ve Metin modunda yer alan 'Bugünün Tarihi', 'Ad Soyad' veya 'Onaylandı' gibi hızlı şablon butonları, el yazısıyla uğraşmadan tek tıkla girdiyi doldurmanızı ve zamandan tasarruf etmenizi sağlar."
+            question: "PDF üzerine filigran metni ekleyebilir miyim?",
+            description: "Evet. 'Çapraz Filigran Ekle' modunu kullanarak belgenizin tüm sayfalarına 45 derece eğimle otomatik olarak filigran metni ekleyebilirsiniz."
           },
           {
-            question: "Eklenen filigranlar dökümanın okunmasını engeller mi?",
-            description: "Hayır. Filigran opaklığı (transparency) ve yazı boyutları tamamen ayarlanabilirdir. Varsayılan olarak yarı şeffaf basıldığı için alttaki yazıların okunurluğunu kesinlikle bozmaz."
+            question: "Filigranın opaklığını ayarlayabilir miyim?",
+            description: "Evet. Filigranın saydamlık derecesini (opaklığını) dilediğiniz gibi ayarlayarak alttaki döküman metinlerinin okunurluğunu engellemeyecek şekilde ayarlayabilirsiniz."
+          },
+          {
+            question: "PDF’e tarih veya kısa metin ekleyebilir miyim?",
+            description: "Evet. 'Tarih / Metin Ekle' moduna geçerek dökümanın ilk sayfasında dilediğiniz köşeye bugünün tarihini veya kısa bir onay metnini kolayca basabilirsiniz."
+          },
+          {
+            question: "Filigranlı PDF dosyasını hemen indirebilir miyim?",
+            description: "Evet. 'Filigran Ekle' butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme butonu görünür. Çok sayfalı veya yüksek boyutlu PDF dosyalarında işlem süresi cihazınızın donanım performansına bağlı olarak birkaç saniye sürebilir."
           }
         ].map(faq => ({ question: faq.question, answer: faq.description }))}
       />
