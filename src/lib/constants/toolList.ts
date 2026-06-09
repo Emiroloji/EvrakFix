@@ -169,5 +169,50 @@ export const toolList: ToolItem[] = [
     category: 'document',
     icon: 'Sparkles',
     badge: 'Yeni'
+  },
+  {
+    id: 'document-scanner',
+    title: 'Belge Tarayıcı',
+    description: 'Telefon kamerasıyla çektiğiniz evrak fotoğraflarını cihazınızda tarayıp netleştirin, gölgeleri temizleyin ve PDF olarak indirin.',
+    path: '/document-scanner',
+    category: 'other',
+    icon: 'Camera',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-to-text',
+    title: 'PDF’ten Metin Çıkarıcı',
+    description: 'PDF dökümanlarınızdaki tüm yazıları cihazınızda hızlıca ayıklayıp TXT veya Markdown olarak indirin veya kopyalayın.',
+    path: '/pdf-to-text',
+    category: 'document',
+    icon: 'FileText',
+    badge: 'Yeni'
+  },
+  {
+    id: 'csv-json-xml-converter',
+    title: 'CSV JSON XML Dönüştürücü',
+    description: 'CSV, JSON ve XML dosyalarınızı veya metinlerinizi cihazınızda güvenle birbirine dönüştürün.',
+    path: '/csv-json-xml-converter',
+    category: 'other',
+    icon: 'RefreshCw',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-to-grayscale',
+    title: 'PDF Yazıcı Dostu Yapıcı',
+    description: 'PDF dosyalarınızın renklerini gri tonlamaya çevirin ve toner tasarrufu için arka plan gölgelerini temizleyin.',
+    path: '/pdf-to-grayscale',
+    category: 'pdf',
+    icon: 'Printer',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-resizer',
+    title: 'PDF Sayfa Boyutu & Kenar Payı',
+    description: 'PDF belgelerinizi A4, Letter veya A3 boyutlarına vektör kalitesini bozmadan yeniden ölçeklendirin.',
+    path: '/pdf-resizer',
+    category: 'pdf',
+    icon: 'Maximize2',
+    badge: 'Yeni'
   }
 ];

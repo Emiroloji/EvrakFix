@@ -23,6 +23,11 @@ const XmlInvoiceViewerPage = lazy(() => import('../features/xml-invoice-viewer/X
 const TextDiffCheckerPage = lazy(() => import('../features/text-diff-checker/TextDiffCheckerPage').then(m => ({ default: m.TextDiffCheckerPage })));
 const PdfStampImagePage = lazy(() => import('../features/pdf-stamp-image/PdfStampImagePage').then(m => ({ default: m.PdfStampImagePage })));
 const ImageOcrPage = lazy(() => import('../features/image-ocr/ImageOcrPage').then(m => ({ default: m.ImageOcrPage })));
+const DocumentScannerPage = lazy(() => import('../features/document-scanner/DocumentScannerPage').then(m => ({ default: m.DocumentScannerPage })));
+const PdfToTextPage = lazy(() => import('../features/pdf-to-text/PdfToTextPage').then(m => ({ default: m.PdfToTextPage })));
+const CsvJsonXmlConverterPage = lazy(() => import('../features/csv-json-xml-converter/CsvJsonXmlConverterPage').then(m => ({ default: m.CsvJsonXmlConverterPage })));
+const PdfToGrayscalePage = lazy(() => import('../features/pdf-to-grayscale/PdfToGrayscalePage').then(m => ({ default: m.PdfToGrayscalePage })));
+const PdfResizerPage = lazy(() => import('../features/pdf-resizer/PdfResizerPage').then(m => ({ default: m.PdfResizerPage })));
 
 export interface Route {
   path: string;
@@ -157,6 +162,36 @@ export const routes: Route[] = [
     component: <ImageOcrPage />,
     title: 'Resimden Metin Okuma (OCR) | Görseldeki Yazıyı Kopyala - EvrakFix',
     description: 'Görsellerinizdeki veya taranmış resmi evrak fotoğraflarınızdaki metinleri yapay zeka ile cihazınızda okuyun ve kopyalayın.'
+  },
+  {
+    path: '/document-scanner',
+    component: <DocumentScannerPage />,
+    title: 'Belge Tarayıcı | Evrak Fotoğrafını Netleştir ve PDF Yap - EvrakFix',
+    description: 'Telefon kamerasıyla çektiğiniz evrak fotoğraflarını cihazınızda tarayıp netleştirin, gölgeleri temizleyin ve PDF olarak indirin.'
+  },
+  {
+    path: '/pdf-to-text',
+    component: <PdfToTextPage />,
+    title: 'PDF’ten Metin Çıkarıcı | PDF Yazılarını Kopyala ve İndir - EvrakFix',
+    description: 'Seçilebilir PDF dökümanlarınızdaki tüm yazıları cihazınızda hızlıca ayıklayıp TXT veya Markdown olarak indirin.'
+  },
+  {
+    path: '/csv-json-xml-converter',
+    component: <CsvJsonXmlConverterPage />,
+    title: 'CSV JSON XML Dönüştürücü | Ücretsiz Dosya Veri Çevirici - EvrakFix',
+    description: 'CSV, JSON ve XML dosyalarınızı veya metinlerinizi cihazınızda güvenle birbirine dönüştürün, anında indirin.'
+  },
+  {
+    path: '/pdf-to-grayscale',
+    component: <PdfToGrayscalePage />,
+    title: 'PDF Yazıcı Dostu Yapıcı | PDF Siyah Beyaz Yapma - EvrakFix',
+    description: 'PDF dosyalarınızın renklerini gri tonlamaya çevirin ve toner tasarrufu için arka plan gölgelerini temizleyin.'
+  },
+  {
+    path: '/pdf-resizer',
+    component: <PdfResizerPage />,
+    title: 'PDF Sayfa Boyutu & Kenar Payı Düzenleyici | PDF Resizer - EvrakFix',
+    description: 'PDF belgelerinizi A4, Letter veya A3 boyutlarına vektör kalitesini ve metin seçilebilirliğini bozmadan yeniden ölçeklendirin.'
   }
 ];
 

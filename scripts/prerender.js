@@ -133,6 +133,36 @@ const routeConfigs = [
     title: 'Resimden Metin Okuma (OCR) | Görseldeki Yazıyı Kopyala - EvrakFix',
     description: 'Görsellerinizdeki veya taranmış resmi evrak fotoğraflarınızdaki metinleri yapay zeka ile cihazınızda okuyun ve kopyalayın.',
     sourceFile: 'src/features/image-ocr/ImageOcrPage.tsx'
+  },
+  {
+    path: '/document-scanner',
+    title: 'Belge Tarayıcı | Evrak Fotoğrafı Netleştirme ve Tarama - EvrakFix',
+    description: 'Telefon kamerasıyla çektiğiniz veya bilgisayarınızdaki gölgeli evrak fotoğraflarını netleştirin, siyah-beyaz yapın ve PDF olarak indirin.',
+    sourceFile: 'src/features/document-scanner/DocumentScannerPage.tsx'
+  },
+  {
+    path: '/pdf-to-text',
+    title: 'PDF’ten Metin Çıkarıcı | PDF Yazı ve Metin Ayıklama - EvrakFix',
+    description: 'Seçilebilir yazı katmanına sahip PDF belgelerinizdeki metinleri saniyeler içinde ayıklayın, kopyalayın veya TXT/Markdown olarak indirin.',
+    sourceFile: 'src/features/pdf-to-text/PdfToTextPage.tsx'
+  },
+  {
+    path: '/csv-json-xml-converter',
+    title: 'CSV JSON XML Dönüştürücü | Ücretsiz Veri Tablosu Çevirici - EvrakFix',
+    description: 'CSV, JSON ve XML formatındaki veri dosyalarınızı tarayıcınızda saniyeler içinde birbirine dönüştürün. Sunucu yüklemesi yoktur, verileriniz güvendedir.',
+    sourceFile: 'src/features/csv-json-xml-converter/CsvJsonXmlConverterPage.tsx'
+  },
+  {
+    path: '/pdf-to-grayscale',
+    title: 'PDF Yazıcı Dostu Yapıcı | Renkli PDF\'i Siyah-Beyaz Yapma - EvrakFix',
+    description: 'Renkli PDF dökümanlarınızı siyah-beyaza çevirin, gri arka planları silip yazı kontrastını artırarak yazıcı kartuşundan tasarruf edin.',
+    sourceFile: 'src/features/pdf-to-grayscale/PdfToGrayscalePage.tsx'
+  },
+  {
+    path: '/pdf-resizer',
+    title: 'PDF Sayfa Boyutu & Kenar Payı Düzenleyici | PDF Resizer - EvrakFix',
+    description: 'PDF belgelerinin sayfa boyutlarını standart A4, A3 veya Letter formatlarına dönüştürün, kenar ve ciltleme payı boşlukları ekleyin.',
+    sourceFile: 'src/features/pdf-resizer/PdfResizerPage.tsx'
   }
 ];
 
@@ -807,8 +837,151 @@ Evet. EvrakFix responsive mobil uyumludur. Akıllı telefon veya tabletinizin ka
       { question: 'Yüklediğim resimler veya belgeler sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Resimleriniz hiçbir internet sunucusuna gönderilmez, doğrudan cihazınızın tarayıcı belleğinde yerel olarak çözümlenir.' },
       { question: 'Hangi resim formatları destekleniyor?', answer: 'JPG, JPEG ve PNG formatındaki tüm popüler resim ve ekran görüntüsü (screenshot) dosyalarını yükleyerek tarayabilirsiniz.' },
       { question: 'OCR işleminin doğruluk oranı nedir?', answer: 'Doğruluk oranı doğrudan görselin netliğine, yazı tipine, ışık kalitesine ve çözünürlüğüne bağlıdır. İyi ışıkta çekilmiş, net ve bilgisayar yazısı içeren görsellerde doğruluk oranı %98\'e kadar ulaşır.' },
-      { question: 'İlk tarama neden diğerlerine göre biraz daha uzun sürüyor?', answer: 'İlk kullanımda tarayıcınızın OCR motorunu ve dil verilerini yerel olarak yüklemesi gerekir. Bu yükleme işlemi internet hızınıza bağlı olarak birkaç saniye sürebilir. Sonraki taramalar önbellekten yüklendiği için çok daha hızlı tamamlanır.' },
       { question: 'El yazısı metinleri okuyabilir miyim?', answer: 'OCR motorumuz el yazısı metinleri de okumayı dener; ancak el yazısının kişiye özel eğimleri ve düzensizlikleri nedeniyle doğruluk oranı bilgisayar (font) yazısına göre daha düşük olmaktadır.' }
+    ]
+  },
+  '/document-scanner': {
+    toolName: 'Belge Tarayıcı',
+    description: `EvrakFix Belge Tarayıcı (Scan & Contrast Filter) aracımız, akıllı telefonunuzun kamerasıyla çektiğiniz veya bilgisayarınızda bulunan evrak resimlerini tarayıp netleştirmenizi sağlar. Çekimden kaynaklı oluşan sayfa kenarı gölgelerini temizler, kağıt rengini beyazlaştırır ve siyah yazıları belirginleştirir. Tamamen yerel (client-side) çalışan bu modül sayesinde, yüklediğiniz kişisel evrak, makbuz, kimlik fotokopisi veya sınav kağıdı resimleri hiçbir sunucuya yüklenmez ve gizliliğiniz korunur.
+
+■ Belge Tarayıcı Nedir?
+Belge tarayıcı, mobil kameralarla çekilen belgelerin gölgeli, eğik veya yetersiz ışıklı resimlerini analiz ederek resmi bir ofis tarayıcısından (flatbed scanner) taranmış gibi düz, beyaz arka planlı ve yüksek kontrastlı bir PDF/resim dökümanına dönüştüren araçtır.
+
+■ Evrak Fotoğrafları Nasıl Netleştirilir?
+Evrak resminizi seçin. 'Sihirli Renk' (Magic Scan) filtresini seçtiğinizde sistem otomatik olarak koyu gölgeleri beyazlaştırır ve yazıları koyulaştırır. İsteğinize göre döndürerek yönünü düzeltin. Sonrasında PDF olarak kaydedip çıktıya hazır hale getirin.
+
+■ PDF veya PNG İndirme Seçenekleri Nedir?
+- PDF Olarak İndir: Resmi yazışmalar veya e-devlet yüklemeleri için dökümanı standart A4 boyutuna hizalayarak yüksek kaliteli bir PDF haline verir.
+- Görsel Olarak İndir: Resmi doğrudan temizlenmiş ve yönü düzeltilmiş bir PNG dosyası olarak kaydeder.
+
+■ Belge Tarayıcı Güvenli mi?
+Evet. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Görselleriniz veya kimlik fotokopileriniz internet üzerinden hiçbir uzak sunucuya aktarılmaz, depolanmaz ve üçüncü şahıslarla paylaşılmaz. Tüm veri işleme süreci doğrudan kendi cihazınızın tarayıcı belleğinde gerçekleşir.`,
+    steps: [
+      { title: 'Fotoğrafı Yükleyin', description: 'Tarayıp netleştirmek istediğiniz evrak fotoğrafını (JPG, PNG, WebP) sürükleyip bırakarak yükleyin.' },
+      { title: 'Filtre ve Ayarları Düzenleyin', description: 'Sihirli Renk veya Siyah-Beyaz modlarından birini seçip parlaklık, kontrast veya yön açısını ayarlayın.' },
+      { title: 'PDF veya PNG Olarak İndirin', description: 'Ayarlar bittiğinde \'PDF Olarak İndir\' butonuna tıklayarak taranmış resmi dökümanınızı anında indirin.' }
+    ],
+    faqs: [
+      { question: 'Evrak fotoğraflarım veya belgelerim sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Resimleriniz hiçbir sunucuya aktarılmadan doğrudan cihazınızın tarayıcısında işlenir.' },
+      { question: 'Sihirli Renk (Magic Scan) filtresi ne işe yarar?', answer: 'Sihirli renk filtresi, evrak resmindeki kağıt dokusu gölgelerini ve sarı oda ışığı lekelerini beyazlaştırırken, mürekkep yazılarının ve renkli logoların kalitesini artırarak yazıcı dostu bir çıktı sunar.' },
+      { question: 'Yamuk çekilen fotoğrafların yönünü düzeltebilir miyim?', answer: 'Evet. \'Döndür\' butonu yardımıyla ters veya yan taranmış evrak resimlerinizi saat yönünde 90 derecelik açılarla çevirip düzeltebilirsiniz.' },
+      { question: 'Tarama sonrası dosya boyutu çok büyük olur mu?', answer: 'Hayır. Araç, resmi PDF\'e aktarırken JPEG sıkıştırma standartlarını kullanarak dosya boyutunu e-posta eki veya e-devlet yükleme sınırlarına uygun şekilde optimize eder.' },
+      { question: 'Bu aracı mobil cihazlarda kullanabilir miyim?', answer: 'Evet. Mobil tarayıcılarla tam uyumludur. Akıllı telefonunuzdan girdiğinizde doğrudan kameranızı açıp anlık evrak fotoğrafı çekerek tarayabilirsiniz.' }
+    ]
+  },
+  '/pdf-to-text': {
+    toolName: 'PDF’ten Metin Çıkarıcı',
+    description: `EvrakFix PDF’ten Metin Çıkarıcı (PDF to Text / Markdown) aracımız, bilgisayarınızda veya mobil cihazınızda bulunan seçilebilir metin katmanına sahip PDF dökümanlarındaki tüm yazıları saniyeler içinde düz metne dönüştürür. PDF dosyalarından elinizle yazı kopyalamanın zor olduğu durumlarda, tüm sayfaların metinlerini tek seferde ayıklar. Sunucusuz (client-side) çalışan gizlilik odaklı mimarisi sayesinde, sözleşmeleriniz veya özel dökümanlarınız hiçbir şekilde internet sunucularına aktarılmaz, verileriniz tamamen cihazınızda kalır.
+
+■ PDF’ten Metin Çıkarma Nedir?
+PDF'ten metin çıkarma (PDF text extraction), bir PDF dökümanı içerisindeki sayısal yazı katmanlarını okuyarak yazı tipi, görsel ve biçimlendirmelerden arındırılmış yalın düz metin (plain text) üretme işlemidir.
+
+■ PDF Dosyasındaki Yazılar Nasıl Kopyalanır?
+EvrakFix PDF Metin Ayıklayıcı'ya dosyanızı yükleyin. Sistem, PDF'teki tüm yazıları tarayıcıda çözümler ve sayfa sayfa ayırarak önizleme kutusuna yansıtır. 'Tümünü Kopyala' butonuna tıklayarak hafızaya alabilir ya da bilgisayarınıza TXT veya Markdown olarak kaydedebilirsiniz.
+
+■ Hangi PDF Dosyalarından Metin Çıkarılabilir?
+Yalnızca dijital ortamda üretilmiş (Word'den PDF'e çevrilmiş, e-kitaplar vb.) veya OCR işlemi uygulanarak metin katmanı kazandırılmış PDF belgelerinden metin çıkarılabilir. Tarayıcıdan doğrudan resim olarak aktarılmış, seçilemeyen yazılar içeren PDF'ler için 'Resimden Metin Okuma (OCR)' aracımızı kullanmanız gerekir.
+
+■ Metin Ayıklama İşlemi Güvenli mi?
+Evet, son derece güvenlidir. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışmaktadır. PDF dökümanınız hiçbir uzak sunucuya yüklenmez, doğrudan cihazınızın RAM belleğinde işlenir. Gizlilik taahhüdümüz kapsamında verileriniz tamamen sizde kalır.`,
+    steps: [
+      { title: 'PDF Dosyasını Yükleyin', description: 'Metnini kopyalamak istediğiniz seçilebilir yazı katmanına sahip PDF belgesini sürükleyip bırakarak yükleyin.' },
+      { title: 'Formatı Belirleyin', description: 'Dışa aktarma formatını düz metin (.txt) veya yapılandırılmış Markdown (.md) olarak belirleyin.' },
+      { title: 'Kopyalayın veya İndirin', description: 'Dönüşüm tamamlandığında \'Tümünü Kopyala\' tuşuyla kopyalayın ya da dosya olarak cihazınıza indirin.' }
+    ],
+    faqs: [
+      { question: 'Belgelerim ve metinlerim sunucuya kaydediliyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. PDF dosyası ve ayıklanan yazılar hiçbir internet sunucusuna gönderilmez, doğrudan cihazınızın tarayıcısında işlenir.' },
+      { question: 'Taranmış resimli PDF’lerden yazı çıkarabilir miyim?', answer: 'Bu araç sadece seçilebilir yazı katmanı olan dijital PDF\'ler içindir. Fotoğraf olarak taranmış PDF\'ler için lütfen ana menüdeki \'Resimden Metin Okuma (OCR)\' aracımızı tercih edin.' },
+      { question: 'Markdown (.md) formatında dışa aktarmak ne avantaj sağlar?', answer: 'Markdown formatı, sayfa başlıklarını ve sayfa sınırlarını temiz bir yapısal formatta (## Sayfa 1 ve ---) saklar, bu sayede not alma uygulamalarında veya dökümantasyon sistemlerinde doğrudan kullanılabilir.' },
+      { question: 'Dosya boyutu veya sayfa sayısı sınırı var mı?', answer: 'Hayır, herhangi bir sınır yoktur. Ancak yüzlerce sayfalık çok büyük PDF dosyalarında çözümleme hızı doğrudan tarayıcınızın ve cihazınızın donanım performansına bağlı olarak değişir.' },
+      { question: 'Türkçe karakterler bozulmadan çıkar mı?', answer: 'Evet. pdfjs parser motoru UTF-8 karakter kodlamasıyla çalışır. Türkçe karakterler (ş, ı, ğ, ç, ö, ü) ve özel semboller tamamen orijinal haliyle korunarak ayıklanır.' }
+    ]
+  },
+  '/csv-json-xml-converter': {
+    toolName: 'CSV JSON XML Dönüştürücü',
+    description: `EvrakFix CSV JSON XML Dönüştürücü, veri tabloları ve veri ağacı yapılarını tarayıcınızda saniyeler içinde birbirine dönüştürmenizi sağlar. Excel veya veritabanı çıktısı olan CSV dosyalarını JSON veya XML kod şemalarına, ya da XML e-fatura taslaklarını kopyalanabilir CSV tablolarına çevirmek için idealdir. Tamamen sunucusuz (client-side) çalışan bu araç sayesinde girdiğiniz hiçbir ticari veri, muhasebe tablosu veya finansal kod uzak sunuculara yüklenmez.
+
+■ CSV JSON XML Dönüştürücü Nedir?
+CSV, JSON ve XML veri formatları arasında hızlı çeviriler gerçekleştiren dijital bir araçtır:
+- CSV (Comma Separated Values): Tablo verileri ve Excel için ideal basitleştirilmiş format.
+- JSON (JavaScript Object Notation): Modern web API'leri için standart ağaç veri formatı.
+- XML (eXtensible Markup Language): Resmi dökümanlar ve e-faturalar için etiket tabanlı format.
+
+■ CSV Dosyası JSON’a Nasıl Dönüştürülür?
+CSV metninizi sol kutuya yapıştırın veya dosya yükleme alanından seçin. Format seçim panellerinde girdi olarak CSV, çıktı olarak JSON işaretleyip 'Dönüştür' tuşuna basın. Saniyeler içinde çıktı kutusunda JSON kodunu elde edeceksiniz.
+
+■ XML Fatura Verisi CSV Yapılabilir mi?
+Evet. UBL-TR standardına uygun e-fatura XML verilerini yapıştırıp çıktı olarak CSV'yi seçtiğinizde, sistem otomatik olarak hiyerarşik etiketleri analiz eder ve tablo şeklinde düzleştirip Excel'de açabileceğiniz bir CSV çıktısı oluşturur.
+
+■ Dönüşüm İşlemi Güvenli mi?
+Evet, tamamen yerel ve güvenlidir. EvrakFix sunucusuz çalışır. Yapıştırdığınız veya yüklediğiniz hiçbir veri internetteki uzak bir sunucuya aktarılmaz, izlenmez ve kaydedilmez. Tüm dönüşüm algoritmaları tarayıcınızın kendi işlem gücüyle yerel olarak sonlanır.`,
+    steps: [
+      { title: 'Girdi Verinizi Yükleyin', description: 'Dönüştürmek istediğiniz CSV, JSON veya XML metnini yapıştırın ya da dosya olarak sisteme yükleyin.' },
+      { title: 'Dönüşüm Yönünü Seçin', description: 'Girdi ve çıktı formatını seçin. Sistem dosya yüklendiğinde uzantıya göre girdiyi otomatik algılar.' },
+      { title: 'Dönüştürün ve Alın', description: '\'Veriyi Dönüştür\' butonuna basarak dönüşümü başlatın, çıktıyı kopyalayın veya dosya olarak indirin.' }
+    ],
+    faqs: [
+      { question: 'Girdiğim veriler sunucuya gönderiliyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Verileriniz hiçbir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde dönüştürülür.' },
+      { question: 'Bozuk veya eksik CSV dosyaları hata verir mi?', answer: 'Dönüştürücü motorumuz basit yazım hatalarını tolere edecek şekilde tasarlanmıştır. Ancak başlık satırı (header) bulunmayan veya düzensiz virgül kullanan dosyalarda sütun eşleşmesi hatalı olabilir.' },
+      { question: 'Büyük boyutlu veritabanı çıktıları dönüştürülebilir mi?', answer: 'Evet. Birkaç megabayta kadar olan büyük veri setleri tarayıcıda işlenebilir. Ancak işlem hızı tamamen bilgisayarınızın donanım performansına (RAM ve işlemci) bağlıdır.' },
+      { question: 'XML şemalarında iç içe geçmiş etiketler nasıl CSV olur?', answer: 'Sistem, XML ağacını düzleştirme (flatten) algoritması kullanarak tüm iç içe etiketleri parent_child yapısında başlıklar halinde sütunlara döker, böylece veri kaybı olmadan tabloya aktarılır.' },
+      { question: 'Bu araç tamamen ücretsiz midir?', answer: 'Evet. Herhangi bir kullanım sınırı, kota veya ücretlendirme bulunmamaktadır.' }
+    ]
+  },
+  '/pdf-to-grayscale': {
+    toolName: 'PDF Yazıcı Dostu Yapıcı',
+    description: `EvrakFix PDF Yazıcı Dostu Yapıcı (Grayscale & Toner Saver) aracımız, renkli dökümanlarınızı, ders notlarınızı veya kitap taramalarınızı siyah-beyaza çevirmenizi sağlar. Akıllı arka plan temizleme (Toner Saver) teknolojisi sayesinde sayfadaki gereksiz renkli zemin dolgularını ve koyu sayfa gölgelerini tespit ederek beyaza çevirir; yazıcı kartuşundan ve tonerden yüksek oranda tasarruf etmenizi sağlar. Tamamen tarayıcıda çalışan gizlilik odaklı mimarisiyle dökümanlarınız hiçbir şekilde internet sunucularına aktarılmadan tamamen kendi cihazınızda işlenir.
+
+■ PDF Yazıcı Dostu Yapıcı Nedir?
+Renkli dökümanların yazıcıdan çıktı alınırken çok fazla kartuş tüketmesini önlemek amacıyla sayfaları gri tonlamaya çeviren ve toner tasarrufu sağlamak için hafif gölgeli kağıt arka planlarını tamamen beyaz yapan akıllı bir dönüşüm aracıdır.
+
+■ PDF Siyah-Beyaz Nasıl Yapılır?
+EvrakFix yazıcı dostu sayfasına PDF dosyanızı yükleyin. 'Toner Tasarrufu' ve 'Yazı Kontrastını Artır' seçeneklerini aktif hale getirip 'Yazıcı Dostu Yap' butonuna tıklayın. Sayfalarınız saniyeler içinde analiz edilerek gri tonlara çevrilir ve arka planları temizlenmiş PDF belgesi indirilmeye hazır hale gelir.
+
+■ Toner Tasarrufu Filtresi Ne Avantaj Sağlar?
+Birçok taranmış dökümanda sayfaların arkasında gri veya kirli sarı bir renk tonu kalır. Yazıcı bu kısımları da basmaya çalışarak çok fazla mürekkep harcar. Toner Tasarrufu filtresi, bu kirli tonları dijital olarak algılar ve beyaza yuvarlayarak yazıcınızın sadece asıl metin ve çizgileri basmasını sağlar.
+
+■ Dönüşüm İşlemi Güvenli mi?
+Evet. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz PDF dosyaları internetteki hiçbir uzak sunucuya yüklenmez, doğrudan cihazınızın tarayıcı belleğinde (RAM) işlenir. Dosyalarınız tamamen güvendedir.`,
+    steps: [
+      { title: 'PDF Belgenizi Yükleyin', description: 'Siyah-beyaz yapmak veya kartuş tasarrufu uygulamak istediğiniz renkli PDF dosyasını yükleyin.' },
+      { title: 'Tasarruf Seçeneklerini Ayarlayın', description: 'Toner Tasarrufu (arka plan silme) ve Yazı Kontrastını Artırma kutucuklarını ihtiyacınıza göre işaretleyin.' },
+      { title: 'Dönüştürün ve İndirin', description: '\'Yazıcı Dostu Yap\' butonuna basarak işlemi başlatın, tamamlandığında siyah-beyaz PDF\'inizi anında indirin.' }
+    ],
+    faqs: [
+      { question: 'Belgelerim ve metinlerim sunucuya gönderiliyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Belgeleriniz hiçbir uzak internet sunucusuna gönderilmez, doğrudan cihazınızın tarayıcısında işlenir.' },
+      { question: 'Renkli PDF’i siyah-beyaza çevirince dosya kalitesi düşer mi?', answer: 'Hayır. Yüksek kaliteli piksel render algoritmalarımız sayesinde orijinal PDF sayfa çözünürlüğü korunur, sadece renk kanalları optimize edilerek gri tonlamaya çevrilir.' },
+      { question: 'Tasarruflu modda yazılar kaybolur mu?', answer: 'Hayır. \'Yazı Kontrastını Artır\' seçeneği aktif olduğunda, renklerin griye dönmesiyle soluklaşabilecek olan açık renkli yazılar koyulaştırılarak okunurluğu artırılır.' },
+      { question: 'Çok sayfalı büyük kitaplarda işlem süresi ne kadardır?', answer: 'Çözümleme işlemi sayfa sayısına ve sayfa çözünürlüğüne bağlı olarak değişir. İşlemler tarayıcıda yapıldığı için süre doğrudan cihazınızın RAM ve işlemci donanım gücüne bağlıdır.' },
+      { question: 'Bu hizmet için herhangi bir ücret ödenmesi gerekir mi?', answer: 'Hayır. EvrakFix bünyesindeki tüm araçlar gibi PDF Yazıcı Dostu Yapıcı da tamamen ücretsizdir ve kullanım limiti bulunmamaktadır.' }
+    ]
+  },
+  '/pdf-resizer': {
+    toolName: 'PDF Sayfa Boyutu & Kenar Payı Düzenleyici',
+    description: `EvrakFix PDF Sayfa Boyutu & Kenar Payı Düzenleyici (PDF Resizer), PDF dökümanlarınızın sayfa boyutlarını standart A4, A3, A5 veya Letter formatlarına dönüştürmenizi sağlar. Sayfa kenarlarındaki yazıları korumak veya çıktı alırken zımbalama payı bırakmak için özel kenar boşlukları (margins) ekleyebilirsiniz. En büyük avantajı, sayfaları resme dönüştürmeden doğrudan vektör düzeyinde ölçeklemesidir; böylece yazılarınızın netliği bozulmaz ve arama seçilebilirliği aynen korunur.
+
+■ PDF Resizer Nedir?
+PDF resizer, dökümanın sayfa alanlarını (MediaBox/CropBox) ölçeklendirerek sayfaları A4 veya Letter gibi standart yazıcı boyutlarına uyumlu hale getiren ve kenar boşluklarını milimetrik olarak ayarlayan gelişmiş bir düzenleyicidir.
+
+■ Sayfa Boyutları Nasıl A4 Yapılır?
+PDF dosyanızı yükleyin. Hedef sayfa boyutu listesinden 'A4 Boyutu' seçeneğini işaretleyin. Kayma olmaması için kenar boşluğunu (örneğin 20 pt) ayarlayıp 'Boyutlandır' butonuna basın. Vektör kalitesinde derlenen yeni PDF belgeniz saniyeler içinde inecektir.
+
+■ Vektörel Ölçeklendirme Nedir?
+Geleneksel araçlar sayfayı resme çevirip büyüttüğü için metin kalitesi bulanıklaşır ve yazıların seçilmesi/kopyalanması engellenir. EvrakFix ise sayfa katmanlarını doğrudan PDF kod yapısı içinde embed ederek yeniden çizer; bu sayede döküman orijinalliğini ve metin seçilebilirliğini korur.
+
+■ Boyut Değiştirme Güvenli mi?
+Evet. EvrakFix sunucusuz (client-side) çalışır. İşlediğiniz PDF belgeleri veya sözleşmeler internetteki uzak sunuculara yüklenmez, doğrudan kendi bilgisayarınızın tarayıcısında işlenir. Gizliliğiniz tarayıcı düzeyinde koruma altındadır.`,
+    steps: [
+      { title: 'PDF Dosyasını Yükleyin', description: 'Boyutunu ve kenar paylarını değiştirmek istediğiniz PDF dökümanını sürükleyip bırakarak yükleyin.' },
+      { title: 'Boyut ve Boşluk Seçin', description: 'Dönüştürmek istediğiniz hedef boyutu (A4, A3, Letter vb.) seçin ve kenar payı sürgüsünü ayarlayın.' },
+      { title: 'İşleyin ve İndirin', description: '\'Belgeyi Yeniden Boyutlandır\' butonuna tıklayarak işlemi başlatın, tamamlandığında PDF\'inizi anında indirin.' }
+    ],
+    faqs: [
+      { question: 'Belgelerim ve verilerim sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. PDF dosyası hiçbir internet sunucusuna gönderilmez, doğrudan cihazınızın tarayıcı belleğinde yerel olarak işlenir.' },
+      { question: 'Boyutlandırma sonrasında PDF’teki yazılar kopyalanabilir kalır mı?', answer: 'Evet. Sayfalar resme dönüştürülmez. Orijinal vektörel yapı korunduğu için PDF içerisindeki metin arama ve metin kopyalama özellikleri aynen aktif kalır.' },
+      { question: 'Kenar boşluğu eklemek ne işe yarar?', answer: 'Özellikle kitapçık basımlarında, ciltleme veya zımbalama yapıldığında sayfa kenarındaki metinlerin kaybolmaması için kenar marjı eklemek kritik öneme sahiptir.' },
+      { question: 'Yatay (Landscape) sayfalar dikey (Portrait) olur mu?', answer: 'Seçtiğiniz preset boyuta göre sayfalar otomatik ölçeklenir ve ortalanır. Geniş sayfaların bozulmaması için orijinal en/boy oranını koruyarak yeni sayfa sınırlarına sığdırılır.' },
+      { question: 'Bu araç ücretli midir veya limit var mıdır?', answer: 'Hayır. PDF Resizer tamamen ücretsizdir ve herhangi bir dosya yükleme sınırı veya kota bulunmamaktadır.' }
     ]
   }
 };
@@ -880,7 +1053,7 @@ function runPrerender() {
 
   const htmlTemplate = fs.readFileSync(templatePath, 'utf8');
 
-  console.log('\n--- STARTING STATIK SEO PRERENDER INJECTION (V2.8) ---');
+  console.log('\n--- STARTING STATIK SEO PRERENDER INJECTION (V2.9) ---');
 
   for (const config of routeConfigs) {
     let finalHtml = htmlTemplate;

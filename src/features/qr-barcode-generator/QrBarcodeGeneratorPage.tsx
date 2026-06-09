@@ -391,7 +391,7 @@ Uygulamamız en çok kullanılan 6 barkod tipini destekler:
 - ITF: Koli ve lojistik palet takibinde kullanılan barkod.
 
 ■ EvrakFix QR ve Barkod Oluşturucu Güvenli mi?
-Evet. EvrakFix %100 tarayıcı tabanlı çalışan sunucusuz (client-side) bir sistemdir. Girdiğiniz veritabanı değerleri, kişisel detaylar, özel URL adresleri veya barkod numaraları hiçbir internet sunucusuna gönderilmez, izlenmez ve kaydedilmez. Kodların çizimi doğrudan cihazınızın kendi işlemcisiyle tarayıcı pencerenizde tamamlanır.
+Evet. EvrakFix tamamen tarayıcı tabanlı çalışan sunucusuz (client-side) bir sistemdir. Girdiğiniz veritabanı değerleri, kişisel detaylar, özel URL adresleri veya barkod numaraları hiçbir internet sunucusuna gönderilmez, izlenmez ve kaydedilmez. Kodların çizimi doğrudan cihazınızın kendi işlemcisiyle tarayıcı pencerenizde tamamlanır.
 
 ■ Mobil Cihazlardan QR ve Barkod Üretilebilir mi?
 Evet. EvrakFix mobil uyumlu tasarıma sahiptir. iOS ve Android yüklü cihazlarınızdan kameranızla okutmak üzere hızlıca QR kod üretebilir, SVG veya PNG formatlarında anında telefonunuza kaydedip kullanabilirsiniz."

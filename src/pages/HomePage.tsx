@@ -1,4 +1,4 @@
-import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, EyeOff, Hash, Lock, Minimize2, QrCode, ArrowRightLeft, Award } from 'lucide-react';
+import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, EyeOff, Hash, Lock, Minimize2, QrCode, ArrowRightLeft, Award, Camera, RefreshCw, Printer, Maximize2 } from 'lucide-react';
 
 const iconMap: Record<string, any> = {
   Merge,
@@ -16,7 +16,11 @@ const iconMap: Record<string, any> = {
   QrCode,
   ArrowRightLeft,
   Award,
-  Sparkles
+  Sparkles,
+  Camera,
+  RefreshCw,
+  Printer,
+  Maximize2
 };
 import { toolList } from '../lib/constants/toolList';
 import { Button } from '../components/ui/Button';
@@ -101,6 +105,11 @@ export const HomePage = () => {
           <a href="/text-diff-checker" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">⚖️ Metin Karşılaştır</a>
           <a href="/pdf-stamp-image" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">💮 Kaşe Ekle</a>
           <a href="/image-ocr" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">👁️ Resimden Metin Oku</a>
+          <a href="/document-scanner" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">📷 Belge Tara</a>
+          <a href="/pdf-to-text" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">📝 PDF'ten Metin Çıkar</a>
+          <a href="/csv-json-xml-converter" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🔄 Format Dönüştür</a>
+          <a href="/pdf-to-grayscale" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🖨️ PDF Yazıcı Dostu</a>
+          <a href="/pdf-resizer" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">📏 PDF Yeniden Boyutlandır</a>
           <a href="/document-generator" className="px-2.5 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/45 hover:bg-emerald-500/30 hover:border-emerald-400 text-emerald-250 transition-all font-bold shadow-md shadow-emerald-500/10">📝 Dilekçe Oluştur</a>
           <a href="/image-compressor" className="px-2.5 py-1.5 rounded-xl bg-blue-500/25 border border-blue-500/40 hover:bg-blue-500/35 hover:border-blue-400 text-blue-250 transition-all font-bold shadow-md shadow-blue-500/10 animate-pulse">🔥 🗜️ Görsel Sıkıştır</a>
         </div>
