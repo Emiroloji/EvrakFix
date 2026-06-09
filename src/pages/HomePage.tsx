@@ -1,4 +1,4 @@
-import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, EyeOff, Hash } from 'lucide-react';
+import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, EyeOff, Hash, Lock, Minimize2, QrCode } from 'lucide-react';
 
 const iconMap: Record<string, any> = {
   Merge,
@@ -10,13 +10,16 @@ const iconMap: Record<string, any> = {
   Sliders,
   FileText,
   EyeOff,
-  Hash
+  Hash,
+  Lock,
+  Minimize2,
+  QrCode
 };
 import { toolList } from '../lib/constants/toolList';
 import { Button } from '../components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
-import { Shield, Sparkles, Zap, ArrowRight, Lock, UploadCloud, Cpu, DownloadCloud } from 'lucide-react';
+import { Shield, Sparkles, Zap, ArrowRight, UploadCloud, Cpu, DownloadCloud } from 'lucide-react';
 import { navigateTo } from '../lib/utils/navigation';
 import { openSecurityModal } from '../lib/utils/security';
 
@@ -89,6 +92,8 @@ export const HomePage = () => {
           <a href="/pdf-metadata-cleaner" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🧹 Metadata Temizle</a>
           <a href="/pdf-page-numbers" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🔢 Numaralandır</a>
           <a href="/image-to-pdf" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🖼️ Görseli PDF Yap</a>
+          <a href="/pdf-compressor" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">🗜️ PDF Sıkıştır</a>
+          <a href="/qr-barcode-generator" className="px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/15 hover:border-blue-500/40 hover:text-blue-300 transition-all font-semibold">📱 QR Oluştur</a>
           <a href="/document-generator" className="px-2.5 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/45 hover:bg-emerald-500/30 hover:border-emerald-400 text-emerald-250 transition-all font-bold shadow-md shadow-emerald-500/10">📝 Dilekçe Oluştur</a>
           <a href="/image-compressor" className="px-2.5 py-1.5 rounded-xl bg-blue-500/25 border border-blue-500/40 hover:bg-blue-500/35 hover:border-blue-400 text-blue-250 transition-all font-bold shadow-md shadow-blue-500/10 animate-pulse">🔥 🗜️ Görsel Sıkıştır</a>
         </div>

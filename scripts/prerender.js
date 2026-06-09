@@ -91,6 +91,24 @@ const routeConfigs = [
     title: 'PDF Sayfa Numarası Ekle | Ücretsiz PDF Numaralandırma - EvrakFix',
     description: 'PDF dosyanıza cihazınızda güvenle sayfa numarası ekleyin. Konum ve format seçin, numaralandırılmış PDF’i hemen indirin.',
     sourceFile: 'src/features/pdf-page-numbers/PdfPageNumbersPage.tsx'
+  },
+  {
+    path: '/pdf-protect-unlock',
+    title: 'PDF Şifrele & Şifre Çöz | Ücretsiz PDF Şifre Koyma ve Kaldırma - EvrakFix',
+    description: 'PDF dosyalarınıza cihazınızda güvenle şifre koyun veya mevcut PDF şifrelerini kaldırın. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
+    sourceFile: 'src/features/pdf-protect-unlock/PdfProtectUnlockPage.tsx'
+  },
+  {
+    path: '/pdf-compressor',
+    title: 'PDF Sıkıştırıcı | Ücretsiz PDF Boyut Küçültme - EvrakFix',
+    description: 'PDF dosyalarınızın boyutunu kalitesini bozmadan cihazınızda güvenle küçültün. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.',
+    sourceFile: 'src/features/pdf-compressor/PdfCompressorPage.tsx'
+  },
+  {
+    path: '/qr-barcode-generator',
+    title: 'QR Kod & Barkod Oluşturucu | Ücretsiz QR ve Barkod Yapıcı - EvrakFix',
+    description: 'Ücretsiz ve güvenli şekilde kendi QR kodlarınızı ve barkodlarınızı cihazınızda oluşturun, PNG veya SVG olarak indirin.',
+    sourceFile: 'src/features/qr-barcode-generator/QrBarcodeGeneratorPage.tsx'
   }
 ];
 
@@ -518,78 +536,121 @@ Evet, tamamen güvenlidir. EvrakFix yerel (client-side) olarak çalışmaktadır
       { question: 'Numaralandırılmış PDF dosyasını hemen indirebilir miyim?', answer: 'Evet. Sayfa numarası ekle butonuna tıkladığınızda işlem cihazınızda saniyeler içinde tamamlanır ve numaralı PDF belgeniz otomatik olarak bilgisayarınıza veya telefonunuza indirilir.' }
     ]
   },
-  '/pdf-metadata-cleaner': {
-    toolName: 'PDF Metadata Temizleyici',
-    description: `PDF Metadata Temizleyici aracımız, PDF belgelerinizin arka planında saklanan ve gizliliğinizi riske atabilecek kimlik bilgilerini sıfırlamanızı sağlar. Yüklediğiniz PDF'in içeriğine dokunmadan; yazar ismi, oluşturma tarihi, düzenleme tarihi, kullanılan yazılım lisans bilgileri ve gömülü XML tabanlı XMP meta verileri tarayıcınızda yerel olarak temizlenir. Hiçbir belgeniz sunucularımıza gitmez, gizliliğiniz tamamen güvence altındadır.
+  '/pdf-protect-unlock': {
+    toolName: 'PDF Şifreleme ve Şifre Çözme',
+    description: `PDF Şifrele & Şifre Çöz (PDF Protect / Unlock) aracımız, belgelerinizin gizliliğini en üst düzeyde korumanızı veya mevcut şifre korumalarını kaldırmanızı sağlar. Cihazınızda yerel (client-side) çalışan bu modül sayesinde, PDF belgeleriniz ve girdiğiniz şifreler hiçbir uzak internet sunucusuna gönderilmez, gizliliğiniz korunur.
 
-■ PDF metadata nedir?
-PDF metadata; belgenin başlığı, yazarı, konusu, anahtar kelimeleri, oluşturulduğu tarih, son değiştirilme tarihi ve belgeyi oluşturan yazılım gibi arka planda saklanan tanımlayıcı yasal ve teknik bilgilerdir.
+■ PDF Şifreleme Nedir?
+PDF şifreleme, bir PDF belgesine yetkisiz erişimi engellemek amacıyla dökümana bir kullanıcı veya açılış şifresi eklenmesi işlemidir. Şifrelenmiş PDF dosyaları, doğru şifre girilmediği sürece hiçbir PDF okuyucu veya tarayıcıda görüntülenemez.
 
-■ PDF metadata neden temizlenir?
-Gizliliğinizi korumak, kurumsal verilerin dışarı sızmasını önlemek ve belgeleriniz üzerinden bilgisayar kullanıcı adı, işletim sistemi, yazılım sürümleri gibi hassas verilerin başkaları tarafından görüntülenmesini engellemek için temizlenir.
+■ PDF Şifresi Nasıl Konulur?
+EvrakFix PDF Şifreleme aracına belgenizi yükleyin. 'Şifre Ekle' modunu seçip güçlü bir şifre girin. 'PDF'i Şifrele' butonuna tıkladığınızda dökümanınız saniyeler içinde şifrelenir ve indirmeye hazır hale gelir.
 
-■ PDF dosyasındaki yazar bilgisi nasıl silinir?
-EvrakFix PDF Metadata Temizleyici'ye PDF belgenizi yükledikten sonra, 'Metadata Temizle' butonuna tıklayarak yazar adı, belge başlığı ve diğer tüm kimlik verilerini saniyeler içinde silebilirsiniz.
+■ PDF Şifresi Nasıl Kaldırılır (Şifre Çözme)?
+Mevcut şifresini bildiğiniz bir PDF dosyasının korumasını kaldırmak için belgenizi yükleyin. 'Şifre Kaldır' modunu seçip dosyanın şifresini yazın. 'Şifreyi Kaldır' butonuna tıkladığınızda şifreleme kalıcı olarak kaldırılır ve döküman şifresiz olarak indirilir.
 
-■ PDF metadata temizlemek güvenli mi?
-Evet. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Dosyalarınız sunucuya gönderilmez, tüm işlemler bilgisayarınızda veya telefonunuzda yerel olarak gerçekleşir.
+■ PDF Şifreleme ve Şifre Çözme Güvenli mi?
+Evet. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Girdiğiniz şifreler, metinler veya PDF dosyaları internet üzerinden hiçbir sunucuya yüklenmez, depolanmaz ve paylaşılmaz. Tüm veri işleme süreci doğrudan kendi cihazınızın RAM belleğinde tamamlanır.
 
-■ Hangi bilgiler temizlenebilir?
-Belge başlığı (Title), yazar (Author), konu (Subject), anahtar kelimeler (Keywords), oluşturucu yazılımlar (Creator/Producer) ile oluşturma ve son değiştirilme tarihleri tamamen silinir veya sıfırlanır.
+■ Şifrelenmiş PDF Dosyasını Açmak İçin Ne Gerekir?
+Bir PDF dosyasının şifresini kaldırabilmek veya içeriğini okuyabilmek için dökümana konulmuş olan orijinal açılış (user) şifresini bilmeniz ve sisteme girmeniz gerekir. Şifresini bilmediğiniz dosyaların şifresini kırmak yasal ve teknik olarak mümkün değildir.
 
-■ Mobil cihazdan PDF metadata temizlenebilir mi?
-Evet. EvrakFix mobil uyumludur. iPhone, iPad veya Android cihazlarınızın tarayıcılarından ek bir uygulama olmadan PDF belgelerinin metadata bilgilerini kolayca temizleyebilirsiniz.
+■ Mobil Cihazlardan PDF Şifrelenebilir veya Şifresi Çözülebilir mi?
+Evet. EvrakFix mobil uyumlu tasarıma sahiptir. iOS ve Android işletim sistemli telefon veya tabletlerinizden ek uygulama indirmeden tarayıcınız üzerinden PDF belgelerinizi saniyeler içinde şifreleyebilir veya şifrelerini çözebilirsiniz.
 
-■ EvrakFix ile metadata temizlemenin avantajları
-Üyelik gerekmez, limitsiz ve tamamen ücretsizdir. Dosyalar sunucuya yüklenmediği için internet kotanızdan tasarruf sağlar ve gizlilik seviyesini en üst düzeyde tutar.`,
+■ EvrakFix ile PDF Şifreleme ve Çözmenin Avantajları
+EvrakFix ile üyelik, kota veya ücret olmadan tamamen ücretsiz şifreleme ve şifre kaldırma işlemleri yapabilirsiniz. Sunucu yüklemesi olmadığı için internet hızından bağımsız olarak milisaniyeler içinde sonuç alırsınız ve hassas belgeleriniz tamamen cihazınızda güvende kalır.`,
     steps: [
-      { title: 'PDF Belgenizi Yükleyin', description: 'Metadata bilgilerini silmek istediğiniz PDF belgesini sürükleyip bırakarak veya cihazınızdan seçerek yükleyin.' },
-      { title: 'Metadata Temizle Butonuna Tıklayın', description: '\'Metadata Temizle\' butonuna basarak dosya bilgilerini, yazar adını, tarihleri ve XMP etiketlerini sıfırlayın.' },
-      { title: 'Temizlenmiş PDF\'i İndirin', description: 'İşlem bittiğinde temizlenmiş yeni PDF dökümanınızı güvenle bilgisayarınıza veya telefonunuza indirin.' }
+      { title: 'PDF Belgenizi Yükleyin', description: 'Şifrelemek veya şifresini kaldırmak istediğiniz PDF dosyasını sürükleyip bırakarak yükleyin.' },
+      { title: 'İşlem ve Şifre Belirleyin', description: 'Yapmak istediğiniz işlemi (Şifre Ekle veya Şifre Kaldır) seçip kullanacağınız şifreyi girin.' },
+      { title: 'İşleyin ve İndirin', description: 'İşlem butonuna tıklayın; şifrelenmiş veya şifresi çözülmüş PDF belgeniz saniyeler içinde otomatik olarak insin.' }
     ],
     faqs: [
-      { question: 'PDF metadata nedir?', answer: 'PDF metadata; belgenin başlığı, yazarı, konusu, anahtar kelimeleri, oluşturulduğu tarih, son değiştirilme tarihi ve belgeyi oluşturan yazılım gibi arka planda saklanan tanımlayıcı yasal ve teknik bilgilerdir.' },
-      { question: 'PDF dosyam sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz dökümanlar hiçbir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde işlenir.' },
-      { question: 'Hangi metadata bilgileri temizlenir?', answer: 'Belgenizin başlığı (Title), yazarı (Author), konusu (Subject), anahtar kelimeleri (Keywords), oluşturucu yazılımı (Creator/Producer) ile oluşturma ve son düzenleme tarihleri tamamen nötr değerlerle sıfırlanır.' },
-      { question: 'PDF içeriği silinir mi?', answer: 'Kesinlikle hayır. Bu işlem yalnızca PDF dosyasının arka planında saklanan kimlik ve tarih verilerini temizler. PDF içindeki sayfalar, resimler, metinler veya formlar hiçbir şekilde silinmez ya da bozulmaz.' },
-      { question: 'Temizlenmiş PDF dosyasını hemen indirebilir miyim?', answer: 'Evet. \'Metadata Temizle\' butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme saniyeler içinde başlar. Çok yüksek sayfalı dökümanlarda işlem süresi cihazınızın donanım performansına bağlı olarak birkaç saniye sürebilir.' }
+      { question: 'PDF dosyam şifrelenirken veya şifresi çözülürken sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Dökümanlarınız hiçbir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde işlenir.' },
+      { question: 'Şifresini bilmediğim bir PDF\'in şifresini kaldırabilir miyim?', answer: 'Hayır. Hukuki ve teknik güvenlik standartları gereği, bir PDF\'in şifresini kaldırabilmek için dosyanın mevcut şifresini bilmeniz ve sisteme girmeniz gerekmektedir.' },
+      { question: 'PDF dosyam için belirleyeceğim şifre uzunluğu ne olmalıdır?', answer: 'Güvenliğiniz için en az 6 karakterli, büyük/küçük harf ve rakam içeren güçlü şifreler tercih etmenizi öneririz.' },
+      { question: 'Bu işlem mobil tarayıcılarda çalışır mı?', answer: 'Evet. EvrakFix mobil tarayıcılarla tam uyumludur. Akıllı telefon veya tabletinizden ek uygulama indirmeden PDF şifreleyebilir veya şifresini çözebilirsiniz.' },
+      { question: 'İşlem sonrasında dosyamı hemen indirebilir miyim?', answer: 'Evet. İşlem butonuna bastığınız anda işlem tarayıcı hızında yerel olarak gerçekleşir ve indirme saniyeler içinde başlar.' }
     ]
   },
-  '/pdf-page-numbers': {
-    toolName: 'PDF Sayfa Numarası Ekle',
-    description: `PDF Sayfa Numarası Ekle aracımız, dökümanlarınızın okuma ve arşivleme düzenini kolaylaştırmak için sayfa numaraları eklemenizi sağlar. Tamamen tarayıcınızda ve yerel olarak çalışan bu modül sayesinde, PDF dökümanınız sunucuya yüklenmeden saniyeler içinde numaralandırılır. Yazı boyutu, başlangıç sayfası, biçim ve konum (alt/üst, sağ/sol/orta) ayarlarını kişiselleştirerek profesyonel çıktılar elde edebilirsiniz.
+  '/pdf-compressor': {
+    toolName: 'PDF Sıkıştırma',
+    description: `PDF Sıkıştırıcı (PDF Compressor) aracımız, büyük boyutlu PDF belgelerinizin boyutunu tarayıcınızda yerel (client-side) olarak küçültmenizi sağlar. Belgelerinizin kalitesini ve boyutunu dilediğiniz gibi ayarlayarak paylaşım, e-posta gönderimi veya arşivleme işlemlerinizi kolaylaştırın. Dosyalarınız hiçbir uzak internet sunucusuna gönderilmez, verileriniz tamamen sizin cihazınızda güvende kalır.
 
-■ PDF sayfa numarası ekleme nedir?
-PDF sayfa numarası ekleme, çok sayfalı PDF belgelerinin okunabilirliğini, takibini ve düzenini kolaylaştırmak amacıyla sayfalarına sıralı numaraların basılması işlemidir.
+■ PDF Sıkıştırma Nedir?
+PDF sıkıştırma, PDF belgesi içerisinde yer alan yüksek çözünürlüklü görsellerin kalitesini ve boyutunu optimize ederek PDF dosyasının toplam disk ebatını (KB veya MB cinsinden) küçültme işlemidir. Bu işlem belgelerin internet üzerinden daha hızlı aktarılmasını sağlar.
 
-■ PDF dosyasına sayfa numarası nasıl eklenir?
-EvrakFix PDF Sayfa Numarası Ekle aracına belgenizi yükledikten sonra, seçenek paneli üzerinden dilediğiniz konum, format, yazı boyutu ve başlangıç numarasını belirleyip 'Sayfa Numarası Ekle' butonuna tıklayarak işlemi tamamlayabilirsiniz.
+■ PDF Dosyası Nasıl Sıkıştırılır?
+EvrakFix PDF Sıkıştırıcı'ya sıkıştırmak istediğiniz PDF belgesini sürükleyip bırakın. Sıkıştırma kalitesi seviyesini seçin. Ardından 'PDF'i Sıkıştır' butonuna tıklayarak işlemi başlatın. Sıkıştırılmış PDF belgeniz saniyeler içinde otomatik olarak indirilecektir.
 
-■ Sayfa numarası hangi konuma eklenebilir?
-Sayfa numaralarını dökümanınızın alt sol, alt orta, alt sağ, üst orta veya üst sağ olmak üzere 5 farklı noktasına yerleştirebilirsiniz.
+■ PDF Sıkıştırma Kalitesi ve Boyut Farkları Nelerdir?
+Aracımız üç farklı sıkıştırma seviyesi sunar:
+- Düşük Sıkıştırma (Yüksek Kalite): Görsellerin netliğini korur, boyutu makul miktarda düşürür.
+- Orta Sıkıştırma (Orta Kalite): En iyi kalite/boyut dengesini sunar (Önerilir).
+- Yüksek Sıkıştırma (Düşük Kalite): Görsel kalitesinden ödün vererek maksimum dosya küçültme oranı sağlar.
 
-■ Sayfa numarası formatı değiştirilebilir mi?
-Evet. Format seçenekleri üzerinden sadece numara (1, 2...), metinli numara (Sayfa 1, Sayfa 2...), toplam sayfa sayısı ile birlikte (1 / 10...) ya da hem metinli hem toplamlı (Sayfa 1 / 10...) formatları seçebilirsiniz.
+■ Sıkıştırma İşlemi Sonrasında Metin Seçilebilir mi?
+PDF Sıkıştırıcı aracımız, sayfaları yüksek performanslı Canvas motoru üzerinde görsele dönüştürerek sıkıştırma uygular. Bu nedenle, sıkıştırılmış PDF dökümanı içindeki yazıların kopyalanması, seçilmesi veya metin araması yapılması özelliği devre dışı kalabilir. Arama yapılabilir PDF kopyasına ihtiyacınız varsa orijinal dosyayı saklamanızı tavsiye ederiz.
 
-■ Hangi durumlarda PDF numaralandırma kullanılır?
-Resmi dilekçeler, tez çalışmaları, kitap taslakları, sözleşmeler, raporlar veya iş başvurularında sayfa takibini kolaylaştırmak ve belgeleri düzenli göstermek amacıyla kullanılır.
+■ PDF Sıkıştırma Güvenli mi?
+Evet. EvrakFix tamamen tarayıcı tabanlı (client-side) çalışır. Yüklediğiniz PDF dosyaları internetteki hiçbir uzak sunucuya aktarılmaz, kaydedilmez ve üçüncü taraflarla paylaşılmaz. Tüm süreç doğrudan sizin bilgisayarınızda veya telefonunuzda gerçekleştirilir.
 
-■ PDF sayfa numarası eklemek güvenli mi?
-Evet, tamamen güvenlidir. EvrakFix yerel (client-side) olarak çalışmaktadır. Yüklediğiniz PDF belgesi hiçbir uzak sunucuya yüklenmez, doğrudan tarayıcınızda işlenir.
+■ Mobil Cihazdan PDF Sıkıştırma Yapılabilir mi?
+Evet. EvrakFix responsive mobil uyumlu tasarımı sayesinde Android veya iPhone/iPad cihazlarınızın tarayıcıları üzerinden ek bir program indirmeden PDF belgelerinizi saniyeler içinde kolayca sıkıştırabilirsiniz.
 
-■ EvrakFix ile PDF numaralandırmanın avantajları
-Üyelik gerektirmeden, limitsiz ve tamamen ücretsiz çalışır. İşlemler yerel olarak yapıldığı için sunucu bekleme süresi yoktur ve döküman güvenliğiniz en yüksek düzeyde (cihazınızda) kalır.`,
+■ EvrakFix ile PDF Sıkıştırmanın Avantajları
+EvrakFix ile üyelik, limit veya hiçbir ücret olmadan tamamen ücretsiz PDF sıkıştırabilirsiniz. İşlemler yerel gerçekleştiği için internet hızınızdan bağımsız olarak anında tamamlanır ve verileriniz hiçbir zaman cihazınızdan dışarı çıkmaz.`,
     steps: [
-      { title: 'PDF Dökümanını Yükleyin', description: 'Sayfa numarası eklemek istediğiniz PDF dosyasını sürükleyip bırakarak veya cihazınızdan seçerek yükleme alanına aktarın.' },
-      { title: 'Numaralandırma Ayarlarını Yapın', description: 'Sayfa numarası formatını, konumunu, yazı boyutunu ve başlangıç numarasını kontrol paneli üzerinden belirleyin.' },
-      { title: 'Sayfa Numarası Ekle Butonuna Basın', description: '\'Sayfa Numarası Ekle\' butonuna basarak numaralandırılmış yeni PDF dosyanızı anında cihazınıza indirin.' }
+      { title: 'PDF Belgenizi Yükleyin', description: 'Sıkıştırmak istediğiniz PDF dosyasını sürükleyip bırakarak veya cihazınızdan seçerek yükleyin.' },
+      { title: 'Sıkıştırma Seviyesi Seçin', description: 'İhtiyacınıza en uygun olan Düşük, Orta veya Yüksek sıkıştırma seviyelerinden birini belirleyin.' },
+      { title: 'Sıkıştırın ve İndirin', description: 'PDF\'i Sıkıştır butonuna tıklayarak işlemi başlatın; sıkıştırılmış dökümanınız anında bilgisayarınıza insin.' }
     ],
     faqs: [
-      { question: 'PDF dosyam sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz PDF dosyaları internetteki hiçbir sunucuya gönderilmez, doğrudan cihazınızın tarayıcı belleğinde yerel olarak işlenir.' },
-      { question: 'Sayfa numarasını istediğim konuma ekleyebilir miyim?', answer: 'Evet. Sayfa numaralarını alt sol, alt orta, alt sağ, üst orta veya üst sağ olmak üzere 5 farklı konuma hizalayarak ekleyebilirsiniz.' },
-      { question: 'Sayfa numarası formatını değiştirebilir miyim?', answer: 'Evet. Format ayarlarında yalnızca numara (1, 2...), metin içeren numara (Sayfa 1, Sayfa 2...), toplam sayfa sayısı ile birlikte (1 / 10...) veya hem metin hem toplam sayfa sayısı içeren (Sayfa 1 / 10...) formatları serbestçe seçebilirsiniz.' },
-      { question: 'Başlangıç sayfa numarasını değiştirebilir miyim?', answer: 'Evet. Başlangıç numarası ayarını kullanarak belgenizin sayfa numaralandırmasını 1 yerine dilediğiniz herhangi bir sayıdan (örneğin 5 veya 100) başlatabilirsiniz.' },
-      { question: 'Numaralandırılmış PDF dosyasını hemen indirebilir miyim?', answer: 'Evet. Sayfa numarası ekle butonuna tıkladığınızda işlem cihazınızda saniyeler içinde tamamlanır ve numaralı PDF belgeniz otomatik olarak bilgisayarınıza veya telefonunuza indirilir.' }
+      { question: 'PDF dosyam sıkıştırılırken sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Yüklediğiniz dökümanlar hiçbir internet sunucusuna yüklenmez, doğrudan cihazınızın tarayıcı belleğinde işlenir.' },
+      { question: 'PDF sıkıştırma işlemi sonrasında belgemin kalitesi bozulur mu?', answer: 'Seçtiğiniz sıkıştırma seviyesine göre kalite değişir. Düşük Sıkıştırma (Yüksek Kalite) modu görsellerin netliğini korur. Yüksek Sıkıştırma modu ise boyutu maksimum düzeyde düşürür ancak görsel netliğini azaltabilir.' },
+      { question: 'PDF sıkıştırıldıktan sonra içindeki yazılar seçilebilir mi?', answer: 'PDF Sıkıştırıcı aracımız, sayfaları görsele dönüştürerek sıkıştırır. Bu sebeple işlem sonrasında PDF içindeki metinlerin seçilmesi veya kopyalanması devre dışı kalabilir.' },
+      { question: 'Çok büyük boyutlu PDF\'leri sıkıştırabilir miyim?', answer: 'Evet. Ancak çok sayfalı ve yüksek boyutlu PDF dökümanlarında sıkıştırma hızı doğrudan cihazınızın donanım performansına (RAM ve işlemci) bağlıdır.' },
+      { question: 'İşlem sonrasında sıkıştırılmış PDF\'i hemen indirebilir miyim?', answer: 'Evet. Sıkıştırma işlemi tamamlandığı anda yeni PDF belgeniz otomatik olarak bilgisayarınıza veya telefonunuza indirilir.' }
+    ]
+  },
+  '/qr-barcode-generator': {
+    toolName: 'QR Kod ve Barkod Oluşturma',
+    description: `QR Kod & Barkod Oluşturucu (QR & Barcode Generator) aracımız, kendi web siteleriniz, kartvizitleriniz, envanter takibiniz veya ürün etiketleriniz için tamamen ücretsiz şekilde kod üretmenizi sağlar. Çevrimdışı (offline) ve cihaz tabanlı (client-side) çalışan yapısı sayesinde girdiğiniz şifreler, telefon numaraları, gizli mesajlar veya linkler asla uzak internet sunucularına aktarılmaz.
+
+■ QR Kod ve Barkod Nedir?
+QR Kod (Quick Response), iki boyutlu (2D) veri matrisi biçiminde olan ve yüksek hacimli alfanümerik metinleri, web sitesi linklerini (URL) ve iletişim kartlarını saklayabilen bir koddur. Barkod ise tek boyutlu (1D) dikey çizgiler dizisi şeklinde olan ve genellikle lojistik, kargo ve süpermarket ürün kodlamaları gibi sadece sayısal/alfabetik kısa dizgileri tutan bir veri formatıdır.
+
+■ QR Kod Nasıl Oluşturulur?
+EvrakFix QR Kod Oluşturucu'ya linkinizi veya metninizi girin. Çözünürlük boyutunu ve şık bir görünüm için çizgi/arka plan renklerinizi belirleyin. 'PNG İndir' veya 'SVG İndir' butonlarından dilediğinize tıklayarak anında kaydedin.
+
+■ Barkod Nasıl Oluşturulur?
+Barkod sekmesine geçiş yapın. Gerekli ürün veya takip kodunu yazın. Lojistik ve perakende standartlarına uygun (CODE-128, EAN-13, UPC, CODE-39) formatlardan birini seçin. Barkodunuz anında çizilecek ve indirilmeye hazır hale gelecektir.
+
+■ Hangi Barkod Formatları Desteklenmektedir?
+Uygulamamız en çok kullanılan 6 barkod tipini destekler:
+- CODE128: Alfanümerik (harf ve rakam) veri saklayan standart barkod.
+- EAN-13: Dünya genelinde süpermarket ürünlerinde kullanılan 13 haneli sayısal barkod.
+- EAN-8: Küçük ebatlı ambalajlar için 8 haneli sayısal barkod.
+- UPC: Kuzey Amerika perakende standardı 12 haneli barkod.
+- CODE-39: Savunma ve sanayi standartlarında kullanılan basit alfanümerik barkod.
+- ITF: Koli ve lojistik palet takibinde kullanılan barkod.
+
+■ EvrakFix QR ve Barkod Oluşturucu Güvenli mi?
+Evet. EvrakFix tamamen tarayıcı tabanlı çalışan sunucusuz (client-side) bir sistemdir. Girdiğiniz veritabanı değerleri, kişisel detaylar, özel URL adresleri veya barkod numaraları hiçbir internet sunucusuna gönderilmez, izlenmez ve kaydedilmez. Kodların çizimi doğrudan cihazınızın kendi işlemcisiyle tarayıcı pencerenizde tamamlanır.
+
+■ Mobil Cihazdan QR ve Barkod Üretilebilir mi?
+Evet. EvrakFix mobil uyumlu tasarıma sahiptir. iOS ve Android yüklü cihazlarınızdan kameranızla okutmak üzere hızlıca QR kod üretebilir, SVG veya PNG formatlarında anında telefonunuza kaydedip kullanabilirsiniz.`,
+    steps: [
+      { title: 'Kod Tipini Belirleyin', description: 'Oluşturmak istediğiniz kod formatını (QR Kod veya Barkod sekmesini) seçin.' },
+      { title: 'Veri ve Özelleştirme Girin', description: 'İlgili metni/numarayı yazın. Boyut, format tipi ve çizgi/arka plan renklerinizi dilediğiniz gibi seçin.' },
+      { title: 'Format Seçip İndirin', description: 'Çözünürlük kaybı istemiyorsanız SVG, genel kullanım için PNG butonuna tıklayarak dosyanızı anında indirin.' }
+    ],
+    faqs: [
+      { question: 'Girdiğim bilgiler (link, numara, metin) sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Girdiğiniz tüm içerikler doğrudan cihazınızın tarayıcısında Canvas veya SVG\'ye çizilir, uzak internet sunucularına aktarılmaz.' },
+      { question: 'QR kod ve barkod arasındaki fark nedir?', answer: 'QR kodlar (2D) kare matris biçiminde olup çok yüksek veri saklayabilir ve linkler/uzun metinler için idealdir. Barkodlar ise dikey çizgiler (1D) halinde olup lojistik ve ürün etiketlerinde kullanılan kısa sayı dizilerini tutar.' },
+      { question: 'Barkod oluştururken neden hata alıyorum?', answer: 'Seçtiğiniz barkod formatının katı kuralları olabilir. Örneğin EAN-13 sadece 12 veya 13 haneli rakamları kabul ederken harf girilmesine izin vermez. Verinizi format kurallarına göre düzenlemeniz gerekir.' },
+      { question: 'Oluşturduğum kodları hangi formatlarda indirebilirim?', answer: 'Ölçeklenebilir vektör standardı olan SVG formatında veya klasik dijital resim standardı olan PNG formatında tamamen ücretsiz olarak indirebilirsiniz.' },
+      { question: 'Hazırlanan QR kodlar kalıcı mıdır, süresi dolar mı?', answer: 'Evet. Oluşturulan QR kodlar doğrudan girdiğiniz veriyi barındıran statik kodlardır. Arada herhangi bir yönlendirme servisi olmadığı için asla süreleri dolmaz ve kalıcı olarak çalışırlar.' }
     ]
   }
 };

@@ -16,6 +16,9 @@ const PdfToImagePage = lazy(() => import('../features/pdf-to-image/PdfToImagePag
 const ImageCompressorPage = lazy(() => import('../features/image-compressor/ImageCompressorPage').then(m => ({ default: m.ImageCompressorPage })));
 const PdfMetadataCleanerPage = lazy(() => import('../features/pdf-metadata-cleaner/PdfMetadataCleanerPage').then(m => ({ default: m.PdfMetadataCleanerPage })));
 const PdfPageNumbersPage = lazy(() => import('../features/pdf-page-numbers/PdfPageNumbersPage').then(m => ({ default: m.PdfPageNumbersPage })));
+const PdfProtectUnlockPage = lazy(() => import('../features/pdf-protect-unlock/PdfProtectUnlockPage').then(m => ({ default: m.PdfProtectUnlockPage })));
+const PdfCompressorPage = lazy(() => import('../features/pdf-compressor/PdfCompressorPage').then(m => ({ default: m.PdfCompressorPage })));
+const QrBarcodeGeneratorPage = lazy(() => import('../features/qr-barcode-generator/QrBarcodeGeneratorPage').then(m => ({ default: m.QrBarcodeGeneratorPage })));
 
 export interface Route {
   path: string;
@@ -108,6 +111,24 @@ export const routes: Route[] = [
     component: <PdfPageNumbersPage />,
     title: 'PDF Sayfa Numarası Ekle | Ücretsiz PDF Numaralandırma - EvrakFix',
     description: 'PDF dosyanıza cihazınızda güvenle sayfa numarası ekleyin. Konum ve format seçin, numaralandırılmış PDF’i hemen indirin.'
+  },
+  {
+    path: '/pdf-protect-unlock',
+    component: <PdfProtectUnlockPage />,
+    title: 'PDF Şifrele & Şifre Çöz | Ücretsiz PDF Şifre Koyma ve Kaldırma - EvrakFix',
+    description: 'PDF dosyalarınıza cihazınızda güvenle şifre koyun veya mevcut PDF şifrelerini kaldırın. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
+  },
+  {
+    path: '/pdf-compressor',
+    component: <PdfCompressorPage />,
+    title: 'PDF Sıkıştırıcı | Ücretsiz PDF Boyut Küçültme - EvrakFix',
+    description: 'PDF dosyalarınızın boyutunu kalitesini bozmadan cihazınızda güvenle küçültün. Üyelik gerekmez, dosyalarınız sunucuya yüklenmez.'
+  },
+  {
+    path: '/qr-barcode-generator',
+    component: <QrBarcodeGeneratorPage />,
+    title: 'QR Kod & Barkod Oluşturucu | Ücretsiz QR ve Barkod Yapıcı - EvrakFix',
+    description: 'Ücretsiz ve güvenli şekilde kendi QR kodlarınızı ve barkodlarınızı cihazınızda oluşturun, PNG veya SVG olarak indirin.'
   }
 ];
 

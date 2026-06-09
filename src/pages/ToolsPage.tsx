@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, ArrowRight, Search, ShieldCheck, EyeOff, Hash } from 'lucide-react';
+import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, ArrowRight, Search, ShieldCheck, EyeOff, Hash, Lock, Minimize2, QrCode } from 'lucide-react';
 import { toolList } from '../lib/constants/toolList';
 
 const iconMap: Record<string, any> = {
@@ -12,7 +12,10 @@ const iconMap: Record<string, any> = {
   Sliders,
   FileText,
   EyeOff,
-  Hash
+  Hash,
+  Lock,
+  Minimize2,
+  QrCode
 };
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';

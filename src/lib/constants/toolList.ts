@@ -106,5 +106,32 @@ export const toolList: ToolItem[] = [
     category: 'pdf',
     icon: 'Hash',
     badge: 'Yeni'
+  },
+  {
+    id: 'pdf-protect-unlock',
+    title: 'PDF Şifrele & Şifre Çöz',
+    description: 'PDF dosyalarınıza cihazınızda güvenle şifre koyun veya mevcut PDF şifrelerini kaldırın.',
+    path: '/pdf-protect-unlock',
+    category: 'pdf',
+    icon: 'Lock',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-compressor',
+    title: 'PDF Sıkıştırıcı',
+    description: 'PDF dosyalarınızın boyutunu kalitesini bozmadan cihazınızda güvenle küçültün.',
+    path: '/pdf-compressor',
+    category: 'pdf',
+    icon: 'Minimize2',
+    badge: 'Yeni'
+  },
+  {
+    id: 'qr-barcode-generator',
+    title: 'QR & Barkod Oluşturucu',
+    description: 'Ücretsiz ve güvenli şekilde kendi QR kodlarınızı ve barkodlarınızı cihazınızda oluşturun.',
+    path: '/qr-barcode-generator',
+    category: 'other',
+    icon: 'QrCode',
+    badge: 'Yeni'
   }
 ];
