@@ -19,6 +19,10 @@ const PdfPageNumbersPage = lazy(() => import('../features/pdf-page-numbers/PdfPa
 const PdfProtectUnlockPage = lazy(() => import('../features/pdf-protect-unlock/PdfProtectUnlockPage').then(m => ({ default: m.PdfProtectUnlockPage })));
 const PdfCompressorPage = lazy(() => import('../features/pdf-compressor/PdfCompressorPage').then(m => ({ default: m.PdfCompressorPage })));
 const QrBarcodeGeneratorPage = lazy(() => import('../features/qr-barcode-generator/QrBarcodeGeneratorPage').then(m => ({ default: m.QrBarcodeGeneratorPage })));
+const XmlInvoiceViewerPage = lazy(() => import('../features/xml-invoice-viewer/XmlInvoiceViewerPage').then(m => ({ default: m.XmlInvoiceViewerPage })));
+const TextDiffCheckerPage = lazy(() => import('../features/text-diff-checker/TextDiffCheckerPage').then(m => ({ default: m.TextDiffCheckerPage })));
+const PdfStampImagePage = lazy(() => import('../features/pdf-stamp-image/PdfStampImagePage').then(m => ({ default: m.PdfStampImagePage })));
+const ImageOcrPage = lazy(() => import('../features/image-ocr/ImageOcrPage').then(m => ({ default: m.ImageOcrPage })));
 
 export interface Route {
   path: string;
@@ -129,6 +133,30 @@ export const routes: Route[] = [
     component: <QrBarcodeGeneratorPage />,
     title: 'QR Kod & Barkod Oluşturucu | Ücretsiz QR ve Barkod Yapıcı - EvrakFix',
     description: 'Ücretsiz ve güvenli şekilde kendi QR kodlarınızı ve barkodlarınızı cihazınızda oluşturun, PNG veya SVG olarak indirin.'
+  },
+  {
+    path: '/xml-invoice-viewer',
+    component: <XmlInvoiceViewerPage />,
+    title: 'XML E-Fatura Görselleştirici | Ücretsiz e-Fatura XML Gösterici - EvrakFix',
+    description: 'Gelir İdaresi Başkanlığı (GİB) standartlarındaki e-fatura ve e-arşiv XML dosyalarını cihazınızda güvenle görüntüleyin ve yazdırın.'
+  },
+  {
+    path: '/text-diff-checker',
+    component: <TextDiffCheckerPage />,
+    title: 'Belge Metin Karşılaştırıcı | İki Metin Arasındaki Farkları Bul - EvrakFix',
+    description: 'İki sözleşme veya metin belgesi arasındaki farkları kelime ve satır bazlı olarak cihazınızda güvenle karşılaştırın.'
+  },
+  {
+    path: '/pdf-stamp-image',
+    component: <PdfStampImagePage />,
+    title: 'PDF’e Kaşe & Resim Ekle | PDF İmzalama ve Kaşeleme - EvrakFix',
+    description: 'PDF belgelerinize cihazınızda güvenle resmi hazır kaşe basın veya kendi imza resminizi (PNG/JPG) yerleştirin.'
+  },
+  {
+    path: '/image-ocr',
+    component: <ImageOcrPage />,
+    title: 'Resimden Metin Okuma (OCR) | Görseldeki Yazıyı Kopyala - EvrakFix',
+    description: 'Görsellerinizdeki veya taranmış resmi evrak fotoğraflarınızdaki metinleri yapay zeka ile cihazınızda okuyun ve kopyalayın.'
   }
 ];
 

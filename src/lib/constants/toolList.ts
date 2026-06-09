@@ -133,5 +133,41 @@ export const toolList: ToolItem[] = [
     category: 'other',
     icon: 'QrCode',
     badge: 'Yeni'
+  },
+  {
+    id: 'xml-invoice-viewer',
+    title: 'XML Fatura Gösterici',
+    description: 'XML formatındaki e-Fatura, e-Arşiv veya e-İrsaliye dosyalarını cihazınızda açın ve yazdırın.',
+    path: '/xml-invoice-viewer',
+    category: 'other',
+    icon: 'FileText',
+    badge: 'Yeni'
+  },
+  {
+    id: 'text-diff-checker',
+    title: 'Metin Karşılaştırıcı',
+    description: 'İki farklı metin versiyonunu yan yana karşılaştırın ve değişiklikleri anlık olarak görün.',
+    path: '/text-diff-checker',
+    category: 'document',
+    icon: 'ArrowRightLeft',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-stamp-image',
+    title: 'PDF\'e Kaşe & Resim Ekle',
+    description: 'PDF dökümanlarınıza kurumsal kaşe basabilir veya el yazısı imzanızın resmini ekleyebilirsiniz.',
+    path: '/pdf-stamp-image',
+    category: 'pdf',
+    icon: 'Award',
+    badge: 'Yeni'
+  },
+  {
+    id: 'image-ocr',
+    title: 'Resimden Metin Okuma (OCR)',
+    description: 'Görsellerinizdeki veya taranmış evrak fotoğraflarınızdaki metinleri cihazınızda yapay zeka ile okuyun.',
+    path: '/image-ocr',
+    category: 'document',
+    icon: 'Sparkles',
+    badge: 'Yeni'
   }
 ];
