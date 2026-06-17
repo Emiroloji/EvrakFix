@@ -163,6 +163,54 @@ const routeConfigs = [
     title: 'PDF Sayfa Boyutu & Kenar Payı Düzenleyici | PDF Resizer - EvrakFix',
     description: 'PDF belgelerinin sayfa boyutlarını standart A4, A3 veya Letter formatlarına dönüştürün, kenar ve ciltleme payı boşlukları ekleyin.',
     sourceFile: 'src/features/pdf-resizer/PdfResizerPage.tsx'
+  },
+  {
+    path: '/vat-invoice-calculator',
+    title: 'KDV ve Fatura Hesaplayıcı | Ücretsiz KDV Dahil Hariç Hesaplama - EvrakFix',
+    description: 'Fatura KDV dahil ve hariç tutarlarını tevkifat kesinti oranları (1/10 - 10/10) ile birlikte cihazınızda güvenle hesaplayın.',
+    sourceFile: 'src/features/vat-invoice-calculator/VatInvoiceCalculatorPage.tsx'
+  },
+  {
+    path: '/interest-calculator',
+    title: 'Gecikme Faizi ve Yasal Faiz Hesaplayıcı | Rapor Dökümü - EvrakFix',
+    description: 'Yasal faiz ve ticari avans faizi oranlarındaki dönemsel değişimlere göre faiz döküm raporunuzu cihazınızda güvenle çıkarın.',
+    sourceFile: 'src/features/interest-calculator/InterestCalculatorPage.tsx'
+  },
+  {
+    path: '/pdf-booklet-splitter',
+    title: 'İkiye Katlanmış PDF Sayfalarını Ayırıcı | Booklet Splitter - EvrakFix',
+    description: 'Kitapçık veya yan yana duran çift sayfalı yatay PDF dökümanlarını kalitesini bozmadan ortadan iki dikey sayfaya bölün.',
+    sourceFile: 'src/features/pdf-booklet-splitter/PdfBookletSplitterPage.tsx'
+  },
+  {
+    path: '/markdown-editor',
+    title: 'Markdown Editör & PDF Dönüştürücü | Canlı Önizleme - EvrakFix',
+    description: 'Tarayıcı tabanlı Markdown editörü ile dökümanlarınızı yazın, anlık HTML önizleyin ve cihazınızda güvenle PDF\'e dönüştürün.',
+    sourceFile: 'src/features/markdown-editor/MarkdownEditorPage.tsx'
+  },
+  {
+    path: '/pdf-password-recovery',
+    title: 'PDF Şifre Kırıcı / Kurtarıcı | Kilitli PDF Açma - EvrakFix',
+    description: 'Şifresini unuttuğunuz kilitli PDF dosyalarının kilidini olası şifre listeleriyle tarayıcı düzeyinde brute-force deneyerek açın.',
+    sourceFile: 'src/features/pdf-password-recovery/PdfPasswordRecoveryPage.tsx'
+  },
+  {
+    path: '/qr-barcode-reader',
+    title: 'QR Kod & Barkod Okuyucu | Kamera ile Barkod Tarama - EvrakFix',
+    description: 'Fotoğraf yükleyerek veya kameranızı kullanarak QR kodları ve ticari perakende barkodlarını tarayıcı düzeyinde çözün.',
+    sourceFile: 'src/features/qr-barcode-reader/QrBarcodeReaderPage.tsx'
+  },
+  {
+    path: '/image-background-remover',
+    title: 'Resim Arka Planı Temizleyici | Şeffaf PNG Yapma - EvrakFix',
+    description: 'İmza, kaşe veya logolarınızın beyaz arka planını temizleyerek şeffaf PNG döküman görselleri elde edin.',
+    sourceFile: 'src/features/image-background-remover/ImageBackgroundRemoverPage.tsx'
+  },
+  {
+    path: '/cv-builder',
+    title: 'CV / Özgeçmiş Oluşturucu | Ücretsiz A4 PDF CV Hazırlama - EvrakFix',
+    description: 'Hiçbir sunucuya veri yüklemeden, tarayıcınızda kurumsal A4 PDF özgeçmişler hazırlayıp anında indirin.',
+    sourceFile: 'src/features/cv-builder/CvBuilderPage.tsx'
   }
 ];
 
@@ -977,11 +1025,171 @@ Evet. EvrakFix sunucusuz (client-side) çalışır. İşlediğiniz PDF belgeleri
       { title: 'İşleyin ve İndirin', description: '\'Belgeyi Yeniden Boyutlandır\' butonuna tıklayarak işlemi başlatın, tamamlandığında PDF\'inizi anında indirin.' }
     ],
     faqs: [
-      { question: 'Belgelerim ve verilerim sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. PDF dosyası hiçbir internet sunucusuna gönderilmez, doğrudan cihazınızın tarayıcı belleğinde yerel olarak işlenir.' },
+      { question: 'Belgelerim ve verilerim sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. PDF dosyası hiçbir internet sunucusuna gönderilmez, doğrudan cihazınızın tarayıcısının yerel belleğinde işlenir.' },
       { question: 'Boyutlandırma sonrasında PDF’teki yazılar kopyalanabilir kalır mı?', answer: 'Evet. Sayfalar resme dönüştürülmez. Orijinal vektörel yapı korunduğu için PDF içerisindeki metin arama ve metin kopyalama özellikleri aynen aktif kalır.' },
       { question: 'Kenar boşluğu eklemek ne işe yarar?', answer: 'Özellikle kitapçık basımlarında, ciltleme veya zımbalama yapıldığında sayfa kenarındaki metinlerin kaybolmaması için kenar marjı eklemek kritik öneme sahiptir.' },
       { question: 'Yatay (Landscape) sayfalar dikey (Portrait) olur mu?', answer: 'Seçtiğiniz preset boyuta göre sayfalar otomatik ölçeklenir ve ortalanır. Geniş sayfaların bozulmaması için orijinal en/boy oranını koruyarak yeni sayfa sınırlarına sığdırılır.' },
       { question: 'Bu araç ücretli midir veya limit var mıdır?', answer: 'Hayır. PDF Resizer tamamen ücretsizdir ve herhangi bir dosya yükleme sınırı veya kota bulunmamaktadır.' }
+    ]
+  },
+  '/vat-invoice-calculator': {
+    toolName: 'KDV ve Fatura Hesaplayıcı',
+    description: `EvrakFix KDV ve Fatura Hesaplayıcı, faturalarınızın KDV dahil veya KDV hariç bedellerini cihazınızda saniyeler içinde hesaplamanızı sağlar. Türkiye'de uygulanan standart KDV oranları (%20, %10, %1) ile birlikte faturalarınıza özel KDV tevkifat oranlarını (1/10'dan 10/10'a kadar) kolayca yansıtabilirsiniz. Finansal verileriniz internete yüklenmeden doğrudan kendi tarayıcınızda hesaplanır.
+
+■ KDV Hesaplama Nedir?
+Katma Değer Vergisi (KDV) hesaplama, mal veya hizmetin net matrahı üzerine uygulanacak olan vergi oranına göre vergi tutarını bulma ve matraha ekleyerek (dahil) veya matrahtan çıkararak (hariç) toplam tutarları hesaplama işlemidir.
+
+■ Tevkifatlı Fatura Hesaplama Nasıl Yapılır?
+Gelişmiş hesaplayıcımıza fatura tutarını yazın, KDV Dahil veya KDV Hariç durumunu seçin, KDV oranını belirleyin ve son olarak varsa Tevkifat Oranını (örneğin 5/10) seçin. Matrah, KDV, tevkifat kesintisi ve net fatura bedeli anında listelenir.`,
+    steps: [
+      { title: 'Tutar Girin ve Tür Seçin', description: 'Hesaplamak istediğiniz fatura bedelini yazıp KDV Dahil veya KDV Hariç seçeneğini işaretleyin.' },
+      { title: 'KDV ve Tevkifatı Seçin', description: 'Güncel KDV oranını (%20, %10, %1) ve varsa tevkifat oranını listeden belirleyin.' },
+      { title: 'Sonuçları Alın', description: 'Matrah, KDV tutarı, tevkif edilen KDV ve net tahsil edilecek tutar saniyeler içinde hesaplanır.' }
+    ],
+    faqs: [
+      { question: 'Finansal bilgilerim sunucuya yükleniyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. Girdiğiniz tutar, KDV oranı veya tevkifat gibi finansal hiçbir veri sunucularımıza gitmez, tamamen tarayıcınızda hesaplanır.' },
+      { question: 'Güncel KDV oranları nelerdir?', answer: 'Temmuz 2023 itibarıyla Türkiye\'de genel KDV oranı %20, gıda ve bazı temel ürünler için indirimli KDV oranları %10 ve %1 olarak uygulanmaktadır.' },
+      { question: 'KDV tevkifatı nasıl hesaplanır?', answer: 'Tevkifat oranına göre (örneğin 5/10), hesaplanan toplam KDV tutarı kesintiye uğrar. Kesilen tutar satıcıya ödenmez, alıcı tarafından doğrudan vergi dairesine beyan edilir.' }
+    ]
+  },
+  '/interest-calculator': {
+    toolName: 'Gecikme Faizi ve Yasal Faiz Hesaplayıcı',
+    description: `EvrakFix Yasal ve Gecikme Faizi Hesaplayıcı, borçların vade tarihleri ile ödeme tarihleri arasında geçen süreler için yasal faiz ve ticari temerrüt faizlerini otomatik hesaplar. Türkiye'deki yasal faiz ve ticari (avans) faiz oranlarının tarihsel dönemsel değişimlerini veri tabanında tutarak, tarih aralığına göre gün gün hesaplama dökümünü çıkarır.
+
+■ Yasal Faiz Değişimleri
+Borçlar Kanununa göre yasal faiz oranları değişkenlik göstermektedir. Araç, başlangıç ve bitiş tarihleri arasındaki faiz oranı değişimlerini (yıllık %9 veya yıllık %24 gibi) otomatik bölümlere ayırarak hatasız hesaplama yapar.
+
+■ Faiz Hesaplama Nasıl Yapılır?
+Ana para tutarını yazın, faiz başlangıç (vade) tarihini ve faiz bitiş (ödeme) tarihini seçin. Faiz oranının türünü (Yasal, Ticari veya Özel) belirlediğinizde faiz raporunuz anında oluşturulur.`,
+    steps: [
+      { title: 'Tutar ve Tarihleri Belirleyin', description: 'Hesaplamak istediğiniz ana para tutarını, başlangıç ve bitiş tarihlerini girin.' },
+      { title: 'Faiz Türünü Seçin', description: 'Yasal faiz, ticari temerrüt faizi veya serbest özel bir oran belirleyin.' },
+      { title: 'Raporu İnceleyin', description: 'Oranların değiştiği dönemlere göre gün gün hesaplanan detaylı döküm tablosunu alın.' }
+    ],
+    faqs: [
+      { question: 'Hesaplanan faiz verileri sunucuya yükleniyor mu?', answer: 'Hayır. Borç tutarı, başlangıç veya bitiş tarihi gibi kişisel ve finansal hiçbir veri uzak sunuculara yüklenmez. Tüm hesaplamalar tarayıcınızda yapılır.' },
+      { question: 'Yasal faiz ve ticari faiz oranları güncel mi?', answer: 'Evet, Türkiye\'deki güncel yasal faiz (yıllık %24) ve ticari avans faizi (yıllık %48) oranları sisteme entegredir.' },
+      { question: 'Özel faiz oranıyla hesaplama yapabilir miyim?', answer: 'Evet. Özel Faiz Oranı seçeneğini işaretleyerek kendi belirlediğiniz yıllık faiz yüzdesine göre hesaplama yapabilirsiniz.' }
+    ]
+  },
+  '/pdf-booklet-splitter': {
+    toolName: 'PDF Kitapçık Sayfa Ayırıcı',
+    description: `EvrakFix PDF Kitapçık Ayırıcı, yan yana duran çift sayfalı yatay (landscape) PDF belgelerini dikey (portrait) tekli sayfalar halinde ortadan bölmenizi sağlar. pdf-lib kütüphanesini kullanarak orijinal vektör katmanlarını ve yazı fontlarını koruyarak bölme yapar; bu sayede yazıların netliği bozulmaz ve arama seçilebilirliği aynen kalır.
+
+■ Kitapçık Bölme Nedir?
+İki sayfa yan yana basılmış veya taranmış kitapçıkların, sayfa ortasından dikey bir hatla bölünerek ardışık tekli sayfalar halinde getirilmesi işlemidir.
+
+■ PDF Kitapçık Nasıl Bölünür?
+PDF dökümanını Dropzone alanına yükleyin. 'Yalnızca Yatay Sayfaları Böl' ayarını etkinleştirerek 'Sayfaları Ortadan Böl' butonuna basın. Bölünen sayfalar saniyeler içinde yeni PDF olarak indirilmeye hazır olacaktır.`,
+    steps: [
+      { title: 'Kitapçık PDF Yükleyin', description: 'Ortadan ikiye bölmek istediğiniz yatay düzenli PDF dökümanını seçin.' },
+      { title: 'Ayarları Belirleyin', description: 'Dikey sayfaların korunup korunmayacağını (Yalnızca yatay sayfaları böl) ayarlayın.' },
+      { title: 'İşleyin ve İndirin', description: 'Sayfaları Ortadan Böl butonuna tıklayarak yeni PDF\'inizi anında cihazınıza kaydedin.' }
+    ],
+    faqs: [
+      { question: 'PDF dökümanım sunucuya gidiyor mu?', answer: 'Hayır. EvrakFix tamamen sunucusuz (client-side) çalışmaktadır. PDF dökümanı hiçbir internet sunucusuna gönderilmez, doğrudan tarayıcınızda bölünür.' },
+      { question: 'Bölme sonrasında yazı kalitesi düşer mi?', answer: 'Hayır. Sayfalar resme dönüştürülmez. Orijinal vektör yapısı korunduğu için metinlerin seçilebilirliği ve aratılabilirliği aynen kalır.' },
+      { question: 'Dikey sayfalar da bölünür mü?', answer: 'Yalnızca yatay sayfaları böl ayarı aktifken dikey sayfalar (kapak vb.) bölünmeden olduğu gibi korunur.' }
+    ]
+  },
+  '/markdown-editor': {
+    toolName: 'Markdown Editör & PDF Dönüştürücü',
+    description: `EvrakFix Markdown Editör, düz metin kodları ile şık dökümanlar yazıp bunları cihazınızda PDF formatına dönüştürmenizi sağlar. Sol tarafta dökümanınızı düzenlerken sağ taraftaki panelde HTML önizlemesini gerçek zamanlı izleyebilirsiniz. Tamamen tarayıcı düzeyinde çalışarak veri güvenliğinizi korur.
+
+■ Markdown Nedir?
+Markdown, düz metin biçimlendirme dilidir. Sadece klavyeden başlık (#), liste (-), kalın (**yazı**) gibi sembollerle hızlıca şık ve standartlara uygun kurumsal yazılar yazmanızı sağlar.
+
+■ Markdown PDF'e Nasıl Dönüştürülür?
+Editörde belgenizi oluşturun. 'Cihazda PDF Yap' veya 'Yazdır / Farklı Kaydet' butonlarını kullanarak A4 standartlarında profesyonel PDF çıktısı alın.`,
+    steps: [
+      { title: 'Metninizi Yazın', description: 'Sol taraftaki editöre dökümanınızı Markdown biçiminde yazın veya hazır butonları kullanın.' },
+      { title: 'Önizlemeyi İzleyin', description: 'Sağ taraftaki canlı panelde belgenizin bittiğinde nasıl görüneceğini gerçek zamanlı takip edin.' },
+      { title: 'PDF Olarak Kaydedin', description: 'Yazdır veya PDF Yap butonlarıyla dökümanınızı saniyeler içinde PDF formatında indirin.' }
+    ],
+    faqs: [
+      { question: 'Yazdığım belgeler sunucuya kaydediliyor mu?', answer: 'Hayır. EvrakFix üzerinde yazdığınız hiçbir metin veya döküman sunuculara gitmez, tamamen tarayıcınızda çalışır.' },
+      { question: 'Tablo veya kod blokları ekleyebilir miyim?', answer: 'Evet. Editörün üst araç çubuğundaki düğmeler yardımıyla tablo, kod blokları ve yatay ayraçları kolayca ekleyebilirsiniz.' },
+      { question: 'PDF indirirken mizanpaj bozulur mu?', answer: 'Hayır. A4 standardına göre otomatik sayfa bölünmeleri ve satır sığdırmaları yapılarak kurumsal bir PDF dökümanı üretilir.' }
+    ]
+  },
+  '/pdf-password-recovery': {
+    toolName: 'PDF Şifre Kırıcı / Kurtarıcı',
+    description: `EvrakFix PDF Şifre Kurtarıcı, şifresini unuttuğunuz kilitli PDF dökümanlarının şifresini yerel sözlük (dictionary) denemeleriyle kırmanızı sağlar. Tüm denemeler tamamen cihazınızda (client-side) yapıldığı için, hassas şifre tahminleriniz veya belgeleriniz internetteki hiçbir uzak sunucuya aktarılmaz.
+
+■ PDF Şifre Kırma Nedir?
+Belirlenen veya en yaygın kullanılan şifre listelerinin, PDF şifre çözme motorunda (pdf-lib) yüksek hızda denenerek doğru parolanın bulunması işlemidir.
+
+■ Şifre Nasıl Kurtarılır?
+Şifreli PDF dosyasını yükleyin. Olası şifre tahminlerinizi (isim, doğum yılı vb.) virgül veya alt alta girin. 'Şifre Kurtarmayı Başlat' butonuna tıklayarak tarayıcınızda denemeleri başlatın.`,
+    steps: [
+      { title: 'Şifreli PDF Yükleyin', description: 'Şifresini kırmak veya kurtarmak istediğiniz kilitli PDF belgesini seçin.' },
+      { title: 'Tahminlerinizi Yazın', description: 'Hatırladığınız olası şifre parçalarını, isimleri veya yılları tahmin kutusuna girin.' },
+      { title: 'Kilidi Açıp İndirin', description: 'Doğru şifre bulunduğunda parolayı görebilir ve şifresiz sürümü indirebilirsiniz.' }
+    ],
+    faqs: [
+      { question: 'PDF dosyam ve şifre tahminlerim güvende mi?', answer: 'Evet. Tüm işlemler 100% cihazınızda (tarayıcı belleği) gerçekleşir. Hiçbir veri internete yüklenmez, dosyalarınız tamamen güvendeler.' },
+      { question: 'Brute-force kırma hızı nedir?', answer: 'Kırma hızı tamamen tarayıcınızın ve cihazınızın işlemci performansına bağlıdır. Yerel denemeler milisaniyeler içinde tamamlanır.' },
+      { question: 'Her PDF şifresi kırılabilir mi?', answer: 'Yalnızca girdiğiniz tahmin listesinde veya sistemin ortak şifre sözlüğünde yer alan parolalar kırılabilir. Çok karmaşık rastgele şifreler için kendi kelime listenizi eklemelisiniz.' }
+    ]
+  },
+  '/qr-barcode-reader': {
+    toolName: 'QR Kod & Barkod Okuyucu',
+    description: `EvrakFix QR Kod & Barkod Okuyucu, yüklediğiniz fotoğraflardaki veya cihazınızın kamerasını kullanarak canlı taradığınız kodları çözümler. QR kodlarının yanı sıra perakende ürün barkodlarını da (EAN-13, CODE-128 vb.) tarayıcı düzeyinde sıfır sunucu yüküyle deşifre eder.
+
+■ QR & Barkod Deşifre Etme
+QR kod veya ticari barkod desenlerindeki pikselleri ve çizgileri tarayarak, kodun içindeki metin, link, ürün kodu veya kargo bilgilerini okuma işlemidir.
+
+■ Barkod Kamera ile Nasıl Okutulur?
+Kamerayı Başlat butonuna tıklayarak kameranıza izin verin. Kod desenini ekrandaki kesikli çizgilerin ortasına odaklayın. Sistem kodu otomatik algılayıp içeriği gösterecektir.`,
+    steps: [
+      { title: 'Kamera veya Görsel Seçin', description: 'Canlı kamera tarayıcıyı başlatın veya cihazınızdan barkod içeren bir görsel seçin.' },
+      { title: 'Kodu Odaklayın', description: 'Kamerayı koda yaklaştırın veya görselin çözümlenmesini bekleyin.' },
+      { title: 'İçeriği Alın', description: 'Deşifre edilen metni kopyalayabilir, link ise doğrudan web sitesine gidebilirsiniz.' }
+    ],
+    faqs: [
+      { question: 'Kamera görüntüsü sunucuya iletiliyor mu?', answer: 'Hayır. Kamera kareleri ve yüklediğiniz fotoğraflar tamamen yerel olarak tarayıcınızda (canvas üzerinde) işlenir. İnternete hiçbir görsel veri aktarılmaz.' },
+      { question: 'Hangi barkod türleri destekleniyor?', answer: 'Tüm standart QR kodlarının yanı sıra, tarayıcı desteğinize bağlı olarak EAN-13, EAN-8, UPC-A, CODE-128 ve CODE-39 barkod formatları okunabilir.' },
+      { question: 'Link içeren QR kodları güvenli mi?', answer: 'Deşifre edilen link size gösterilir, siz tıklayıp onaylamadığınız sürece harici web siteleri otomatik açılmaz.' }
+    ]
+  },
+  '/image-background-remover': {
+    toolName: 'Resim Arka Planı Temizleyici',
+    description: `EvrakFix Resim Arka Planı Temizleyici, el yazısı imza fotoğraflarınızın veya dijital kaşelerinizin beyaz/gri arka planını silerek şeffaf PNG (transparent) haline verir. Gelişmiş Euclidean RGB piksel taramasıyla çalışır.
+
+■ Arka Plan Silme Nedir?
+Resimdeki arka plan renk kanallarını (genellikle beyaz kağıt piksellerini) tespit edip şeffaflık katmanı ekleyerek nesneyi (örneğin imzayı) arka plandan ayırma işlemidir.
+
+■ İmza Arka Planı Nasıl Temizlenir?
+İmza fotoğrafını yükleyin. Beyaz rengin silinme hassasiyeti için tolerans sürgüsünü ayarlayın. İmza çizgilerini keskinleştirmek için Kontrastı Artır seçeneğini açık tutarak şeffaf PNG olarak indirin.`,
+    steps: [
+      { title: 'Görselinizi Yükleyin', description: 'Beyaz arka planını temizlemek istediğiniz imza veya logo resmini sürükleyip bırakın.' },
+      { title: 'Hassasiyeti Ayarlayın', description: 'Tolerans çubuğuyla beyaz renklerin silinme hassasiyetini anlık önizleme ile belirleyin.' },
+      { title: 'Şeffaf PNG İndirin', description: 'Arka planı silinen ve mürekkebi netleştirilen imzanızı transparent PNG olarak anında kaydedin.' }
+    ],
+    faqs: [
+      { question: 'Resim verilerim güvende mi?', answer: 'Evet. Resim pikselleri 100% tarayıcınızda yerel çalışır, hiçbir uzak sunucuya yüklenmez ve üçüncü kişilerle paylaşılmaz.' },
+      { question: 'İmzamın kalitesi bozulur mu?', answer: 'Hayır. Görsel çözünürlüğü korunarak sadece beyaz pikseller şeffaf yapılır. Kontrast güçlendirme mürekkebi daha net gösterir.' },
+      { question: 'Hangi formatta indirme yapılır?', answer: 'Şeffaflığı (transparency) desteklemesi için çıktınız her zaman kayıpsız PNG formatında indirilir.' }
+    ]
+  },
+  '/cv-builder': {
+    toolName: 'CV / Özgeçmiş Oluşturucu',
+    description: `EvrakFix CV / Özgeçmiş Oluşturucu, hiçbir sunucuya kişisel verilerinizi göndermeden tarayıcınızda kurumsal A4 PDF özgeçmişler hazırlamanızı sağlar. Kişisel bilgiler, iş deneyimleri, eğitim geçmişi, projeler ve yeteneklerinizi doldurarak şık bir tasarımla PDF formatında indirebilirsiniz.
+
+■ CV Oluşturma Güvenliği
+Girdiğiniz isim, telefon, adres, e-posta ve iş geçmişi gibi hassas kişisel veriler tarayıcı düzeyinde RAM'de işlenir. Sunucu veritabanı bulunmadığı için verileriniz tamamen gizli kalır.
+
+■ Özgeçmiş PDF Nasıl Hazırlanır?
+Kategorileri doldurun veya 'Örnek Doldur' seçeneğiyle taslağı hazırlayın. 'CV\'yi PDF Olarak İndir' butonuna basarak A4 formatındaki resmi belgenizi indirin.`,
+    steps: [
+      { title: 'Kategorileri Doldurun', description: 'Kişisel bilgiler, iş geçmişi, eğitim, yetenekler gibi alanları doldurun.' },
+      { title: 'Örnek Veri Kullanın', description: 'Dilerseniz tek tıkla örnek şablonu doldurup üzerinde hızlıca düzenleme yapın.' },
+      { title: 'PDF Olarak Kaydedin', description: 'CV\'yi PDF Olarak İndir butonuna tıklayarak resmi A4 belgenizi saniyeler içinde kaydedin.' }
+    ],
+    faqs: [
+      { question: 'Kişisel bilgilerim bir sisteme kaydediliyor mu?', answer: 'Hayır. EvrakFix\'in veritabanı veya üye kayıt sistemi yoktur. Girdiğiniz tüm bilgiler sadece sizin bilgisayarınızda kalır.' },
+      { question: 'Boş bırakılan alanlar CV\'de nasıl görünür?', answer: 'Boş bıraktığınız tüm alanlar veya listeler PDF oluşturulurken otomatik olarak gizlenir, belgede boş yer kaplamaz.' },
+      { question: 'Daha sonra CV\'mi düzenleyebilir miyim?', answer: 'Veriler sunucuda depolanmadığı için tarayıcı sekmesini kapattığınızda temizlenir. Düzenleme yapana kadar sekmeyi açık tutmalısınız.' }
     ]
   }
 };

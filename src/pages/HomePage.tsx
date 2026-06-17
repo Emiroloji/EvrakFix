@@ -1,4 +1,9 @@
-import { Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, EyeOff, Hash, Lock, Minimize2, QrCode, ArrowRightLeft, Award, Camera, RefreshCw, Printer, Maximize2 } from 'lucide-react';
+import { 
+  Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, 
+  EyeOff, Hash, Lock, Minimize2, QrCode, ArrowRightLeft, Award, Camera, 
+  RefreshCw, Printer, Maximize2, Calculator, Percent, BookOpen, Edit3, 
+  Key, Scan, Eraser, Briefcase 
+} from 'lucide-react';
 
 const iconMap: Record<string, any> = {
   Merge,
@@ -16,11 +21,19 @@ const iconMap: Record<string, any> = {
   QrCode,
   ArrowRightLeft,
   Award,
-  Sparkles,
+  Sparkles: null, // fallback
   Camera,
   RefreshCw,
   Printer,
-  Maximize2
+  Maximize2,
+  Calculator,
+  Percent,
+  BookOpen,
+  Edit3,
+  Key,
+  Scan,
+  Eraser,
+  Briefcase
 };
 import { toolList } from '../lib/constants/toolList';
 import { Button } from '../components/ui/Button';

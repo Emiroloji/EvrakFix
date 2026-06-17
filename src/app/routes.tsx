@@ -28,6 +28,14 @@ const PdfToTextPage = lazy(() => import('../features/pdf-to-text/PdfToTextPage')
 const CsvJsonXmlConverterPage = lazy(() => import('../features/csv-json-xml-converter/CsvJsonXmlConverterPage').then(m => ({ default: m.CsvJsonXmlConverterPage })));
 const PdfToGrayscalePage = lazy(() => import('../features/pdf-to-grayscale/PdfToGrayscalePage').then(m => ({ default: m.PdfToGrayscalePage })));
 const PdfResizerPage = lazy(() => import('../features/pdf-resizer/PdfResizerPage').then(m => ({ default: m.PdfResizerPage })));
+const VatInvoiceCalculatorPage = lazy(() => import('../features/vat-invoice-calculator/VatInvoiceCalculatorPage').then(m => ({ default: m.VatInvoiceCalculatorPage })));
+const InterestCalculatorPage = lazy(() => import('../features/interest-calculator/InterestCalculatorPage').then(m => ({ default: m.InterestCalculatorPage })));
+const PdfBookletSplitterPage = lazy(() => import('../features/pdf-booklet-splitter/PdfBookletSplitterPage').then(m => ({ default: m.PdfBookletSplitterPage })));
+const MarkdownEditorPage = lazy(() => import('../features/markdown-editor/MarkdownEditorPage').then(m => ({ default: m.MarkdownEditorPage })));
+const PdfPasswordRecoveryPage = lazy(() => import('../features/pdf-password-recovery/PdfPasswordRecoveryPage').then(m => ({ default: m.PdfPasswordRecoveryPage })));
+const QrBarcodeReaderPage = lazy(() => import('../features/qr-barcode-reader/QrBarcodeReaderPage').then(m => ({ default: m.QrBarcodeReaderPage })));
+const ImageBackgroundRemoverPage = lazy(() => import('../features/image-background-remover/ImageBackgroundRemoverPage').then(m => ({ default: m.ImageBackgroundRemoverPage })));
+const CvBuilderPage = lazy(() => import('../features/cv-builder/CvBuilderPage').then(m => ({ default: m.CvBuilderPage })));
 
 export interface Route {
   path: string;
@@ -192,6 +200,54 @@ export const routes: Route[] = [
     component: <PdfResizerPage />,
     title: 'PDF Sayfa Boyutu & Kenar Payı Düzenleyici | PDF Resizer - EvrakFix',
     description: 'PDF belgelerinizi A4, Letter veya A3 boyutlarına vektör kalitesini ve metin seçilebilirliğini bozmadan yeniden ölçeklendirin.'
+  },
+  {
+    path: '/vat-invoice-calculator',
+    component: <VatInvoiceCalculatorPage />,
+    title: 'KDV ve Fatura Hesaplayıcı | Ücretsiz KDV Dahil Hariç Hesaplama - EvrakFix',
+    description: 'Fatura KDV dahil ve hariç tutarlarını tevkifat kesinti oranları (1/10 - 10/10) ile birlikte cihazınızda güvenle hesaplayın.'
+  },
+  {
+    path: '/interest-calculator',
+    component: <InterestCalculatorPage />,
+    title: 'Gecikme Faizi ve Yasal Faiz Hesaplayıcı | Rapor Dökümü - EvrakFix',
+    description: 'Yasal faiz ve ticari avans faizi oranlarındaki dönemsel değişimlere göre faiz döküm raporunuzu cihazınızda güvenle çıkarın.'
+  },
+  {
+    path: '/pdf-booklet-splitter',
+    component: <PdfBookletSplitterPage />,
+    title: 'İkiye Katlanmış PDF Sayfalarını Ayırıcı | Booklet Splitter - EvrakFix',
+    description: 'Kitapçık veya yan yana duran çift sayfalı yatay PDF dökümanlarını kalitesini bozmadan ortadan iki dikey sayfaya bölün.'
+  },
+  {
+    path: '/markdown-editor',
+    component: <MarkdownEditorPage />,
+    title: 'Markdown Editör & PDF Dönüştürücü | Canlı Önizleme - EvrakFix',
+    description: 'Tarayıcı tabanlı Markdown editörü ile dökümanlarınızı yazın, anlık HTML önizleyin ve cihazınızda güvenle PDF\'e dönüştürün.'
+  },
+  {
+    path: '/pdf-password-recovery',
+    component: <PdfPasswordRecoveryPage />,
+    title: 'PDF Şifre Kırıcı / Kurtarıcı | Kilitli PDF Açma - EvrakFix',
+    description: 'Şifresini unuttuğunuz kilitli PDF dosyalarının kilidini olası şifre listeleriyle tarayıcı düzeyinde brute-force deneyerek açın.'
+  },
+  {
+    path: '/qr-barcode-reader',
+    component: <QrBarcodeReaderPage />,
+    title: 'QR Kod & Barkod Okuyucu | Kamera ile Barkod Tarama - EvrakFix',
+    description: 'Fotoğraf yükleyerek veya kameranızı kullanarak QR kodları ve ticari perakende barkodlarını tarayıcı düzeyinde çözün.'
+  },
+  {
+    path: '/image-background-remover',
+    component: <ImageBackgroundRemoverPage />,
+    title: 'Resim Arka Planı Temizleyici | Şeffaf PNG Yapma - EvrakFix',
+    description: 'İmza, kaşe veya logolarınızın beyaz arka planını temizleyerek şeffaf PNG döküman görselleri elde edin.'
+  },
+  {
+    path: '/cv-builder',
+    component: <CvBuilderPage />,
+    title: 'CV / Özgeçmiş Oluşturucu | Ücretsiz A4 PDF CV Hazırlama - EvrakFix',
+    description: 'Hiçbir sunucuya veri yüklemeden, tarayıcınızda kurumsal A4 PDF özgeçmişler hazırlayıp anında indirin.'
   }
 ];
 

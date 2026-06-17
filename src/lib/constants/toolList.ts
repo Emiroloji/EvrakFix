@@ -214,5 +214,77 @@ export const toolList: ToolItem[] = [
     category: 'pdf',
     icon: 'Maximize2',
     badge: 'Yeni'
+  },
+  {
+    id: 'vat-invoice-calculator',
+    title: 'KDV ve Fatura Hesaplayıcı',
+    description: 'KDV dahil ve hariç tutarlarını tevkifat oranları ile birlikte cihazınızda güvenle hesaplayın.',
+    path: '/vat-invoice-calculator',
+    category: 'other',
+    icon: 'Calculator',
+    badge: 'Yeni'
+  },
+  {
+    id: 'interest-calculator',
+    title: 'Gecikme Faizi Hesaplayıcı',
+    description: 'Yasal ve ticari faiz oranlarındaki dönemsel değişimleri otomatik hesaba katarak faiz raporu çıkarın.',
+    path: '/interest-calculator',
+    category: 'other',
+    icon: 'Percent',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-booklet-splitter',
+    title: 'PDF Kitapçık Ayırıcı',
+    description: 'Çift sayfalı yatay PDF dökümanlarını kalitesini bozmadan ortadan iki dikey sayfaya bölün.',
+    path: '/pdf-booklet-splitter',
+    category: 'pdf',
+    icon: 'BookOpen',
+    badge: 'Yeni'
+  },
+  {
+    id: 'markdown-editor',
+    title: 'Markdown Editör & PDF',
+    description: 'Markdown formatında dökümanlar yazın, canlı önizleyin ve cihazınızda PDF\'e dönüştürün.',
+    path: '/markdown-editor',
+    category: 'document',
+    icon: 'Edit3',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-password-recovery',
+    title: 'PDF Şifre Kurtarıcı',
+    description: 'Şifresini unuttuğunuz kilitli PDF dosyalarının şifresini brute-force ile kurtarın.',
+    path: '/pdf-password-recovery',
+    category: 'pdf',
+    icon: 'Key',
+    badge: 'Yeni'
+  },
+  {
+    id: 'qr-barcode-reader',
+    title: 'QR & Barkod Okuyucu',
+    description: 'Fotoğraf yükleyerek veya kameranızı kullanarak QR kodları ve perakende barkodları çözün.',
+    path: '/qr-barcode-reader',
+    category: 'other',
+    icon: 'Scan',
+    badge: 'Yeni'
+  },
+  {
+    id: 'image-background-remover',
+    title: 'Arka Plan Temizleyici',
+    description: 'İmza, kaşe veya logolarınızın beyaz arka planını temizleyerek şeffaf PNG elde edin.',
+    path: '/image-background-remover',
+    category: 'other',
+    icon: 'Eraser',
+    badge: 'Yeni'
+  },
+  {
+    id: 'cv-builder',
+    title: 'CV / Özgeçmiş Oluşturucu',
+    description: 'Hiçbir sunucuya veri yüklemeden tarayıcınızda kurumsal A4 PDF özgeçmişler hazırlayın.',
+    path: '/cv-builder',
+    category: 'document',
+    icon: 'Briefcase',
+    badge: 'Yeni'
   }
 ];
