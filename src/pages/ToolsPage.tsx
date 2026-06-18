@@ -3,7 +3,7 @@ import {
   Merge, Scissors, Image, Signature, Layers, LayoutGrid, Sliders, FileText, 
   ArrowRight, Search, ShieldCheck, EyeOff, Hash, Lock, Minimize2, QrCode, 
   ArrowRightLeft, Award, Sparkles, Camera, RefreshCw, Printer, Maximize2,
-  Calculator, Percent, BookOpen, Edit3, Key, Scan, Eraser, Briefcase
+  Calculator, Percent, BookOpen, Edit3, Key, Scan, Eraser, Briefcase, Scale, FolderOpen, CalendarDays, Languages, FileBadge
 } from 'lucide-react';
 import { toolList } from '../lib/constants/toolList';
 
@@ -35,7 +35,12 @@ const iconMap: Record<string, any> = {
   Key,
   Scan,
   Eraser,
-  Briefcase
+  Briefcase,
+  Scale,
+  FolderOpen,
+  CalendarDays,
+  Languages,
+  FileBadge
 };
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';

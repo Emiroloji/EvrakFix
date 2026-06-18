@@ -211,6 +211,36 @@ const routeConfigs = [
     title: 'CV / Özgeçmiş Oluşturucu | Ücretsiz A4 PDF CV Hazırlama - EvrakFix',
     description: 'Hiçbir sunucuya veri yüklemeden, tarayıcınızda kurumsal A4 PDF özgeçmişler hazırlayıp anında indirin.',
     sourceFile: 'src/features/cv-builder/CvBuilderPage.tsx'
+  },
+  {
+    path: '/severance-calculator',
+    title: 'Kıdem ve İhbar Tazminatı Hesaplayıcı | Gelir Vergisi Kesintisi - EvrakFix',
+    description: 'Çalışanların brüt maaş ve çalışma sürelerine göre kıdem ve ihbar tazminatını yasal kesintilerle birlikte cihazınızda güvenle hesaplayın.',
+    sourceFile: 'src/features/severance-calculator/SeveranceCalculatorPage.tsx'
+  },
+  {
+    path: '/bulk-renamer',
+    title: 'Toplu Dosya Adı Değiştirici | Sıra No ve Sayaç Ekleme - EvrakFix',
+    description: 'Çok sayıda dosyanın ismini belirlediğiniz kurallara göre tarayıcıda toplu değiştirin ve ZIP olarak indirin.',
+    sourceFile: 'src/features/bulk-renamer/BulkRenamerPage.tsx'
+  },
+  {
+    path: '/timesheet-calculator',
+    title: 'Serbest Çalışan Mesai & Hakediş Raporlayıcı | Timesheet - EvrakFix',
+    description: 'Günlük mesai saatlerinizi ve saatlik ücretlerinizi girerek aylık kazanç tablonuzu ve zaman çizelgenizi PDF olarak indirin.',
+    sourceFile: 'src/features/timesheet-calculator/TimesheetCalculatorPage.tsx'
+  },
+  {
+    path: '/text-analyzer',
+    title: 'Metin Analizörü & Kelime Bulutu | Türkçe Okunabilirlik - EvrakFix',
+    description: 'Metinlerinizin kelime sayısını, yoğunluğunu ve okunabilirlik puanını analiz edin ve kelime bulutu grafiği oluşturun.',
+    sourceFile: 'src/features/text-analyzer/TextAnalyzerPage.tsx'
+  },
+  {
+    path: '/pdf-cover-stamp',
+    title: 'PDF Kapak Ekle & Barkod Damgala | Evrak Numaralandırma - EvrakFix',
+    description: 'PDF belgelerinin başına kurumsal kapak sayfası ekleyin veya sayfaların üst/alt kısımlarına barkod damgalayın.',
+    sourceFile: 'src/features/pdf-cover-stamp/PdfCoverStampPage.tsx'
   }
 ];
 
@@ -1190,6 +1220,91 @@ Kategorileri doldurun veya 'Örnek Doldur' seçeneğiyle taslağı hazırlayın.
       { question: 'Kişisel bilgilerim bir sisteme kaydediliyor mu?', answer: 'Hayır. EvrakFix\'in veritabanı veya üye kayıt sistemi yoktur. Girdiğiniz tüm bilgiler sadece sizin bilgisayarınızda kalır.' },
       { question: 'Boş bırakılan alanlar CV\'de nasıl görünür?', answer: 'Boş bıraktığınız tüm alanlar veya listeler PDF oluşturulurken otomatik olarak gizlenir, belgede boş yer kaplamaz.' },
       { question: 'Daha sonra CV\'mi düzenleyebilir miyim?', answer: 'Veriler sunucuda depolanmadığı için tarayıcı sekmesini kapattığınızda temizlenir. Düzenleme yapana kadar sekmeyi açık tutmalısınız.' }
+    ]
+  },
+  '/severance-calculator': {
+    toolName: 'Kıdem ve İhbar Tazminatı Hesaplayıcı',
+    description: `EvrakFix Kıdem ve İhbar Tazminatı Hesaplayıcı; çalışanların hak kazandığı tazminat miktarlarını yasal gelir/damga vergisi ve güncel kıdem tavan sınırlamalarına göre hesaplar. Hesaplanan verileri resmi bir rapor şablonunda PDF olarak bilgisayarınıza veya telefonunuza anında kaydetmenizi sağlar.
+
+■ Kıdem Tazminatı Nedir?
+Kıdem tazminatı, en az 1 tam yıl çalışan bir işçinin iş sözleşmesinin haklı nedenlerle feshi durumunda çalıştığı her yıl için 30 günlük giydirilmiş brüt maaş üzerinden hak ettiği yasal bir ödemedir.`,
+    steps: [
+      { title: 'Tarihleri Seçin', description: 'İşçinin işe başlama ve işten ayrılış tarihlerini gün bazlı olarak seçin.' },
+      { title: 'Maaşı Tanımlayın', description: 'Brüt temel maaşı ve düzenli ödenen sosyal yardımları (yol, yemek vb.) girin.' },
+      { title: 'Raporu İndirin', description: 'Tazminat tavanı ve vergileri hesaplanan haklarınızı PDF raporu olarak bilgisayarınıza indirin.' }
+    ],
+    faqs: [
+      { question: 'Asgari çalışma süresi nedir?', answer: 'Bir çalışanın kıdem tazminatına hak kazanabilmesi için aynı işverene bağlı olarak en az 1 tam yıl (365 gün) çalışmış olması zorunludur.' },
+      { question: 'Verilerim güvende mi?', answer: 'Evet. Hesaplamalar ve PDF dökümü oluşturma tamamen cihazınızın tarayıcısında yapılır. Hiçbir finansal veri veya tarih sunuculara yüklenmez.' },
+      { question: 'Hangi vergiler kesilir?', answer: 'Kıdem tazminatından sadece damga vergisi (%0.759) kesilir. İhbar tazminatından ise hem gelir vergisi (%15) hem de damga vergisi kesilmektedir.' }
+    ]
+  },
+  '/bulk-renamer': {
+    toolName: 'Toplu Dosya Adı Değiştirici',
+    description: `EvrakFix Toplu Dosya Adı Değiştirici; klasörlerinizdeki çok sayıda dosyanın ismini belirlediğiniz kurallara göre tek tıkla ve saniyeler içinde topluca değiştirmenizi sağlar. Değiştirilen dosyalar yeni isimleriyle ZIP olarak indirilir.
+
+■ Toplu İsimlendirme Nedir?
+Çok sayıda belgenin veya görselin adının kurumsal bir şablona (önek, sonek, sıralı sayaç ekleyerek) uyarlanıp tek seferde güncellenmesi işlemidir.`,
+    steps: [
+      { title: 'Dosyaları Yükleyin', description: 'İsmi değişecek tüm dosyaları dropzone alanına sürükleyip topluca ekleyin.' },
+      { title: 'Kuralları Seçin', description: 'Önek, sonek, harf biçimi (büyük/küçük) ve sıralı sayaç kurallarını ayarlayın.' },
+      { title: 'ZIP Olarak Kaydedin', description: 'Canlı önizleme listesini kontrol edip yeni isimlerle dosyaları ZIP paketi olarak indirin.' }
+    ],
+    faqs: [
+      { question: 'Hangi uzantılar destekleniyor?', answer: 'Uzantı kısıtlaması yoktur. PDF, PNG, JPG, Word, Excel, TXT vb. tüm dosyaları yükleyip adlandırabilirsiniz.' },
+      { question: 'Sayaç nasıl çalışır?', answer: 'Sayaç seçeneğini işaretleyerek isimlerin arkasına sıralı sayılar (001, 002 vb.) yerleştirebilirsiniz.' },
+      { question: 'Dosyalarım çalınabilir mi?', answer: 'Hayır. Dosyalar hiçbir sunucuya yüklenmez. İsim değiştirme ve ZIP sıkıştırma tamamen yerel tarayıcı belleğinde yapılır.' }
+    ]
+  },
+  '/timesheet-calculator': {
+    toolName: 'Mesai & Kazanç Hesaplayıcı',
+    description: `EvrakFix Mesai Hesaplayıcı (Timesheet); saatlik çalışanlar, serbest çalışanlar veya danışmanlar için günlük/aylık çalışma çizelgesi ve kazanç dökümü oluşturulmasını sağlar. Çizelgenizi PDF veya Excel uyumlu CSV olarak ihraç edebilirsiniz.
+
+■ Timesheet Nedir?
+Çalışılan günlerin, giriş-çıkış saatlerinin, mola sürelerinin ve mesai katsayılarının listelendiği resmi zaman çizelgesi dökümüdür.`,
+    steps: [
+      { title: 'Ücretleri Tanımlayın', description: 'Standart saatlik çalışma ücretinizi ve para biriminizi (₺, $, €, £) ayarlayın.' },
+      { title: 'Mesai Girişi Yapın', description: 'Tarih, giriş/çıkış saatleri ve mola dakikalarını girerek listeye mesai ekleyin.' },
+      { title: 'Tabloyu Dışa Aktarın', description: 'Toplam kazancınızı inceleyip zaman çizelgenizi Excel (CSV) veya kurumsal PDF olarak indirin.' }
+    ],
+    faqs: [
+      { question: 'Gece vardiyaları doğru hesaplanır mı?', answer: 'Evet. Giriş saatini çıkış saatinden geç yazarsanız (örn. 22:00 - 06:00), sistem ertesi güne geçildiğini otomatik algılayıp vardiyayı doğru hesaplar.' },
+      { question: 'Mola süreleri düşülür md?', answer: 'Evet, girdiğiniz mola dakikası toplam çalışılan süreden otomatik olarak düşülerek net çalışma saati hesaplanır.' },
+      { question: 'Bilgilerim kaydediliyor mu?', answer: 'Hayır. Verileriniz tarayıcınızdan çıkmaz. Sayfayı kapattığınızda temizlenir.' }
+    ]
+  },
+  '/text-analyzer': {
+    toolName: 'Metin Analizörü & Kelime Bulutu',
+    description: `EvrakFix Metin Analizörü; yazılı belgelerinizin kelime, karakter, cümle yoğunluğunu analiz eder ve Türkçe okunabilirlik indeksini (Ateşman Formülü) hesaplar. Ayrıca metindeki kelimelerden dinamik bir kelime bulutu grafiği çizer.
+
+■ Türkçe Okunabilirlik Analizi Nedir?
+Ateşman formülüyle, metinlerin hece ve cümle uzunluklarını Türkçe dil yapısına göre oranlayarak okunabilirlik zorluk derecesini çıkarma işlemidir.`,
+    steps: [
+      { title: 'Metninizi Girin', description: 'Analiz edilmesini istediğiniz yazıyı ilgili alana yapıştırın.' },
+      { title: 'Metrikleri Görün', description: 'Okunabilirlik puanını, kelime, cümle sayısı ve okuma süresini anlık inceleyin.' },
+      { title: 'Grafiği İndirin', description: 'Metindeki yoğun kelimelerden oluşturulan kelime bulutunu PNG görseli olarak indirin.' }
+    ],
+    faqs: [
+      { question: 'Ateşman skoru ne anlama gelir?', answer: 'Skor 100\'e yaklaştıkça metin kolaylaşır (ilkokul), 30\'un altına indikçe ağırlaşır (akademik/hukuki).' },
+      { question: 'Bağlaçlar kelime bulutunda görünür mü?', answer: 'Hayır. Türkçe\'deki "ve, veya, ama, ile, bir" gibi etkisiz kelimeler (stopwords) analizde otomatik temizlenir.' },
+      { question: 'Güvenli mi?', answer: 'Metinleriniz hiçbir sunucuya iletilmez, tamamen cihazınızda (client-side) analiz edilir.' }
+    ]
+  },
+  '/pdf-cover-stamp': {
+    toolName: 'PDF Kapak Ekle & Barkod Bas',
+    description: `EvrakFix PDF Kapak Ekle & Barkod Damgalayıcı; PDF belgelerinizin başına resmi kapak sayfaları (Modern, Klasik, Minimalist) yerleştirmenizi veya sayfalarına arşiv referans numarası ve barkod damgası basmanızı sağlar.
+
+■ PDF Kapak ve Damga Nedir?
+PDF dökümanının ilk sayfasına tasnif bilgileri içeren bir kapak eklenmesi veya sayfaların üst/alt kısımlarına takip barkodu eklenmesi işlemidir.`,
+    steps: [
+      { title: 'PDF Yükleyin', description: 'İşlem yapmak istediğiniz PDF dosyasını dropzone alanına sürükleyip yükleyin.' },
+      { title: 'Bilgileri Yazın', description: 'Belge başlığı, hazırlayan kurum, arşiv referans numarası ve tarihi girin.' },
+      { title: 'Belgeyi Kaydedin', description: 'Kapak şablonu veya damgalama konumunu seçip işlenmiş PDF\'inizi indirin.' }
+    ],
+    faqs: [
+      { question: 'PDF dökümanımın kalitesi bozulur mu?', answer: 'Hayır. Sayfaları görselleştirmeden doğrudan vektör katmanı olarak işlediğimiz için PDF netliği ve metin seçilebilirliği korunur.' },
+      { question: 'Damgalanan barkod taranabilir mi?', answer: 'Oluşturulan barkodlar arşivcilik standartlarını simüle eden vektörel çizgilerdir.' },
+      { question: 'Yüklenen dosyalar güvende mi?', answer: 'Evet. Dosyalarınız tamamen yerel tarayıcınızda işlenir, sunucuya aktarılmaz.' }
     ]
   }
 };

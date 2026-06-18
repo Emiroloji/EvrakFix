@@ -286,5 +286,50 @@ export const toolList: ToolItem[] = [
     category: 'document',
     icon: 'Briefcase',
     badge: 'Yeni'
+  },
+  {
+    id: 'severance-calculator',
+    title: 'Kıdem Tazminatı Hesapla',
+    description: 'Brüt maaş ve çalışma sürelerine göre kıdem ve ihbar tazminatını yasal kesintilerle birlikte hesaplayın.',
+    path: '/severance-calculator',
+    category: 'other',
+    icon: 'Scale',
+    badge: 'Yeni'
+  },
+  {
+    id: 'bulk-renamer',
+    title: 'Toplu Dosya Adı Değiştirici',
+    description: 'Çok sayıda dosyanın adını belirli kurallara göre tarayıcıda toplu değiştirin ve ZIP olarak indirin.',
+    path: '/bulk-renamer',
+    category: 'other',
+    icon: 'FolderOpen',
+    badge: 'Yeni'
+  },
+  {
+    id: 'timesheet-calculator',
+    title: 'Mesai & Kazanç Hesaplayıcı',
+    description: 'Günlük mesai ve saatlik ücretlerinize göre aylık kazanç tablonuzu ve zaman çizelgenizi PDF yapın.',
+    path: '/timesheet-calculator',
+    category: 'other',
+    icon: 'CalendarDays',
+    badge: 'Yeni'
+  },
+  {
+    id: 'text-analyzer',
+    title: 'Metin Analizörü & Kelime Bulutu',
+    description: 'Metinlerin kelime sayısı, yoğunluğu ve okunabilirlik analizini yapın ve kelime bulutu grafiği çizin.',
+    path: '/text-analyzer',
+    category: 'document',
+    icon: 'Languages',
+    badge: 'Yeni'
+  },
+  {
+    id: 'pdf-cover-stamp',
+    title: 'PDF Kapak Ekle & Barkod Bas',
+    description: 'PDF belgelerinin başına kurumsal kapak sayfası ekleyin veya sayfaların üstüne barkod damgalayın.',
+    path: '/pdf-cover-stamp',
+    category: 'pdf',
+    icon: 'FileBadge',
+    badge: 'Yeni'
   }
 ];

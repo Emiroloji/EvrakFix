@@ -1,4 +1,4 @@
-const CACHE_NAME = 'evrakfix-cache-v3.0.0';
+const CACHE_NAME = 'evrakfix-cache-v3.1.0';
 const PRE_CACHE_ASSETS = [
   '/',
   '/index.html',

@@ -36,6 +36,11 @@ const PdfPasswordRecoveryPage = lazy(() => import('../features/pdf-password-reco
 const QrBarcodeReaderPage = lazy(() => import('../features/qr-barcode-reader/QrBarcodeReaderPage').then(m => ({ default: m.QrBarcodeReaderPage })));
 const ImageBackgroundRemoverPage = lazy(() => import('../features/image-background-remover/ImageBackgroundRemoverPage').then(m => ({ default: m.ImageBackgroundRemoverPage })));
 const CvBuilderPage = lazy(() => import('../features/cv-builder/CvBuilderPage').then(m => ({ default: m.CvBuilderPage })));
+const SeveranceCalculatorPage = lazy(() => import('../features/severance-calculator/SeveranceCalculatorPage').then(m => ({ default: m.SeveranceCalculatorPage })));
+const BulkRenamerPage = lazy(() => import('../features/bulk-renamer/BulkRenamerPage').then(m => ({ default: m.BulkRenamerPage })));
+const TimesheetCalculatorPage = lazy(() => import('../features/timesheet-calculator/TimesheetCalculatorPage').then(m => ({ default: m.TimesheetCalculatorPage })));
+const TextAnalyzerPage = lazy(() => import('../features/text-analyzer/TextAnalyzerPage').then(m => ({ default: m.TextAnalyzerPage })));
+const PdfCoverStampPage = lazy(() => import('../features/pdf-cover-stamp/PdfCoverStampPage').then(m => ({ default: m.PdfCoverStampPage })));
 
 export interface Route {
   path: string;
@@ -248,6 +253,36 @@ export const routes: Route[] = [
     component: <CvBuilderPage />,
     title: 'CV / Özgeçmiş Oluşturucu | Ücretsiz A4 PDF CV Hazırlama - EvrakFix',
     description: 'Hiçbir sunucuya veri yüklemeden, tarayıcınızda kurumsal A4 PDF özgeçmişler hazırlayıp anında indirin.'
+  },
+  {
+    path: '/severance-calculator',
+    component: <SeveranceCalculatorPage />,
+    title: 'Kıdem ve İhbar Tazminatı Hesaplayıcı | Gelir Vergisi Kesintisi - EvrakFix',
+    description: 'Çalışanların brüt maaş ve çalışma sürelerine göre kıdem ve ihbar tazminatını yasal kesintilerle birlikte cihazınızda güvenle hesaplayın.'
+  },
+  {
+    path: '/bulk-renamer',
+    component: <BulkRenamerPage />,
+    title: 'Toplu Dosya Adı Değiştirici | Sıra No ve Sayaç Ekleme - EvrakFix',
+    description: 'Çok sayıda dosyanın ismini belirlediğiniz kurallara göre tarayıcıda toplu değiştirin ve ZIP olarak indirin.'
+  },
+  {
+    path: '/timesheet-calculator',
+    component: <TimesheetCalculatorPage />,
+    title: 'Serbest Çalışan Mesai & Hakediş Raporlayıcı | Timesheet - EvrakFix',
+    description: 'Günlük mesai saatlerinizi ve saatlik ücretlerinizi girerek aylık kazanç tablonuzu ve zaman çizelgenizi PDF olarak indirin.'
+  },
+  {
+    path: '/text-analyzer',
+    component: <TextAnalyzerPage />,
+    title: 'Metin Analizörü & Kelime Bulutu | Türkçe Okunabilirlik - EvrakFix',
+    description: 'Metinlerinizin kelime sayısını, yoğunluğunu ve okunabilirlik puanını analiz edin ve kelime bulutu grafiği oluşturun.'
+  },
+  {
+    path: '/pdf-cover-stamp',
+    component: <PdfCoverStampPage />,
+    title: 'PDF Kapak Ekle & Barkod Damgala | Evrak Numaralandırma - EvrakFix',
+    description: 'PDF belgelerinizin başına kurumsal kapak sayfası ekleyin veya sayfaların üst/alt kısımlarına barkod damgalayın.'
   }
 ];
 
